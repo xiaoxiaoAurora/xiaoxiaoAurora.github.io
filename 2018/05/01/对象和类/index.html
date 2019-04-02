@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Python中的对象和类1. 什么是对象 2. 使用class定义类如果把类比作塑料盒子，类则像是制作和自用的模具。例如，Python的内置类String可以创建像‘cat’和‘duck’这样的字符串对象。Python中还有许多用来创建其他标准数据类型的类，包括字典、列表等。如果想要在Python中创建属于自己的对象，首先必须用关键词class来定义一个类。    1234567#创建一个空">
+<meta name="keywords" content="Python,类,对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python | 对象和类">
+<meta property="og:url" content="https://xiaoxiaoaurora.github.io/2018/05/01/对象和类/index.html">
+<meta property="og:site_name" content="XiaoXiao">
+<meta property="og:description" content="Python中的对象和类1. 什么是对象 2. 使用class定义类如果把类比作塑料盒子，类则像是制作和自用的模具。例如，Python的内置类String可以创建像‘cat’和‘duck’这样的字符串对象。Python中还有许多用来创建其他标准数据类型的类，包括字典、列表等。如果想要在Python中创建属于自己的对象，首先必须用关键词class来定义一个类。    1234567#创建一个空">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://bing.ioliu.cn/photo/BM1759_EN-AU0329493905?force=home_7">
+<meta property="og:updated_time" content="2019-04-02T12:22:37.432Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python | 对象和类">
+<meta name="twitter:description" content="Python中的对象和类1. 什么是对象 2. 使用class定义类如果把类比作塑料盒子，类则像是制作和自用的模具。例如，Python的内置类String可以创建像‘cat’和‘duck’这样的字符串对象。Python中还有许多用来创建其他标准数据类型的类，包括字典、列表等。如果想要在Python中创建属于自己的对象，首先必须用关键词class来定义一个类。    1234567#创建一个空">
+<meta name="twitter:image" content="https://bing.ioliu.cn/photo/BM1759_EN-AU0329493905?force=home_7">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="XiaoXiao" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://xiaoxiaoaurora.github.io/2018/05/01/对象和类/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Python | 对象和类 | XiaoXiao</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/xiaoxiaoAurora" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XiaoXiao</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-top">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/top/" rel="section"><i class="menu-item-icon fa fa-fw fa-signal"></i> <br>top</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-search">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/search/" rel="section"><i class="menu-item-icon fa fa-fw fa-search"></i> <br>搜索</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiaoxiaoaurora.github.io/2018/05/01/对象和类/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xiao">
+      <meta itemprop="description" content="怕什么真理无穷，进一寸有进一寸的欢喜。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoXiao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python | 对象和类
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-01 09:34:57" itemprop="dateCreated datePublished" datetime="2018-05-01T09:34:57+08:00">2018-05-01</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-02 20:22:37" itemprop="dateModified" datetime="2019-04-02T20:22:37+08:00">2019-04-02</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数"></span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长"></span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <img src="https://bing.ioliu.cn/photo/BM1759_EN-AU0329493905?force=home_7" itemprop="contentUrl">
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <p><img src="https://i.loli.net/2018/05/31/5b0f529386dd5.jpg" alt>  </p>
+<h1 id="Python中的对象和类"><a href="#Python中的对象和类" class="headerlink" title="Python中的对象和类"></a>Python中的对象和类</h1><h2 id="1-什么是对象"><a href="#1-什么是对象" class="headerlink" title="1. 什么是对象"></a>1. 什么是对象</h2><p><img src="https://i.loli.net/2018/06/07/5b18cf7e08af7.jpg" alt><br><img src="https://i.loli.net/2018/06/07/5b18cf9e823d9.jpg" alt></p>
+<h2 id="2-使用class定义类"><a href="#2-使用class定义类" class="headerlink" title="2. 使用class定义类"></a>2. 使用class定义类</h2><p>如果把类比作塑料盒子，类则像是制作和自用的模具。例如，Python的内置类String可以创建像‘cat’和‘duck’这样的字符串对象。Python中还有许多用来创建其他标准数据类型的类，包括字典、列表等。如果想要在Python中创建属于自己的对象，首先必须用关键词class来定义一个类。<br><img src="https://i.loli.net/2018/05/31/5b0f597a67cff.jpg" alt></p>
+   <figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#创建一个空类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="type">Person</span>():</span></span><br><span class="line"><span class="class">         pass  </span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">      # 通过类名创建对象，同调用函数一样：</span></span><br><span class="line"><span class="class">      someone = <span class="type">Person</span>()</span></span><br><span class="line"><span class="class">      (以上例子中，<span class="type">Person</span>()创建了一个<span class="type">Person</span>类的对象，并给它赋值someone这个名字。但是由于<span class="type">Person</span>类是空的，所以由它创建的对象someone实际上什么也做不了。)</span></span><br></pre></td></tr></table></figure>
+<p>重新定义类，将Python中特殊的对象初始化方法<strong>init</strong>放入其中：  </p>
+<pre><code><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>():</span></span><br><span class="line">       <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>，name)</span></span>:      </span><br><span class="line">       <span class="comment">#实际的Python类的定义形式。 __init__()是Python中一个特殊的函数名，用于根据类的定义创建实例对象。self参数指向了这个正在被创建的对象本身。当你在类声明里定义__init__()方法时，第一个参数必须为self。尽管self并不是一个Python保留字，但它很常用。</span></span><br><span class="line">       <span class="comment"># 在初始化方法中添加name参数</span></span><br><span class="line">           <span class="keyword">self</span>.name = name</span><br><span class="line">            </span><br><span class="line">		<span class="comment">#用Person类创建一个对象，为name特性传递一个字符串参数。</span></span><br><span class="line">		hunter = Person(<span class="string">"Elmer Fudd"</span>)</span><br></pre></td></tr></table></figure>
+</code></pre><p><img src="https://i.loli.net/2018/05/31/5b0f5f79e4568.jpg" alt>    </p>
+<p><img src="https://i.loli.net/2018/05/31/5b0f5fd20cec4.jpg" alt></p>
+<pre><code>print(&quot;The mighty hunter:&quot;, hunter.name)  
+The mighty hunter: Elmer Fudd  
+</code></pre><p><img src="https://i.loli.net/2018/05/31/5b0f6198229f2.jpg" alt></p>
+<h2 id="3-继承"><a href="#3-继承" class="headerlink" title="3. 继承"></a>3. 继承</h2><p><img src="https://i.loli.net/2018/05/31/5b0f620f41ace.jpg" alt>  </p>
+<pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span><span class="params">()</span>:</span></span><br><span class="line">   	<span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Yugo</span><span class="params">(Car)</span>:</span></span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="comment">#接着，为每个类创建一个实例对象:</span></span><br><span class="line">   give_me_a_car = Car()</span><br><span class="line">   give_me_a_yugo = Yugo()</span><br></pre></td></tr></table></figure>
+</code></pre><p><img src="https://i.loli.net/2018/05/31/5b0f6abc595c8.jpg" alt>  </p>
+<pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span><span class="params">()</span>:</span></span><br><span class="line">   	<span class="function"><span class="keyword">def</span> <span class="title">exclaim</span><span class="params">(self)</span>:</span></span><br><span class="line">		print(<span class="string">"I'm a Car!"</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Yugo</span><span class="params">(Car)</span>:</span></span><br><span class="line">	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+# 最后，为每个类创建一个对象，并调用刚刚声明的exclaim方法：
+&gt;&gt;&gt; give_me_a_car = Car()
+&gt;&gt;&gt; give_me_a_yugo = Yugo()
+&gt;&gt;&gt; give_me_a_car.exclaim()
+I&apos;m a Car!
+&gt;&gt;&gt; give_me_a_yugo.exclaim()
+I&apos;m a Car!
+</code></pre><p>我们不需要做任何特殊的操作，Yugo就自动从Car那里继承了exclaim()方法。但事实上，我们并不希望Yugo在exclaim()方法里宣称它是一个Car，这可能会造成身份危机（无法区分Car和Yugo）。让我们来看看怎么解决这个问题。  </p>
+<h2 id="4-覆盖方法"><a href="#4-覆盖方法" class="headerlink" title="4. 覆盖方法"></a>4. 覆盖方法</h2><p>新创建的子类会自动继承父类的所有信息。那子类是如何替代–或者说覆盖（override）–父类的方法。Yugo和Car一定存在着某些区别，不然的话，创建它又有什么意义？</p>
+<p>尝试改写以下Yugo中的exclaim()方法的功能：</p>
+<pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span><span class="params">()</span>:</span></span><br><span class="line">   	<span class="function"><span class="keyword">def</span> <span class="title">exclaim</span><span class="params">(self)</span>:</span></span><br><span class="line">		print(<span class="string">"I'm a Car!"</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Yugo</span><span class="params">(Car)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">exclaim</span><span class="params">(self)</span>:</span></span><br><span class="line">		print(<span class="string">"I'm a Yugo! Much like a Car , but more Yugo-ish."</span>)  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="comment">#接着，为每个类创建一个实例对象:</span></span><br><span class="line">   give_me_a_car = Car()</span><br><span class="line">   give_me_a_yugo = Yugo()</span><br></pre></td></tr></table></figure>
+</code></pre><p>看看它们各自会宣称什么?  </p>
+<pre><code>&gt;&gt;&gt; give_me_a_car.exclaim()
+I&apos;m a Car!
+&gt;&gt;&gt; give_me_a_yugo.exclaim()
+I&apos;m a Yugo! Much like a Car , but more Yugo-ish.  
+</code></pre><p>在上面的例子中，覆盖了父类的exclaim（）方法，在子类中，可以覆盖任何父类的方法，包括<strong>init</strong>()。下面的例子使用了之前创建过的Person类。我们来创建两个子类，分别代表医生（MDPerson）和律师（JDPerson）：    </p>
+<pre><code>class Person():
+    def __init__(self，name): 
+        self.name = name
+
+class MDPerson(Person):
+    def __init__(self，name): 
+        self.name = &quot;Doctor&quot; + name
+
+class JDPerson(Person):
+    def __init__(self，name): 
+        self.name = name + &quot;Esquire&quot;
+</code></pre><p>在上面的例子中，子类的初始化方法<strong>init</strong>()接收的参数和父类Person一样，但存储到对象内部name特性的值却不尽相同：  </p>
+<pre><code>&gt;&gt;&gt; person = Person(&quot;Fudd&quot;)  
+&gt;&gt;&gt; doctor = MDPerson(&quot;Fudd&quot;)  
+&gt;&gt;&gt; lawyer = JDPerson(&quot;Fudd&quot;) 
+&gt;&gt;&gt; print(person.name)
+Fudd
+&gt;&gt;&gt; print(doctor.name)
+Doctor Fudd
+&gt;&gt;&gt; print(lawyer.name)
+Fudd Esquire  
+</code></pre><h2 id="5-添加新方法"><a href="#5-添加新方法" class="headerlink" title="5. 添加新方法"></a>5. 添加新方法</h2><p><img src="https://i.loli.net/2018/06/05/5b1636660dfc1.jpg" alt></p>
+<h2 id="6-使用super从父类得到帮助"><a href="#6-使用super从父类得到帮助" class="headerlink" title="6. 使用super从父类得到帮助"></a>6. 使用super从父类得到帮助</h2><p>调用父类的方法—-&gt; super()  </p>
+<p>下面这个例子将定义一个新的类EmailPerson,用于表示有电子邮箱的Person。首先，来定义熟悉的Person类：</p>
+<pre><code>class Person():
+    def __init__(self，name): 
+        self.name = name  
+</code></pre><p>下面是子类的定义，注意，子类的初始化方法<strong>init</strong>()中添加了一个额外的email参数：  </p>
+<pre><code>class EmailPerson(Person):
+    def __init__(self，name, email):
+        super().__init__(name) 
+        self.email = email  
+</code></pre><p><img src="https://i.loli.net/2018/06/05/5b1640d76cb41.jpg" alt></p>
+<h2 id="7-self的自辩"><a href="#7-self的自辩" class="headerlink" title="7. self的自辩"></a>7. self的自辩</h2><p>Python中必须把self设置为实例方法（前面例子中你见到的所有方法都是实例方法）的第一个参数。 Python使用self参数来找到正确的对象所包含的特性和方法。通过下面的例子，来查看调用对象方法背后Python实际做的工作。</p>
+<p>前面例子中所讲的Car类，再次调用exclaim()方法：  </p>
+<pre><code>&gt;&gt;&gt; car = Car()
+&gt;&gt;&gt; car.exclaim()
+I&apos;m a Car!  
+</code></pre><p><img src="https://i.loli.net/2018/06/05/5b162ee23298d.jpg" alt></p>
+<p>没看完，后续补充 </p>
+<h2 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h2><h2 id="9"><a href="#9" class="headerlink" title="9."></a>9.</h2><h2 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h2><h2 id="11"><a href="#11" class="headerlink" title="11."></a>11.</h2><h2 id="12"><a href="#12" class="headerlink" title="12."></a>12.</h2><h2 id="13"><a href="#13" class="headerlink" title="13."></a>13.</h2>
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+      
+      <div>
+    
+    <div style="text-align:center;color:#ccc;font-size:14px;">
+        -------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------
+    </div>
+    
+</div>
+      
+    </div>
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i>Python</a>
+          
+            <a href="/tags/类/" rel="tag"><i class="fa fa-tag"></i>类</a>
+          
+            <a href="/tags/对象/" rel="tag"><i class="fa fa-tag"></i>对象</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/25/keras实现CRF层遇到的问题：3D张量的报错/" rel="next" title="keras实现CRF层遇到的问题：3D张量的报错">
+                <i class="fa fa-chevron-left"></i> keras实现CRF层遇到的问题：3D张量的报错
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/09/Python之argparse使用/" rel="prev" title="Python之argparse使用">
+                Python之argparse使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Xiao</p>
+              <div class="site-description motion-element" itemprop="description">怕什么真理无穷，进一寸有进一寸的欢喜。</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">28</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/xiaoxiaoAurora" title="GitHub &rarr; https://github.com/xiaoxiaoAurora" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="/uliuxiao@163.com" title="E-Mail &rarr; uliuxiao@163.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                神奇的链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://xiaoxiaoaurora.github.io/about/" title="https://xiaoxiaoaurora.github.io/about/">关于此博客</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python中的对象和类"><span class="nav-number">1.</span> <span class="nav-text">Python中的对象和类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-什么是对象"><span class="nav-number">1.1.</span> <span class="nav-text">1. 什么是对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-使用class定义类"><span class="nav-number">1.2.</span> <span class="nav-text">2. 使用class定义类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-继承"><span class="nav-number">1.3.</span> <span class="nav-text">3. 继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-覆盖方法"><span class="nav-number">1.4.</span> <span class="nav-text">4. 覆盖方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-添加新方法"><span class="nav-number">1.5.</span> <span class="nav-text">5. 添加新方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-使用super从父类得到帮助"><span class="nav-number">1.6.</span> <span class="nav-text">6. 使用super从父类得到帮助</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-self的自辩"><span class="nav-number">1.7.</span> <span class="nav-text">7. self的自辩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8"><span class="nav-number">1.8.</span> <span class="nav-text">8.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9"><span class="nav-number">1.9.</span> <span class="nav-text">9.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10"><span class="nav-number">1.10.</span> <span class="nav-text">10.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11"><span class="nav-number">1.11.</span> <span class="nav-text">11.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12"><span class="nav-number">1.12.</span> <span class="nav-text">12.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13"><span class="nav-number">1.13.</span> <span class="nav-text">13.</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xiao</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数"></span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长"></span>
+  
+</div>
+
+
+
+
+
+
+
+
+  
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共19.1k字</span>
+</div>
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>
+

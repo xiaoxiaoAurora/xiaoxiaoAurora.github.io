@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiaoxiaoaurora.github.io/"/>
-  <updated>2019-04-02T11:55:25.663Z</updated>
+  <updated>2019-04-02T12:20:05.593Z</updated>
   <id>https://xiaoxiaoaurora.github.io/</id>
   
   <author>
@@ -15,6 +15,107 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://xiaoxiaoaurora.github.io/2019/04/02/range()%E5%9C%A8Python3%E4%B8%AD%E4%B8%8Epython2%E4%B8%AD%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>https://xiaoxiaoaurora.github.io/2019/04/02/range()在Python3中与python2中的区别/</id>
+    <published>2019-04-02T12:23:09.482Z</published>
+    <updated>2019-04-02T12:20:05.593Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>title: Python | range()在Python3中与python2中的区别<br>date: 2019/03/23 9:48:21<br>categories: [Python]<br>tags: [Python,range]<br>photos: </p><pre><code>- &quot;https://bing.ioliu.cn/photo/BM1759_EN-AU0329493905?force=home_7&quot; </code></pre><hr><h1 id="Python-range-在Python3中与python2中的区别"><a href="#Python-range-在Python3中与python2中的区别" class="headerlink" title="Python | range()在Python3中与python2中的区别"></a>Python | range()在Python3中与python2中的区别</h1><p>python2中的range返回的是一个列表</p><p>python3中的range返回的是一个迭代值</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;p&gt;title: Python | range()在Python3中与python2中的区别&lt;br&gt;date: 2019/03/23 9:48:21&lt;br&gt;categories: [Python]&lt;br&gt;tags: [Python,range]&lt;br&gt;photos: 
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Python | @classmethod @staticmethod区别</title>
+    <link href="https://xiaoxiaoaurora.github.io/2018/08/20/Python%E4%B8%AD@classmethod%20@staticmethod%E5%8C%BA%E5%88%AB/"/>
+    <id>https://xiaoxiaoaurora.github.io/2018/08/20/Python中@classmethod @staticmethod区别/</id>
+    <published>2018-08-20T11:48:21.000Z</published>
+    <updated>2019-04-02T12:14:07.299Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Python-classmethod-staticmethod区别"><a href="#Python-classmethod-staticmethod区别" class="headerlink" title="Python | @classmethod @staticmethod区别"></a>Python | @classmethod @staticmethod区别</h1><p>Python中有三种方式定义类方法：  </p><ul><li>常规方法；   </li><li>@classmethod修饰方法；  </li><li>@staticmathod修饰方式。    </li></ul><p><img src="https://i.loli.net/2018/08/20/5b7ab046dd11c.jpg" alt>  </p><p>执行：<br> <img src="https://i.loli.net/2018/08/20/5b7ab06b10d9a.jpg" alt></p><p>输出：</p><p><img src="https://i.loli.net/2018/08/20/5b7ab0aea03a5.jpg" alt></p><h1 id="1-定义方式"><a href="#1-定义方式" class="headerlink" title="1. 定义方式"></a>1. 定义方式</h1><p>普通的类方法foo()需要通过self参数隐式的传递当前类对象的实例。@classmethod修饰的方法class_foo()需要通过cls参数传递当前的类对象。@staticmethod修饰的方法定义与普通函数是一样的。  </p><p>self和cls的区别不是强制的，只是PEP8中一种编程风格，<strong>self通常用作实例方法的第一参数，cls通常用作类方法的第一参数。即通常用self来传递当前类对象的实例，cls传递当前类对象。</strong>  </p><h1 id="2-绑定对象"><a href="#2-绑定对象" class="headerlink" title="2. 绑定对象"></a>2. 绑定对象</h1><pre><code># foo方法绑定对象A的实例，class_foo方法绑定对象A，static_foo没有参数绑定&gt;&gt;&gt; print(a.foo)  </code></pre><p>输出：<br><img src="https://i.loli.net/2018/08/20/5b7ab28f14d91.jpg" alt></p><pre><code>&gt;&gt;&gt; print(a.class_foo)&lt;bound method A.class_foo of &lt;class &apos;__main__.A&apos;&gt;&gt;&gt;&gt;&gt; print(a.static_foo)&lt;function A.static_foo at 0x000001A1026F5840&gt;</code></pre><h1 id="3-调用方式"><a href="#3-调用方式" class="headerlink" title="3. 调用方式"></a>3. 调用方式</h1><p>foo可通过实例a调用，类对象A直接调用会参数错误。  </p><pre><code>&gt;&gt;&gt; a.foo(l)  </code></pre><p>输出：<br><img src="https://i.loli.net/2018/08/20/5b7ab4a5cfca5.jpg" alt>  </p><pre><code>A.foo(1)</code></pre><p>输出：<br><img src="https://i.loli.net/2018/08/20/5b7ab4c251d20.jpg" alt>  </p><p>但foo如下方式可以使用正常，显式的传递实例参数a。  </p><pre><code>A.foo(a, 1)</code></pre><p>输出：<br><img src="https://i.loli.net/2018/08/20/5b7ab55e50545.jpg" alt></p><p>class_foo通过类对象或对象实例调用。  </p><pre><code>&gt;&gt;&gt; A.class_foo(1)  </code></pre><p>输出：<br><img src="https://i.loli.net/2018/08/20/5b7ab80f58bf6.jpg" alt>  </p><pre><code>&gt;&gt;&gt; a.class_foo(1)</code></pre><p>输出：<br><img src="https://i.loli.net/2018/08/20/5b7ab849f3b91.jpg" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Python-classmethod-staticmethod区别&quot;&gt;&lt;a href=&quot;#Python-classmethod-staticmethod区别&quot; class=&quot;headerlink&quot; title=&quot;Python | @classmethod @sta
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://xiaoxiaoaurora.github.io/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://xiaoxiaoaurora.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NLP|中英文名词对照附录</title>
+    <link href="https://xiaoxiaoaurora.github.io/2018/07/23/NLP%E4%B9%8B%E4%B8%AD%E8%8B%B1%E6%96%87%E5%90%8D%E8%AF%8D%E5%AF%B9%E7%85%A7/"/>
+    <id>https://xiaoxiaoaurora.github.io/2018/07/23/NLP之中英文名词对照/</id>
+    <published>2018-07-23T08:12:18.000Z</published>
+    <updated>2019-04-02T12:11:14.912Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="NLP-中英文名词对照附录"><a href="#NLP-中英文名词对照附录" class="headerlink" title="NLP|中英文名词对照附录"></a><center>NLP|中英文名词对照附录</center></h1><font size="1" color="#9A32CD">英语不好，记性差，碰到专业术语总是抓狂（@_@）。主要是一些缩略词、语言学常用词。</font>  <h2 id="句法标注"><a href="#句法标注" class="headerlink" title="句法标注"></a>句法标注</h2><ol><li>TLE: Treebank of Learner English  学习者英语树库  </li><li>SALLE: Syntacticlly Annotating Learner Language of English 英语学习者语言的句法标注（也是一个treebank）  </li><li>UD: Universal Dependencies 通用依存  </li><li>POS： Part of Speech  词性</li><li>Literal Annotation  字面标注</li><li>Lemma 词元</li><li>Dependency Annotation 依存标注</li><li>Word Segmentation 分词；中文切词（即把一句话分成一个词的序列。）  </li><li>Morphological 形态学的; 构形<ul><li>morphologically 词法地；形态学上地  </li><li>morphology 形态学，形态论；[语] 词法，[语] 词态学  </li><li>morph 词态；语素；变体  </li><li>morpheme [语] 词素；形态素  </li></ul></li></ol><ol start="10"><li><p>Distributional     分布式的； 分布</p><ul><li>distributive     [语] 分配词    </li></ul></li><li><p>Word formation     构词 词性转换 单词构成  </p></li><li>linguistic form     语言形式(如后缀、词素、单词、短词、句子等); 语言形态; 语言结构  </li></ol><h2 id="other"><a href="#other" class="headerlink" title="other"></a><strong>other</strong></h2><p>activation 激活值<br>activation function 激活函数<br>additive noise 加性噪声<br>autoencoder 自编码器<br>Autoencoders 自编码算法<br>average firing rate 平均激活率<br>average sum-of-squares error 均方差<br>backpropagation 后向传播<br>basis 基<br>basis feature vectors 特征基向量<br>batch gradient ascent 批量梯度上升法<br>Bayesian regularization method 贝叶斯规则化方法<br>Bernoulli random variable 伯努利随机变量<br>bias term 偏置项<br>binary classfication 二元分类<br>class labels 类型标记<br>concatenation 级联<br>conjugate gradient 共轭梯度<br>contiguous groups 联通区域<br>convex optimization software 凸优化软件<br>convolution 卷积<br>cost function 代价函数<br>covariance matrix 协方差矩阵<br>DC component 直流分量<br>decorrelation 去相关<br>degeneracy 退化<br>demensionality reduction 降维<br>derivative 导函数<br>diagonal 对角线<br>diffusion of gradients 梯度的弥散<br>eigenvalue 特征值<br>eigenvector 特征向量<br>error term 残差<br>feature matrix 特征矩阵<br>feature standardization 特征标准化<br>feedforward architectures 前馈结构算法<br>feedforward neural network 前馈神经网络<br>feedforward pass 前馈传导<br>fine-tuned 微调<br>first-order feature 一阶特征<br>forward pass 前向传导<br>forward propagation 前向传播<br>Gaussian prior 高斯先验概率<br>generative model 生成模型<br>gradient descent 梯度下降<br>Greedy layer-wise training 逐层贪婪训练方法<br>grouping matrix 分组矩阵<br>Hadamard product 阿达马乘积<br>Hessian matrix Hessian 矩阵<br>hidden layer 隐含层<br>hidden units 隐藏神经元<br>Hierarchical grouping 层次型分组<br>higher-order features 更高阶特征<br>highly non-convex optimization problem 高度非凸的优化问题<br>histogram 直方图<br>hyperbolic tangent 双曲正切函数<br>hypothesis 估值，假设<br>identity activation function 恒等激励函数<br>IID 独立同分布<br>illumination 照明<br>inactive 抑制<br>independent component analysis 独立成份分析<br>input domains 输入域<br>input layer 输入层<br>intensity 亮度/灰度<br>intercept term 截距<br>KL divergence 相对熵<br>KL divergence KL分散度<br>k-Means K-均值<br>learning rate 学习速率<br>least squares 最小二乘法<br>linear correspondence 线性响应<br>linear superposition 线性叠加<br>line-search algorithm 线搜索算法<br>local mean subtraction 局部均值消减<br>local optima 局部最优解<br>logistic regression 逻辑回归<br>loss function 损失函数<br>low-pass filtering 低通滤波<br>magnitude 幅值<br>MAP 极大后验估计<br>maximum likelihood estimation 极大似然估计<br>mean 平均值<br>MFCC Mel 倒频系数<br>multi-class classification 多元分类<br>neural networks 神经网络<br>neuron 神经元<br>Newton’s method 牛顿法<br>non-convex function 非凸函数<br>non-linear feature 非线性特征<br>norm 范式<br>norm bounded 有界范数<br>norm constrained 范数约束<br>normalization 归一化<br>numerical roundoff errors 数值舍入误差<br>numerically checking 数值检验<br>numerically reliable 数值计算上稳定<br>object detection 物体检测<br>objective function 目标函数<br>off-by-one error 缺位错误<br>orthogonalization 正交化<br>output layer 输出层<br>overall cost function 总体代价函数<br>over-complete basis 超完备基<br>over-fitting 过拟合<br>parts of objects 目标的部件<br>part-whole decompostion 部分-整体分解<br>PCA 主元分析<br>penalty term 惩罚因子<br>per-example mean subtraction 逐样本均值消减<br>pooling 池化<br>pretrain 预训练<br>principal components analysis 主成份分析<br>quadratic constraints 二次约束<br>RBMs 受限Boltzman机<br>reconstruction based models 基于重构的模型<br>reconstruction cost 重建代价<br>reconstruction term 重构项<br>redundant 冗余<br>reflection matrix 反射矩阵<br>regularization 正则化<br>regularization term 正则化项<br>rescaling 缩放<br>robust 鲁棒性<br>run 行程<br>second-order feature 二阶特征<br>sigmoid activation function S型激励函数<br>significant digits 有效数字<br>singular value 奇异值<br>singular vector 奇异向量<br>smoothed L1 penalty 平滑的L1范数惩罚<br>Smoothed topographic L1 sparsity penalty 平滑地形L1稀疏惩罚函数<br>smoothing 平滑<br>Softmax Regresson Softmax回归<br>sorted in decreasing order 降序排列<br>source features 源特征<br>sparse autoencoder 消减归一化<br>Sparsity 稀疏性<br>sparsity parameter 稀疏性参数<br>sparsity penalty 稀疏惩罚<br>square function 平方函数<br>squared-error 方差<br>stationary 平稳性（不变性）<br>stationary stochastic process 平稳随机过程<br>step-size 步长值<br>supervised learning 监督学习<br>symmetric positive semi-definite matrix 对称半正定矩阵<br>symmetry breaking 对称失效<br>tanh function 双曲正切函数<br>the average activation 平均活跃度<br>the derivative checking method 梯度验证方法<br>the empirical distribution 经验分布函数<br>the energy function 能量函数<br>the Lagrange dual 拉格朗日对偶函数<br>the log likelihood 对数似然函数<br>the pixel intensity value 像素灰度值<br>the rate of convergence 收敛速度<br>topographic cost term 拓扑代价项<br>topographic ordered 拓扑秩序<br>transformation 变换<br>translation invariant 平移不变性<br>trivial answer 平凡解<br>under-complete basis 不完备基<br>unrolling 组合扩展<br>unsupervised learning 无监督学习<br>variance 方差<br>vecotrized implementation 向量化实现<br>vectorization 矢量化<br>visual cortex 视觉皮层<br>weight decay 权重衰减<br>weighted average 加权平均值<br>whitening 白化<br>zero-mean 均值为零</p><p>Letter A<br>Accumulated error backpropagation 累积误差逆传播<br>Activation Function 激活函数<br>Adaptive Resonance Theory/ART 自适应谐振理论<br>Addictive model 加性学习<br>Adversarial Networks 对抗网络<br>Affine Layer 仿射层<br>Affinity matrix 亲和矩阵<br>Agent 代理 / 智能体<br>Algorithm 算法<br>Alpha-beta pruning α-β剪枝<br>Anomaly detection 异常检测<br>Approximation 近似<br>Area Under ROC Curve／AUC Roc 曲线下面积<br>Artificial General Intelligence/AGI 通用人工智能<br>Artificial Intelligence/AI 人工智能<br>Association analysis 关联分析<br>Attention mechanism 注意力机制<br>Attribute conditional independence assumption 属性条件独立性假设<br>Attribute space 属性空间<br>Attribute value 属性值<br>Autoencoder 自编码器<br>Automatic speech recognition 自动语音识别<br>Automatic summarization 自动摘要<br>Average gradient 平均梯度<br>Average-Pooling 平均池化</p><p>Letter B<br>Backpropagation Through Time 通过时间的反向传播<br>Backpropagation/BP 反向传播<br>Base learner 基学习器<br>Base learning algorithm 基学习算法<br>Batch Normalization/BN 批量归一化<br>Bayes decision rule 贝叶斯判定准则<br>Bayes Model Averaging／BMA 贝叶斯模型平均<br>Bayes optimal classifier 贝叶斯最优分类器<br>Bayesian decision theory 贝叶斯决策论<br>Bayesian network 贝叶斯网络<br>Between-class scatter matrix 类间散度矩阵<br>Bias 偏置 / 偏差<br>Bias-variance decomposition 偏差-方差分解<br>Bias-Variance Dilemma 偏差 – 方差困境<br>Bi-directional Long-Short Term Memory/Bi-LSTM 双向长短期记忆<br>Binary classification 二分类<br>Binomial test 二项检验<br>Bi-partition 二分法<br>Boltzmann machine 玻尔兹曼机<br>Bootstrap sampling 自助采样法／可重复采样／有放回采样<br>Bootstrapping 自助法<br>Break-Event Point／BEP 平衡点</p><p>Letter C<br>Calibration 校准<br>Cascade-Correlation 级联相关<br>Categorical attribute 离散属性<br>Class-conditional probability 类条件概率<br>Classification and regression tree/CART 分类与回归树<br>Classifier 分类器<br>Class-imbalance 类别不平衡<br>Closed -form 闭式<br>Cluster 簇/类/集群<br>Cluster analysis 聚类分析<br>Clustering 聚类<br>Clustering ensemble 聚类集成<br>Co-adapting 共适应<br>Coding matrix 编码矩阵<br>COLT 国际学习理论会议<br>Committee-based learning 基于委员会的学习<br>Competitive learning 竞争型学习<br>Component learner 组件学习器<br>Comprehensibility 可解释性<br>Computation Cost 计算成本<br>Computational Linguistics 计算语言学<br>Computer vision 计算机视觉<br>Concept drift 概念漂移<br>Concept Learning System /CLS 概念学习系统<br>Conditional entropy 条件熵<br>Conditional mutual information 条件互信息<br>Conditional Probability Table／CPT 条件概率表<br>Conditional random field/CRF 条件随机场<br>Conditional risk 条件风险<br>Confidence 置信度<br>Confusion matrix 混淆矩阵<br>Connection weight 连接权<br>Connectionism 连结主义<br>Consistency 一致性／相合性<br>Contingency table 列联表<br>Continuous attribute 连续属性<br>Convergence 收敛<br>Conversational agent 会话智能体<br>Convex quadratic programming 凸二次规划<br>Convexity 凸性<br>Convolutional neural network/CNN 卷积神经网络<br>Co-occurrence 同现<br>Correlation coefficient 相关系数<br>Cosine similarity 余弦相似度<br>Cost curve 成本曲线<br>Cost Function 成本函数<br>Cost matrix 成本矩阵<br>Cost-sensitive 成本敏感<br>Cross entropy 交叉熵<br>Cross validation 交叉验证<br>Crowdsourcing 众包<br>Curse of dimensionality 维数灾难<br>Cut point 截断点<br>Cutting plane algorithm 割平面法</p><p>Letter D<br>Data mining 数据挖掘<br>Data set 数据集<br>Decision Boundary 决策边界<br>Decision stump 决策树桩<br>Decision tree 决策树／判定树<br>Deduction 演绎<br>Deep Belief Network 深度信念网络<br>Deep Convolutional Generative Adversarial Network/DCGAN 深度卷积生成对抗网络<br>Deep learning 深度学习<br>Deep neural network/DNN 深度神经网络<br>Deep Q-Learning 深度 Q 学习<br>Deep Q-Network 深度 Q 网络<br>Density estimation 密度估计<br>Density-based clustering 密度聚类<br>Differentiable neural computer 可微分神经计算机<br>Dimensionality reduction algorithm 降维算法<br>Directed edge 有向边<br>Disagreement measure 不合度量<br>Discriminative model 判别模型<br>Discriminator 判别器<br>Distance measure 距离度量<br>Distance metric learning 距离度量学习<br>Distribution 分布<br>Divergence 散度<br>Diversity measure 多样性度量／差异性度量<br>Domain adaption 领域自适应<br>Downsampling 下采样<br>D-separation （Directed separation） 有向分离<br>Dual problem 对偶问题<br>Dummy node 哑结点<br>Dynamic Fusion 动态融合<br>Dynamic programming 动态规划</p><p>Letter E<br>Eigenvalue decomposition 特征值分解<br>Embedding 嵌入<br>Emotional analysis 情绪分析<br>Empirical conditional entropy 经验条件熵<br>Empirical entropy 经验熵<br>Empirical error 经验误差<br>Empirical risk 经验风险<br>End-to-End 端到端<br>Energy-based model 基于能量的模型<br>Ensemble learning 集成学习<br>Ensemble pruning 集成修剪<br>Error Correcting Output Codes／ECOC 纠错输出码<br>Error rate 错误率<br>Error-ambiguity decomposition 误差-分歧分解<br>Euclidean distance 欧氏距离<br>Evolutionary computation 演化计算<br>Expectation-Maximization 期望最大化<br>Expected loss 期望损失<br>Exploding Gradient Problem 梯度爆炸问题<br>Exponential loss function 指数损失函数<br>Extreme Learning Machine/ELM 超限学习机</p><p>Letter F<br>Factorization 因子分解<br>False negative 假负类<br>False positive 假正类<br>False Positive Rate/FPR 假正例率<br>Feature engineering 特征工程<br>Feature selection 特征选择<br>Feature vector 特征向量<br>Featured Learning 特征学习<br>Feedforward Neural Networks/FNN 前馈神经网络<br>Fine-tuning 微调<br>Flipping output 翻转法<br>Fluctuation 震荡<br>Forward stagewise algorithm 前向分步算法<br>Frequentist 频率主义学派<br>Full-rank matrix 满秩矩阵<br>Functional neuron 功能神经元</p><p>Letter G<br>Gain ratio 增益率<br>Game theory 博弈论<br>Gaussian kernel function 高斯核函数<br>Gaussian Mixture Model 高斯混合模型<br>General Problem Solving 通用问题求解<br>Generalization 泛化<br>Generalization error 泛化误差<br>Generalization error bound 泛化误差上界<br>Generalized Lagrange function 广义拉格朗日函数<br>Generalized linear model 广义线性模型<br>Generalized Rayleigh quotient 广义瑞利商<br>Generative Adversarial Networks/GAN 生成对抗网络<br>Generative Model 生成模型<br>Generator 生成器<br>Genetic Algorithm/GA 遗传算法<br>Gibbs sampling 吉布斯采样<br>Gini index 基尼指数<br>Global minimum 全局最小<br>Global Optimization 全局优化<br>Gradient boosting 梯度提升<br>Gradient Descent 梯度下降<br>Graph theory 图论<br>Ground-truth 真相／真实</p><p>Letter H<br>Hard margin 硬间隔<br>Hard voting 硬投票<br>Harmonic mean 调和平均<br>Hesse matrix 海塞矩阵<br>Hidden dynamic model 隐动态模型<br>Hidden layer 隐藏层<br>Hidden Markov Model/HMM 隐马尔可夫模型<br>Hierarchical clustering 层次聚类<br>Hilbert space 希尔伯特空间<br>Hinge loss function 合页损失函数<br>Hold-out 留出法<br>Homogeneous 同质<br>Hybrid computing 混合计算<br>Hyperparameter 超参数<br>Hypothesis 假设<br>Hypothesis test 假设验证</p><p>Letter I<br>ICML 国际机器学习会议<br>Improved iterative scaling/IIS 改进的迭代尺度法<br>Incremental learning 增量学习<br>Independent and identically distributed/i.i.d. 独立同分布<br>Independent Component Analysis/ICA 独立成分分析<br>Indicator function 指示函数<br>Individual learner 个体学习器<br>Induction 归纳<br>Inductive bias 归纳偏好<br>Inductive learning 归纳学习<br>Inductive Logic Programming／ILP 归纳逻辑程序设计<br>Information entropy 信息熵<br>Information gain 信息增益<br>Input layer 输入层<br>Insensitive loss 不敏感损失<br>Inter-cluster similarity 簇间相似度<br>International Conference for Machine Learning/ICML 国际机器学习大会<br>Intra-cluster similarity 簇内相似度<br>Intrinsic value 固有值<br>Isometric Mapping/Isomap 等度量映射<br>Isotonic regression 等分回归<br>Iterative Dichotomiser 迭代二分器</p><p>Letter K<br>Kernel method 核方法<br>Kernel trick 核技巧<br>Kernelized Linear Discriminant Analysis／KLDA 核线性判别分析<br>K-fold cross validation k 折交叉验证／k 倍交叉验证<br>K-Means Clustering K – 均值聚类<br>K-Nearest Neighbours Algorithm/KNN K近邻算法<br>Knowledge base 知识库<br>Knowledge Representation 知识表征</p><p>Letter L<br>Label space 标记空间<br>Lagrange duality 拉格朗日对偶性<br>Lagrange multiplier 拉格朗日乘子<br>Laplace smoothing 拉普拉斯平滑<br>Laplacian correction 拉普拉斯修正<br>Latent Dirichlet Allocation 隐狄利克雷分布<br>Latent semantic analysis 潜在语义分析<br>Latent variable 隐变量<br>Lazy learning 懒惰学习<br>Learner 学习器<br>Learning by analogy 类比学习<br>Learning rate 学习率<br>Learning Vector Quantization/LVQ 学习向量量化<br>Least squares regression tree 最小二乘回归树<br>Leave-One-Out/LOO 留一法<br>linear chain conditional random field 线性链条件随机场<br>Linear Discriminant Analysis／LDA 线性判别分析<br>Linear model 线性模型<br>Linear Regression 线性回归<br>Link function 联系函数<br>Local Markov property 局部马尔可夫性<br>Local minimum 局部最小<br>Log likelihood 对数似然<br>Log odds／logit 对数几率<br>Logistic Regression Logistic 回归<br>Log-likelihood 对数似然<br>Log-linear regression 对数线性回归<br>Long-Short Term Memory/LSTM 长短期记忆<br>Loss function 损失函数</p><p>Letter M<br>Machine translation/MT 机器翻译<br>Macron-P 宏查准率<br>Macron-R 宏查全率<br>Majority voting 绝对多数投票法<br>Manifold assumption 流形假设<br>Manifold learning 流形学习<br>Margin theory 间隔理论<br>Marginal distribution 边际分布<br>Marginal independence 边际独立性<br>Marginalization 边际化<br>Markov Chain Monte Carlo/MCMC 马尔可夫链蒙特卡罗方法<br>Markov Random Field 马尔可夫随机场<br>Maximal clique 最大团<br>Maximum Likelihood Estimation/MLE 极大似然估计／极大似然法<br>Maximum margin 最大间隔<br>Maximum weighted spanning tree 最大带权生成树<br>Max-Pooling 最大池化<br>Mean squared error 均方误差<br>Meta-learner 元学习器<br>Metric learning 度量学习<br>Micro-P 微查准率<br>Micro-R 微查全率<br>Minimal Description Length/MDL 最小描述长度<br>Minimax game 极小极大博弈<br>Misclassification cost 误分类成本<br>Mixture of experts 混合专家<br>Momentum 动量<br>Moral graph 道德图／端正图<br>Multi-class classification 多分类<br>Multi-document summarization 多文档摘要<br>Multi-layer feedforward neural networks 多层前馈神经网络<br>Multilayer Perceptron/MLP 多层感知器<br>Multimodal learning 多模态学习<br>Multiple Dimensional Scaling 多维缩放<br>Multiple linear regression 多元线性回归<br>Multi-response Linear Regression ／MLR 多响应线性回归<br>Mutual information 互信息</p><p>Letter N<br>Naive bayes 朴素贝叶斯<br>Naive Bayes Classifier 朴素贝叶斯分类器<br>Named entity recognition 命名实体识别<br>Nash equilibrium 纳什均衡<br>Natural language generation/NLG 自然语言生成<br>Natural language processing 自然语言处理<br>Negative class 负类<br>Negative correlation 负相关法<br>Negative Log Likelihood 负对数似然<br>Neighbourhood Component Analysis/NCA 近邻成分分析<br>Neural Machine Translation 神经机器翻译<br>Neural Turing Machine 神经图灵机<br>Newton method 牛顿法<br>NIPS 国际神经信息处理系统会议<br>No Free Lunch Theorem／NFL 没有免费的午餐定理<br>Noise-contrastive estimation 噪音对比估计<br>Nominal attribute 列名属性<br>Non-convex optimization 非凸优化<br>Nonlinear model 非线性模型<br>Non-metric distance 非度量距离<br>Non-negative matrix factorization 非负矩阵分解<br>Non-ordinal attribute 无序属性<br>Non-Saturating Game 非饱和博弈<br>Norm 范数<br>Normalization 归一化<br>Nuclear norm 核范数<br>Numerical attribute 数值属性</p><p>Letter O<br>Objective function 目标函数<br>Oblique decision tree 斜决策树<br>Occam’s razor 奥卡姆剃刀<br>Odds 几率<br>Off-Policy 离策略<br>One shot learning 一次性学习<br>One-Dependent Estimator／ODE 独依赖估计<br>On-Policy 在策略<br>Ordinal attribute 有序属性<br>Out-of-bag estimate 包外估计<br>Output layer 输出层<br>Output smearing 输出调制法<br>Overfitting 过拟合／过配<br>Oversampling 过采样</p><p>Letter P<br>Paired t-test 成对 t 检验<br>Pairwise 成对型<br>Pairwise Markov property 成对马尔可夫性<br>Parameter 参数<br>Parameter estimation 参数估计<br>Parameter tuning 调参<br>Parse tree 解析树<br>Particle Swarm Optimization/PSO 粒子群优化算法<br>Part-of-speech tagging 词性标注<br>Perceptron 感知机<br>Performance measure 性能度量<br>Plug and Play Generative Network 即插即用生成网络<br>Plurality voting 相对多数投票法<br>Polarity detection 极性检测<br>Polynomial kernel function 多项式核函数<br>Pooling 池化<br>Positive class 正类<br>Positive definite matrix 正定矩阵<br>Post-hoc test 后续检验<br>Post-pruning 后剪枝<br>potential function 势函数<br>Precision 查准率／准确率<br>Prepruning 预剪枝<br>Principal component analysis/PCA 主成分分析<br>Principle of multiple explanations 多释原则<br>Prior 先验<br>Probability Graphical Model 概率图模型<br>Proximal Gradient Descent/PGD 近端梯度下降<br>Pruning 剪枝<br>Pseudo-label 伪标记</p><p>Letter Q<br>Quantized Neural Network 量子化神经网络<br>Quantum computer 量子计算机<br>Quantum Computing 量子计算<br>Quasi Newton method 拟牛顿法</p><p>Letter R<br>Radial Basis Function／RBF 径向基函数<br>Random Forest Algorithm 随机森林算法<br>Random walk 随机漫步<br>Recall 查全率／召回率<br>Receiver Operating Characteristic/ROC 受试者工作特征<br>Rectified Linear Unit/ReLU 线性修正单元<br>Recurrent Neural Network 循环神经网络<br>Recursive neural network 递归神经网络<br>Reference model 参考模型<br>Regression 回归<br>Regularization 正则化<br>Reinforcement learning/RL 强化学习<br>Representation learning 表征学习<br>Representer theorem 表示定理<br>reproducing kernel Hilbert space/RKHS 再生核希尔伯特空间<br>Re-sampling 重采样法<br>Rescaling 再缩放<br>Residual Mapping 残差映射<br>Residual Network 残差网络<br>Restricted Boltzmann Machine/RBM 受限玻尔兹曼机<br>Restricted Isometry Property/RIP 限定等距性<br>Re-weighting 重赋权法<br>Robustness 稳健性/鲁棒性<br>Root node 根结点<br>Rule Engine 规则引擎<br>Rule learning 规则学习</p><p>Letter S<br>Saddle point 鞍点<br>Sample space 样本空间<br>Sampling 采样<br>Score function 评分函数<br>Self-Driving 自动驾驶<br>Self-Organizing Map／SOM 自组织映射<br>Semi-naive Bayes classifiers 半朴素贝叶斯分类器<br>Semi-Supervised Learning 半监督学习<br>semi-Supervised Support Vector Machine 半监督支持向量机<br>Sentiment analysis 情感分析<br>Separating hyperplane 分离超平面<br>Sigmoid function Sigmoid 函数<br>Similarity measure 相似度度量<br>Simulated annealing 模拟退火<br>Simultaneous localization and mapping 同步定位与地图构建<br>Singular Value Decomposition 奇异值分解<br>Slack variables 松弛变量<br>Smoothing 平滑<br>Soft margin 软间隔<br>Soft margin maximization 软间隔最大化<br>Soft voting 软投票<br>Sparse representation 稀疏表征<br>Sparsity 稀疏性<br>Specialization 特化<br>Spectral Clustering 谱聚类<br>Speech Recognition 语音识别<br>Splitting variable 切分变量<br>Squashing function 挤压函数<br>Stability-plasticity dilemma 可塑性-稳定性困境<br>Statistical learning 统计学习<br>Status feature function 状态特征函<br>Stochastic gradient descent 随机梯度下降<br>Stratified sampling 分层采样<br>Structural risk 结构风险<br>Structural risk minimization/SRM 结构风险最小化<br>Subspace 子空间<br>Supervised learning 监督学习／有导师学习<br>support vector expansion 支持向量展式<br>Support Vector Machine/SVM 支持向量机<br>Surrogat loss 替代损失<br>Surrogate function 替代函数<br>Symbolic learning 符号学习<br>Symbolism 符号主义<br>Synset 同义词集</p><p>Letter T<br>T-Distribution Stochastic Neighbour Embedding/t-SNE T – 分布随机近邻嵌入<br>Tensor 张量<br>Tensor Processing Units/TPU 张量处理单元<br>The least square method 最小二乘法<br>Threshold 阈值<br>Threshold logic unit 阈值逻辑单元<br>Threshold-moving 阈值移动<br>Time Step 时间步骤<br>Tokenization 标记化<br>Training error 训练误差<br>Training instance 训练示例／训练例<br>Transductive learning 直推学习<br>Transfer learning 迁移学习<br>Treebank 树库<br>Tria-by-error 试错法<br>True negative 真负类<br>True positive 真正类<br>True Positive Rate/TPR 真正例率<br>Turing Machine 图灵机<br>Twice-learning 二次学习</p><p>Letter U<br>Underfitting 欠拟合／欠配<br>Undersampling 欠采样<br>Understandability 可理解性<br>Unequal cost 非均等代价<br>Unit-step function 单位阶跃函数<br>Univariate decision tree 单变量决策树<br>Unsupervised learning 无监督学习／无导师学习<br>Unsupervised layer-wise training 无监督逐层训练<br>Upsampling 上采样</p><p>Letter V<br>Vanishing Gradient Problem 梯度消失问题<br>Variational inference 变分推断<br>VC Theory VC维理论<br>Version space 版本空间<br>Viterbi algorithm 维特比算法<br>Von Neumann architecture 冯 · 诺伊曼架构</p><p>Letter W<br>Wasserstein GAN/WGAN Wasserstein生成对抗网络<br>Weak learner 弱学习器<br>Weight 权重<br>Weight sharing 权共享<br>Weighted voting 加权投票法<br>Within-class scatter matrix 类内散度矩阵<br>Word embedding 词嵌入<br>Word sense disambiguation 词义消歧</p><p>Letter Z<br>Zero-data learning 零数据学习<br>Zero-shot learning 零次学习</p><p>A<br>approximations近似值<br>arbitrary随意的<br>affine仿射的<br>arbitrary任意的<br>amino acid氨基酸<br>amenable经得起检验的<br>axiom公理，原则<br>abstract提取<br>architecture架构，体系结构；建造业<br>absolute绝对的<br>arsenal军火库<br>assignment分配<br>algebra线性代数<br>asymptotically无症状的<br>appropriate恰当的</p><p>B<br>bias偏差<br>brevity简短，简洁；短暂<br>broader广泛<br>briefly简短的<br>batch批量</p><p>C<br>convergence 收敛，集中到一点<br>convex凸的<br>contours轮廓<br>constraint约束<br>constant常理<br>commercial商务的<br>complementarity补充<br>coordinate ascent同等级上升<br>clipping剪下物；剪报；修剪<br>component分量；部件<br>continuous连续的<br>covariance协方差<br>canonical正规的，正则的<br>concave非凸的<br>corresponds相符合；相当；通信<br>corollary推论<br>concrete具体的事物，实在的东西<br>cross validation交叉验证<br>correlation相互关系<br>convention约定<br>cluster一簇<br>centroids 质心，形心<br>converge收敛<br>computationally计算(机)的<br>calculus计算</p><p>D<br>derive获得，取得<br>dual二元的<br>duality二元性；二象性；对偶性<br>derivation求导；得到；起源<br>denote预示，表示，是…的标志；意味着，[逻]指称<br>divergence 散度；发散性<br>dimension尺度，规格；维数<br>dot小圆点<br>distortion变形<br>density概率密度函数<br>discrete离散的<br>discriminative有识别能力的<br>diagonal对角<br>dispersion分散，散开<br>determinant决定因素<br>disjoint不相交的</p><p>E<br>encounter遇到<br>ellipses椭圆<br>equality等式<br>extra额外的<br>empirical经验；观察<br>ennmerate例举，计数<br>exceed超过，越出<br>expectation期望<br>efficient生效的<br>endow赋予<br>explicitly清楚的<br>exponential family指数家族<br>equivalently等价的</p><p>F<br>feasible可行的<br>forary初次尝试<br>finite有限的，限定的<br>forgo摒弃，放弃<br>fliter过滤<br>frequentist最常发生的<br>forward search前向式搜索<br>formalize使定形</p><p>G<br>generalized归纳的<br>generalization概括，归纳；普遍化；判断（根据不足）<br>guarantee保证；抵押品<br>generate形成，产生<br>geometric margins几何边界<br>gap裂口<br>generative生产的；有生产力的</p><p>H<br>heuristic启发式的；启发法；启发程序<br>hone怀恋；磨<br>hyperplane超平面</p><p>L<br>initial最初的<br>implement执行<br>intuitive凭直觉获知的<br>incremental增加的<br>intercept截距<br>intuitious直觉<br>instantiation例子<br>indicator指示物，指示器<br>interative重复的，迭代的<br>integral积分<br>identical相等的；完全相同的<br>indicate表示，指出<br>invariance不变性，恒定性<br>impose把…强加于<br>intermediate中间的<br>interpretation解释，翻译</p><p>J<br>joint distribution联合概率</p><p>L<br>lieu替代<br>logarithmic对数的，用对数表示的<br>latent潜在的<br>Leave-one-out cross validation留一法交叉验证</p><p>M<br>magnitude巨大<br>mapping绘图，制图；映射<br>matrix矩阵<br>mutual相互的，共同的<br>monotonically单调的<br>minor较小的，次要的<br>multinomial多项的<br>multi-class classification二分类问题</p><p>N<br>nasty讨厌的<br>notation标志，注释<br>naïve朴素的</p><p>O<br>obtain得到<br>oscillate摆动<br>optimization problem最优化问题<br>objective function目标函数<br>optimal最理想的<br>orthogonal(矢量，矩阵等)正交的<br>orientation方向<br>ordinary普通的<br>occasionally偶然的</p><p>P<br>partial derivative偏导数<br>property性质<br>proportional成比例的<br>primal原始的，最初的<br>permit允许<br>pseudocode伪代码<br>permissible可允许的<br>polynomial多项式<br>preliminary预备<br>precision精度<br>perturbation 不安，扰乱<br>poist假定，设想<br>positive semi-definite半正定的<br>parentheses圆括号<br>posterior probability后验概率<br>plementarity补充<br>pictorially图像的<br>parameterize确定…的参数<br>poisson distribution柏松分布<br>pertinent相关的</p><p>Q<br>quadratic二次的<br>quantity量，数量；分量<br>query疑问的</p><p>R<br>regularization使系统化；调整<br>reoptimize重新优化<br>restrict限制；限定；约束<br>reminiscent回忆往事的；提醒的；使人联想…的（of）<br>remark注意<br>random variable随机变量<br>respect考虑<br>respectively各自的；分别的<br>redundant过多的；冗余的</p><p>S<br>susceptible敏感的<br>stochastic可能的；随机的<br>symmetric对称的<br>sophisticated复杂的<br>spurious假的；伪造的<br>subtract减去；减法器<br>simultaneously同时发生地；同步地<br>suffice满足<br>scarce稀有的，难得的<br>split分解，分离<br>subset子集<br>statistic统计量<br>successive iteratious连续的迭代<br>scale标度<br>sort of有几分的<br>squares平方</p><p>T<br>trajectory轨迹<br>temporarily暂时的<br>terminology专用名词<br>tolerance容忍；公差<br>thumb翻阅<br>threshold阈，临界<br>theorem定理<br>tangent正弦</p><p>U<br>unit-length vector单位向量</p><p>V<br>valid有效的，正确的<br>variance方差<br>variable变量；变元<br>vocabulary词汇<br>valued经估价的；宝贵的</p><p>W<br>wrapper包装</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;NLP-中英文名词对照附录&quot;&gt;&lt;a href=&quot;#NLP-中英文名词对照附录&quot; class=&quot;headerlink&quot; title=&quot;NLP|中英文名词对照附录&quot;&gt;&lt;/a&gt;&lt;center&gt;NLP|中英文名词对照附录&lt;/center&gt;&lt;/h1&gt;&lt;font size=&quot;
+      
+    
+    </summary>
+    
+      <category term="NLP" scheme="https://xiaoxiaoaurora.github.io/categories/NLP/"/>
+    
+    
+      <category term="NLP" scheme="https://xiaoxiaoaurora.github.io/tags/NLP/"/>
+    
+      <category term="名词解释" scheme="https://xiaoxiaoaurora.github.io/tags/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python | 处理json文件</title>
+    <link href="https://xiaoxiaoaurora.github.io/2018/06/21/python%E4%B9%8Bjson%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/"/>
+    <id>https://xiaoxiaoaurora.github.io/2018/06/21/python之json文件读取/</id>
+    <published>2018-06-21T11:08:21.000Z</published>
+    <updated>2019-04-02T12:18:31.095Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Python-处理json文件"><a href="#Python-处理json文件" class="headerlink" title="Python | 处理json文件"></a>Python | 处理json文件</h1><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">json文件内容：  </span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"stations"</span>:[</span><br><span class="line">            &#123;</span><br><span class="line">            <span class="attr">"sta_name"</span>:<span class="string">"北京北"</span>,</span><br><span class="line">            <span class="attr">"sta_ename"</span>:<span class="string">"beijingbei"</span>,</span><br><span class="line">            <span class="attr">"sta_code"</span>:<span class="string">"VAP"</span>,</span><br><span class="line">            <span class="attr">"text"</span>:<span class="string">"自三峡七百里中，两岸连山，略无阙处。"</span>,</span><br><span class="line">            &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="1-需要加载一个Json文件，并将Json中的某些项进行修改，然后写回到一个新的Json文件中去。"><a href="#1-需要加载一个Json文件，并将Json中的某些项进行修改，然后写回到一个新的Json文件中去。" class="headerlink" title="1. 需要加载一个Json文件，并将Json中的某些项进行修改，然后写回到一个新的Json文件中去。"></a>1. 需要加载一个Json文件，并将Json中的某些项进行修改，然后写回到一个新的Json文件中去。</h2><p>Model代码：  </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3.6</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Python-处理json文件&quot;&gt;&lt;a href=&quot;#Python-处理json文件&quot; class=&quot;headerlink&quot; title=&quot;Python | 处理json文件&quot;&gt;&lt;/a&gt;Python | 处理json文件&lt;/h1&gt;&lt;figure class=&quot;hi
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://xiaoxiaoaurora.github.io/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://xiaoxiaoaurora.github.io/tags/Python/"/>
+    
+      <category term="json" scheme="https://xiaoxiaoaurora.github.io/tags/json/"/>
+    
+  </entry>
   
   <entry>
     <title>Attention机制的理解</title>
@@ -141,11 +242,68 @@
   </entry>
   
   <entry>
+    <title>Python之argparse使用</title>
+    <link href="https://xiaoxiaoaurora.github.io/2018/05/09/Python%E4%B9%8Bargparse%E4%BD%BF%E7%94%A8/"/>
+    <id>https://xiaoxiaoaurora.github.io/2018/05/09/Python之argparse使用/</id>
+    <published>2018-05-09T01:34:57.000Z</published>
+    <updated>2019-04-02T12:17:11.355Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Python-命令行解析工具Argparse的介绍及使用"><a href="#Python-命令行解析工具Argparse的介绍及使用" class="headerlink" title="Python 命令行解析工具Argparse的介绍及使用"></a><center>Python 命令行解析工具Argparse的介绍及使用</center></h1><h2 id="Argparse-Tutorial"><a href="#Argparse-Tutorial" class="headerlink" title="Argparse Tutorial"></a>Argparse Tutorial</h2><p>argparse是python的命令行解析工具，是Python标准库推荐使用的命令行参数解析模块，负责从sys.argv中解析程序所需的参数，同时argparse还可以自动生成帮助信息和错误提示。</p><h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>以下代码是一个Python程序，它采用整数列表并生成总和或最大值:  </p><p><img src="https://i.loli.net/2018/07/13/5b488865257db.jpg" alt>  </p><p><img src="https://i.loli.net/2018/07/13/5b488843cba17.jpg" alt></p><p>假设上面的Python代码保存在名为argparse_tu1.py的文件中, 它可以在命令行运行，并提供有用的帮助消息:  </p><p><img src="https://i.loli.net/2018/07/13/5b48889fd6df3.jpg" alt>  </p><p>当使用适当的参数运行时，它将输出命令行整数的和或最大值:  </p><p><img src="https://i.loli.net/2018/07/13/5b4889c570a96.jpg" alt>  </p><pre><code>python argparse_tu1.py 5 6 7 8 --sum</code></pre><p><img src="https://i.loli.net/2018/07/13/5b488a38483e6.jpg" alt>  </p><p>如果传入无效的参数，它将发出一个错误:  </p><pre><code>python argparse_tu1.py x i a o</code></pre><p><img src="https://i.loli.net/2018/07/13/5b488abee045c.jpg" alt></p><p>以下部分将引导完成此示例:</p><h3 id="创建一个parser"><a href="#创建一个parser" class="headerlink" title="创建一个parser"></a>创建一个parser</h3><p>使用argparse的第一步就是创建一个ArgumentParser对象：</p><pre><code>&gt;&gt;&gt; parser = argparse.ArgumentParser(description &apos;Process some integers.&apos;)  </code></pre><p>创建的ArgumentParser对象保存了将命令行参数解析为Python数据类型的所需要的所有信息。    </p><h3 id="添加参数"><a href="#添加参数" class="headerlink" title="添加参数"></a>添加参数</h3><p>创建ArgumentParser对象之后，需要向其声明指定程序所需的参数信息（几个参数、是否必须、参数类型等等），这一步需要调用add_argument()方法实现。add_argument()方法会告诉ArgumentParser对象如何在命令行上获取字符串（注意：所有的命令行参数都是string类型）并将它们转换为程序所需的对象。调用parse_args（）时会存储和使用此信息。例如：</p><pre><code>&apos;&apos;&apos;parser.add_argument(&apos;integers&apos;, metavar=&apos;N&apos;, type=int, nargs=&apos;+&apos;, help=&apos;an integer for the accumulator&apos;)parser.add_argument(&apos;--sum&apos;, dest=&apos;accumulator&apos;, action=&apos;store_const&apos;, const=sum, default=max, help=&apos;sum the integers(default: find the max)&apos;)     &apos;&apos;&apos;</code></pre><p>参考：<a href="https://docs.python.org/3/library/argparse.html" target="_blank" rel="noopener">https://docs.python.org/3/library/argparse.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Python-命令行解析工具Argparse的介绍及使用&quot;&gt;&lt;a href=&quot;#Python-命令行解析工具Argparse的介绍及使用&quot; class=&quot;headerlink&quot; title=&quot;Python 命令行解析工具Argparse的介绍及使用&quot;&gt;&lt;/a&gt;&lt;c
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://xiaoxiaoaurora.github.io/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://xiaoxiaoaurora.github.io/tags/Python/"/>
+    
+      <category term="Argparse" scheme="https://xiaoxiaoaurora.github.io/tags/Argparse/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python | 对象和类</title>
+    <link href="https://xiaoxiaoaurora.github.io/2018/05/01/%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/"/>
+    <id>https://xiaoxiaoaurora.github.io/2018/05/01/对象和类/</id>
+    <published>2018-05-01T01:34:57.000Z</published>
+    <updated>2019-04-02T12:22:37.432Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://i.loli.net/2018/05/31/5b0f529386dd5.jpg" alt>  </p><h1 id="Python中的对象和类"><a href="#Python中的对象和类" class="headerlink" title="Python中的对象和类"></a>Python中的对象和类</h1><h2 id="1-什么是对象"><a href="#1-什么是对象" class="headerlink" title="1. 什么是对象"></a>1. 什么是对象</h2><p><img src="https://i.loli.net/2018/06/07/5b18cf7e08af7.jpg" alt><br><img src="https://i.loli.net/2018/06/07/5b18cf9e823d9.jpg" alt></p><h2 id="2-使用class定义类"><a href="#2-使用class定义类" class="headerlink" title="2. 使用class定义类"></a>2. 使用class定义类</h2><p>如果把类比作塑料盒子，类则像是制作和自用的模具。例如，Python的内置类String可以创建像‘cat’和‘duck’这样的字符串对象。Python中还有许多用来创建其他标准数据类型的类，包括字典、列表等。如果想要在Python中创建属于自己的对象，首先必须用关键词class来定义一个类。<br><img src="https://i.loli.net/2018/05/31/5b0f597a67cff.jpg" alt></p>   <figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#创建一个空类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="type">Person</span>():</span></span><br><span class="line"><span class="class">         pass  </span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">      # 通过类名创建对象，同调用函数一样：</span></span><br><span class="line"><span class="class">      someone = <span class="type">Person</span>()</span></span><br><span class="line"><span class="class">      (以上例子中，<span class="type">Person</span>()创建了一个<span class="type">Person</span>类的对象，并给它赋值someone这个名字。但是由于<span class="type">Person</span>类是空的，所以由它创建的对象someone实际上什么也做不了。)</span></span><br></pre></td></tr></table></figure><p>重新定义类，将Python中特殊的对象初始化方法<strong>init</strong>放入其中：  </p><pre><code><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>():</span></span><br><span class="line">       <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>，name)</span></span>:      </span><br><span class="line">       <span class="comment">#实际的Python类的定义形式。 __init__()是Python中一个特殊的函数名，用于根据类的定义创建实例对象。self参数指向了这个正在被创建的对象本身。当你在类声明里定义__init__()方法时，第一个参数必须为self。尽管self并不是一个Python保留字，但它很常用。</span></span><br><span class="line">       <span class="comment"># 在初始化方法中添加name参数</span></span><br><span class="line">           <span class="keyword">self</span>.name = name</span><br><span class="line">            </span><br><span class="line"><span class="comment">#用Person类创建一个对象，为name特性传递一个字符串参数。</span></span><br><span class="line">hunter = Person(<span class="string">"Elmer Fudd"</span>)</span><br></pre></td></tr></table></figure></code></pre><p><img src="https://i.loli.net/2018/05/31/5b0f5f79e4568.jpg" alt>    </p><p><img src="https://i.loli.net/2018/05/31/5b0f5fd20cec4.jpg" alt></p><pre><code>print(&quot;The mighty hunter:&quot;, hunter.name)  The mighty hunter: Elmer Fudd  </code></pre><p><img src="https://i.loli.net/2018/05/31/5b0f6198229f2.jpg" alt></p><h2 id="3-继承"><a href="#3-继承" class="headerlink" title="3. 继承"></a>3. 继承</h2><p><img src="https://i.loli.net/2018/05/31/5b0f620f41ace.jpg" alt>  </p><pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span><span class="params">()</span>:</span></span><br><span class="line">   <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Yugo</span><span class="params">(Car)</span>:</span></span><br><span class="line"><span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="comment">#接着，为每个类创建一个实例对象:</span></span><br><span class="line">   give_me_a_car = Car()</span><br><span class="line">   give_me_a_yugo = Yugo()</span><br></pre></td></tr></table></figure></code></pre><p><img src="https://i.loli.net/2018/05/31/5b0f6abc595c8.jpg" alt>  </p><pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span><span class="params">()</span>:</span></span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">exclaim</span><span class="params">(self)</span>:</span></span><br><span class="line">print(<span class="string">"I'm a Car!"</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Yugo</span><span class="params">(Car)</span>:</span></span><br><span class="line"><span class="keyword">pass</span></span><br></pre></td></tr></table></figure># 最后，为每个类创建一个对象，并调用刚刚声明的exclaim方法：&gt;&gt;&gt; give_me_a_car = Car()&gt;&gt;&gt; give_me_a_yugo = Yugo()&gt;&gt;&gt; give_me_a_car.exclaim()I&apos;m a Car!&gt;&gt;&gt; give_me_a_yugo.exclaim()I&apos;m a Car!</code></pre><p>我们不需要做任何特殊的操作，Yugo就自动从Car那里继承了exclaim()方法。但事实上，我们并不希望Yugo在exclaim()方法里宣称它是一个Car，这可能会造成身份危机（无法区分Car和Yugo）。让我们来看看怎么解决这个问题。  </p><h2 id="4-覆盖方法"><a href="#4-覆盖方法" class="headerlink" title="4. 覆盖方法"></a>4. 覆盖方法</h2><p>新创建的子类会自动继承父类的所有信息。那子类是如何替代–或者说覆盖（override）–父类的方法。Yugo和Car一定存在着某些区别，不然的话，创建它又有什么意义？</p><p>尝试改写以下Yugo中的exclaim()方法的功能：</p><pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span><span class="params">()</span>:</span></span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">exclaim</span><span class="params">(self)</span>:</span></span><br><span class="line">print(<span class="string">"I'm a Car!"</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Yugo</span><span class="params">(Car)</span>:</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">exclaim</span><span class="params">(self)</span>:</span></span><br><span class="line">print(<span class="string">"I'm a Yugo! Much like a Car , but more Yugo-ish."</span>)  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="comment">#接着，为每个类创建一个实例对象:</span></span><br><span class="line">   give_me_a_car = Car()</span><br><span class="line">   give_me_a_yugo = Yugo()</span><br></pre></td></tr></table></figure></code></pre><p>看看它们各自会宣称什么?  </p><pre><code>&gt;&gt;&gt; give_me_a_car.exclaim()I&apos;m a Car!&gt;&gt;&gt; give_me_a_yugo.exclaim()I&apos;m a Yugo! Much like a Car , but more Yugo-ish.  </code></pre><p>在上面的例子中，覆盖了父类的exclaim（）方法，在子类中，可以覆盖任何父类的方法，包括<strong>init</strong>()。下面的例子使用了之前创建过的Person类。我们来创建两个子类，分别代表医生（MDPerson）和律师（JDPerson）：    </p><pre><code>class Person():    def __init__(self，name):         self.name = nameclass MDPerson(Person):    def __init__(self，name):         self.name = &quot;Doctor&quot; + nameclass JDPerson(Person):    def __init__(self，name):         self.name = name + &quot;Esquire&quot;</code></pre><p>在上面的例子中，子类的初始化方法<strong>init</strong>()接收的参数和父类Person一样，但存储到对象内部name特性的值却不尽相同：  </p><pre><code>&gt;&gt;&gt; person = Person(&quot;Fudd&quot;)  &gt;&gt;&gt; doctor = MDPerson(&quot;Fudd&quot;)  &gt;&gt;&gt; lawyer = JDPerson(&quot;Fudd&quot;) &gt;&gt;&gt; print(person.name)Fudd&gt;&gt;&gt; print(doctor.name)Doctor Fudd&gt;&gt;&gt; print(lawyer.name)Fudd Esquire  </code></pre><h2 id="5-添加新方法"><a href="#5-添加新方法" class="headerlink" title="5. 添加新方法"></a>5. 添加新方法</h2><p><img src="https://i.loli.net/2018/06/05/5b1636660dfc1.jpg" alt></p><h2 id="6-使用super从父类得到帮助"><a href="#6-使用super从父类得到帮助" class="headerlink" title="6. 使用super从父类得到帮助"></a>6. 使用super从父类得到帮助</h2><p>调用父类的方法—-&gt; super()  </p><p>下面这个例子将定义一个新的类EmailPerson,用于表示有电子邮箱的Person。首先，来定义熟悉的Person类：</p><pre><code>class Person():    def __init__(self，name):         self.name = name  </code></pre><p>下面是子类的定义，注意，子类的初始化方法<strong>init</strong>()中添加了一个额外的email参数：  </p><pre><code>class EmailPerson(Person):    def __init__(self，name, email):        super().__init__(name)         self.email = email  </code></pre><p><img src="https://i.loli.net/2018/06/05/5b1640d76cb41.jpg" alt></p><h2 id="7-self的自辩"><a href="#7-self的自辩" class="headerlink" title="7. self的自辩"></a>7. self的自辩</h2><p>Python中必须把self设置为实例方法（前面例子中你见到的所有方法都是实例方法）的第一个参数。 Python使用self参数来找到正确的对象所包含的特性和方法。通过下面的例子，来查看调用对象方法背后Python实际做的工作。</p><p>前面例子中所讲的Car类，再次调用exclaim()方法：  </p><pre><code>&gt;&gt;&gt; car = Car()&gt;&gt;&gt; car.exclaim()I&apos;m a Car!  </code></pre><p><img src="https://i.loli.net/2018/06/05/5b162ee23298d.jpg" alt></p><p>没看完，后续补充 </p><h2 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h2><h2 id="9"><a href="#9" class="headerlink" title="9."></a>9.</h2><h2 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h2><h2 id="11"><a href="#11" class="headerlink" title="11."></a>11.</h2><h2 id="12"><a href="#12" class="headerlink" title="12."></a>12.</h2><h2 id="13"><a href="#13" class="headerlink" title="13."></a>13.</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/05/31/5b0f529386dd5.jpg&quot; alt&gt;  &lt;/p&gt;
+&lt;h1 id=&quot;Python中的对象和类&quot;&gt;&lt;a href=&quot;#Python中的对象和类&quot; class=&quot;headerlink&quot; ti
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://xiaoxiaoaurora.github.io/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://xiaoxiaoaurora.github.io/tags/Python/"/>
+    
+      <category term="类" scheme="https://xiaoxiaoaurora.github.io/tags/%E7%B1%BB/"/>
+    
+      <category term="对象" scheme="https://xiaoxiaoaurora.github.io/tags/%E5%AF%B9%E8%B1%A1/"/>
+    
+  </entry>
+  
+  <entry>
     <title>keras实现CRF层遇到的问题：3D张量的报错</title>
     <link href="https://xiaoxiaoaurora.github.io/2018/04/25/keras%E5%AE%9E%E7%8E%B0CRF%E5%B1%82%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%9A3D%E5%BC%A0%E9%87%8F%E7%9A%84%E6%8A%A5%E9%94%99/"/>
     <id>https://xiaoxiaoaurora.github.io/2018/04/25/keras实现CRF层遇到的问题：3D张量的报错/</id>
     <published>2018-04-25T12:09:45.000Z</published>
-    <updated>2019-04-02T11:52:11.937Z</updated>
+    <updated>2019-04-02T12:06:00.842Z</updated>
     
     <content type="html"><![CDATA[<h1 id="keras实现CRF层遇到的问题：3D张量的报错"><a href="#keras实现CRF层遇到的问题：3D张量的报错" class="headerlink" title="keras实现CRF层遇到的问题：3D张量的报错"></a>keras实现CRF层遇到的问题：3D张量的报错</h1><p>问题：在使用CRF层构建模型进行训练时，总是报错：  </p><p><img src="https://i.loli.net/2018/04/25/5ae07550f3a28.jpg" alt>  </p><p>下面是ValueError的完整信息：</p><pre><code>ValueError: Index out of range using input dim 2; input has only 2 dims for &apos;loss/crf_1_loss/strided_slice&apos; (op: &apos;StridedSlice&apos;) with input shapes: [?,?], [3], [3], [3] and with computed input tensors: input[3] = &lt;1 1 1&gt;.    </code></pre><p>是张量的shape问题。具体的原因还需要进一步查找，先标记下，五一假后解决。  </p>]]></content>
     
@@ -160,12 +318,45 @@
     
       <category term="Keras" scheme="https://xiaoxiaoaurora.github.io/categories/Keras/"/>
     
+      <category term="CodingErrors" scheme="https://xiaoxiaoaurora.github.io/categories/Keras/CodingErrors/"/>
+    
     
       <category term="Keras" scheme="https://xiaoxiaoaurora.github.io/tags/Keras/"/>
     
       <category term="CodingErrors" scheme="https://xiaoxiaoaurora.github.io/tags/CodingErrors/"/>
     
       <category term="CRF" scheme="https://xiaoxiaoaurora.github.io/tags/CRF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>softmax() got an unexpected keyword argument &#39;axis&#39;</title>
+    <link href="https://xiaoxiaoaurora.github.io/2018/04/25/softmax-got-an-unexpected-keyword-argument-axis/"/>
+    <id>https://xiaoxiaoaurora.github.io/2018/04/25/softmax-got-an-unexpected-keyword-argument-axis/</id>
+    <published>2018-04-25T02:09:45.000Z</published>
+    <updated>2019-04-02T12:07:29.572Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="softmax-got-an-unexpected-keyword-argument-‘axis’"><a href="#softmax-got-an-unexpected-keyword-argument-‘axis’" class="headerlink" title="softmax() got an unexpected keyword argument ‘axis’"></a>softmax() got an unexpected keyword argument ‘axis’</h1><p>在使用keras构建模型时出现了以下错误：  </p><p><img src="https://i.loli.net/2018/04/25/5ae0295ac11f3.jpg" alt> </p><p>根据错误位置提示的最后一行<br><img src="https://i.loli.net/2018/04/25/5ae02d6730d70.jpg" alt></p><p>可以知道是在tensoflow_backend.py中出现错误，如下图：<br><img src="https://i.loli.net/2018/04/25/5ae02f1f09a2e.jpg" alt>   </p><p>解决方法：<br>把  </p><pre><code>return tf.nn.softmax(x, axis=axis)  </code></pre><p>改为：</p><pre><code>return tf.nn.softmax(x,axis)  </code></pre><p>简单粗暴好用的办法！<br>感谢<a href="https://blog.csdn.net/s_sunnyy/article/details/70469600" target="_blank" rel="noopener"> TypeError: concat() got an unexpected keyword argument ‘axis’</a> 提供参考意见。  </p><p>ps: 遇到狐假虎威的狼外婆和心怀险恶的小红帽，鲁智深是解决不了的，但是曹操自己能做到~</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;softmax-got-an-unexpected-keyword-argument-‘axis’&quot;&gt;&lt;a href=&quot;#softmax-got-an-unexpected-keyword-argument-‘axis’&quot; class=&quot;headerlink&quot; t
+      
+    
+    </summary>
+    
+      <category term="Keras" scheme="https://xiaoxiaoaurora.github.io/categories/Keras/"/>
+    
+      <category term="CodingErrors" scheme="https://xiaoxiaoaurora.github.io/categories/Keras/CodingErrors/"/>
+    
+    
+      <category term="Keras" scheme="https://xiaoxiaoaurora.github.io/tags/Keras/"/>
+    
+      <category term="CodingErrors" scheme="https://xiaoxiaoaurora.github.io/tags/CodingErrors/"/>
+    
+      <category term="Softmax" scheme="https://xiaoxiaoaurora.github.io/tags/Softmax/"/>
     
   </entry>
   
@@ -195,6 +386,35 @@
     
     
       <category term="学习计划" scheme="https://xiaoxiaoaurora.github.io/tags/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python | 面向对象编程</title>
+    <link href="https://xiaoxiaoaurora.github.io/2018/03/31/python%E4%B8%AD%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/"/>
+    <id>https://xiaoxiaoaurora.github.io/2018/03/31/python中的面向对象编程/</id>
+    <published>2018-03-31T01:00:57.000Z</published>
+    <updated>2019-04-02T12:14:56.932Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="python中的面向对象编程"><a href="#python中的面向对象编程" class="headerlink" title="python中的面向对象编程"></a>python中的面向对象编程</h1><p>面向对象编程——Object Oriented Programming，简称OOP，是一种程序设计思想。OOP把对象作为程序的基本单元，<strong>一个对象包含了数据和操作数据的函数</strong>。</p><p>面向过程的程序设计把计算机程序视为一系列的命令集合，即一组函数的顺序执行。为了简化程序设计，<strong>面向过程把函数继续切分为子函数，即把大块函数通过切割成小块函数来降低系统的复杂度</strong>。</p><p>而面向对象的程序设计把计算机程序视为一组对象的集合，而每个对象都可以接收其他对象发过来的消息，并处理这些消息，计算机程序的执行就是一系列消息在各个对象之间传递。</p><h2 id="一-Class-类"><a href="#一-Class-类" class="headerlink" title="一. Class(类)"></a>一. Class(类)</h2><p>在 Python 中，所有数据类型都可以视为对象,当然也可以自定义对象，自定义的对象数据类型就是面向对象中的类(Class)。object表示该类是从哪个类继承下来的，如果没有合适的继承类，就使用 object 类，这是所有类最终都会继承的类。  </p><h3 id="1-定义一个类"><a href="#1-定义一个类" class="headerlink" title="1. 定义一个类"></a>1. 定义一个类</h3><p>  <img src="https://i.loli.net/2018/08/10/5b6d39ae06f62.jpg" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;python中的面向对象编程&quot;&gt;&lt;a href=&quot;#python中的面向对象编程&quot; class=&quot;headerlink&quot; title=&quot;python中的面向对象编程&quot;&gt;&lt;/a&gt;python中的面向对象编程&lt;/h1&gt;&lt;p&gt;面向对象编程——Object Oriente
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://xiaoxiaoaurora.github.io/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://xiaoxiaoaurora.github.io/tags/Python/"/>
+    
+      <category term="OPP" scheme="https://xiaoxiaoaurora.github.io/tags/OPP/"/>
+    
+      <category term="类" scheme="https://xiaoxiaoaurora.github.io/tags/%E7%B1%BB/"/>
     
   </entry>
   
@@ -234,7 +454,7 @@
     <link href="https://xiaoxiaoaurora.github.io/2018/03/23/keras%E4%B9%8BBiLSTM-CRF%E5%AE%9E%E7%8E%B0%E8%AF%AD%E6%B3%95%E9%94%99%E8%AF%AF%E5%88%A4%E6%96%AD%E5%87%BA%E7%8E%B0shape%E4%B8%8D%E7%AC%A6%E5%90%88%E9%97%AE%E9%A2%98/"/>
     <id>https://xiaoxiaoaurora.github.io/2018/03/23/keras之BiLSTM-CRF实现语法错误判断出现shape不符合问题/</id>
     <published>2018-03-23T00:38:01.000Z</published>
-    <updated>2019-04-02T11:52:19.471Z</updated>
+    <updated>2019-04-02T12:05:51.093Z</updated>
     
     <content type="html"><![CDATA[<h1 id="keras之BiLSTM-CRF实现语法错误判断出现shape不符合问题"><a href="#keras之BiLSTM-CRF实现语法错误判断出现shape不符合问题" class="headerlink" title="keras之BiLSTM+CRF实现语法错误判断出现shape不符合问题"></a>keras之BiLSTM+CRF实现语法错误判断出现shape不符合问题</h1><p>在用keras构建BiLSTM+CRF模型实现汉语语法错误诊断过程中，进行训练的时候总是报错：  </p><pre><code>ValueError: Cannot feed value of shape (128, 1) for Tensor u&apos;crf_1_target:0&apos;, which has shape &apos;(?,?,?)  </code></pre><p>出现错误位置在：  </p><pre><code>#bilstm layerbilstm_layer = Bidirectional(LSTM(hidden_dim, return_sequences=False))model.add(bilstm_layer)print(&apos;bilstm_layer.input_shape:&apos;, bilstm_layer.input_shape)print(&apos;bilstm_layer.output_shape:&apos;, bilstm_layer.output_shape)drop_layer = Dropout(dropout_rate)model.add(drop_layer)dense = Dense(num_class)model.add(dense)print(&apos;drop_layer.input_shape:&apos;, drop_layer.input_shape)print(&apos;drop_layer.output_shape:&apos;, drop_layer.output_shape)time_layer = TimeDistributed(Dense(num_class))model.add(time_layer) print(&apos;time_layer.input_shape:&apos;, time_layer.input_shape)print(&apos;time_layer.output_shape:&apos;, time_layer.output_shape)#加载CRF层crf_layer = CRF(num_class, sparse_target=True)model.add(crf_layer)print(&apos;crf_layer.input_shape:&apos;, crf_layer.input_shape)print(&apos;crf_layer.output_shape:&apos;, crf_layer.output_shape)#pdb.set_trace()model.compile(loss=&apos;sparse_categorical_crossentropy&apos;, optimizer=&apos;sgd&apos;)</code></pre><p>BiLSTM是一个时序序列，添加层的参数设置中return_sequence值应为Fasle，若设置为True则每个时间步都会有一个输出值返回，设为False只会返回序列中最后一个时间步的输出值。其次在BiLSTM后接的CRF层也是时许序列，对应着的输出也是每个时间有输出，因此CRF的最终输出为（batch_size,timesteps,num_class）。而在本次任务中，只要求判断输入句子是否有语法错误，真值是一个shape为（batch_size,num_class）d的输出。还有time_layer = TimeDistributed(Dense(num_class))，其中TimeDistributed这个包装器将一个层应用于输入的每个时间切片，所以都是导致最后shape不符的原因，因此会出现上述错误。</p><p><strong>解决方法：</strong><br>弃用CRF层和TimeDistributed层。发现不报错了……<br>但目前还不知道怎么能让CRF和TimeDistributed层存在的情况下不报错，后续有了解决方法会有更新。</p><p>代码参考：<a href="http://blog.csdn.net/qq_16912257/article/details/78969966" target="_blank" rel="noopener">用keras搭建bilstm crf</a></p>]]></content>
     
@@ -249,6 +469,8 @@
     
       <category term="Keras" scheme="https://xiaoxiaoaurora.github.io/categories/Keras/"/>
     
+      <category term="CodingErrors" scheme="https://xiaoxiaoaurora.github.io/categories/Keras/CodingErrors/"/>
+    
     
       <category term="Keras" scheme="https://xiaoxiaoaurora.github.io/tags/Keras/"/>
     
@@ -261,11 +483,64 @@
   </entry>
   
   <entry>
+    <title></title>
+    <link href="https://xiaoxiaoaurora.github.io/2018/03/20/python-logging%E6%A8%A1%E5%9D%97/"/>
+    <id>https://xiaoxiaoaurora.github.io/2018/03/20/python-logging模块/</id>
+    <published>2018-03-20T05:19:24.221Z</published>
+    <updated>2019-04-02T12:15:34.923Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>title: python logging模块<br>date: 2018-03-20 13:23:26<br>categories: [Python]<br>tags: [Python，logging]<br>photos: </p><pre><code>- &quot;https://bing.ioliu.cn/photo/BM1759_EN-AU0329493905?force=home_7&quot; </code></pre><hr><h1 id="python-logging模块"><a href="#python-logging模块" class="headerlink" title="python logging模块"></a>python logging模块</h1><p>（转<a href="https://www.cnblogs.com/liujiacai/p/7804848.html" target="_blank" rel="noopener">https://www.cnblogs.com/liujiacai/p/7804848.html</a>）  </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;p&gt;title: python logging模块&lt;br&gt;date: 2018-03-20 13:23:26&lt;br&gt;categories: [Python]&lt;br&gt;tags: [Python，logging]&lt;br&gt;photos: &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- 
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Python正则表达式</title>
+    <link href="https://xiaoxiaoaurora.github.io/2018/03/20/Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <id>https://xiaoxiaoaurora.github.io/2018/03/20/Python正则表达式/</id>
+    <published>2018-03-20T04:57:25.000Z</published>
+    <updated>2019-04-02T12:16:11.385Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><hr><p>正则表达式修饰符 - 可选标志<br>正则表达式可以包含一些可选标志修饰符来控制匹配的模式。修饰符被指定为一个可选的标志。多个标志可以通过按位 OR(|) 它们来指定。如 re.I | re.M 被设置成 I 和 M 标志：  </p><center><img src="https://i.loli.net/2018/07/19/5b506b1c2d437.jpg" alt></center>  <center><img src="https://i.loli.net/2018/07/19/5b506b6a00d73.jpg" alt></center><h2 id="正则表达式小知识"><a href="#正则表达式小知识" class="headerlink" title="正则表达式小知识"></a>正则表达式小知识</h2><pre><code>**总结**^ 匹配字符串的开始$ 匹配字符串的结尾  \b 匹配一个单词的边界。\d 匹配任意数字。\D 匹配任意非数字字符。p? 匹配一个可选的 p 字符 (换言之，它匹配 1 次或者 0 次 p 字符)。p* 匹配0次或者多次 p 字符。p+ 匹配1次或者多次 p 字符。p{n,m} 匹配 p 字符，至少 n 次，至多 m 次。(a|b|c) 要么匹配 a，要么匹配 b，要么匹配 c。(p) 一般情况下表示一个记忆组 (remembered group)。你可以利用 re.search 函数返回对象的 groups() 函数获取它的值。. 正则表达式中的点号通常意味着 “匹配任意单字符”  </code></pre><p>###匹配标签对:<a href="http://blog.csdn.net/eastmount/article/details/51082253" target="_blank" rel="noopener">http://blog.csdn.net/eastmount/article/details/51082253</a></p><p>###正则总结转自：<a href="http://blog.csdn.net/u014052851/article/details/76640149" target="_blank" rel="noopener">http://blog.csdn.net/u014052851/article/details/76640149</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;正则表达式&quot;&gt;&lt;a href=&quot;#正则表达式&quot; class=&quot;headerlink&quot; title=&quot;正则表达式&quot;&gt;&lt;/a&gt;正则表达式&lt;/h1&gt;&lt;hr&gt;
+&lt;p&gt;正则表达式修饰符 - 可选标志&lt;br&gt;正则表达式可以包含一些可选标志修饰符来控制匹配的模式。修饰符被指定为
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://xiaoxiaoaurora.github.io/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://xiaoxiaoaurora.github.io/tags/Python/"/>
+    
+      <category term="正则表达式" scheme="https://xiaoxiaoaurora.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+      <category term="标签对处理" scheme="https://xiaoxiaoaurora.github.io/tags/%E6%A0%87%E7%AD%BE%E5%AF%B9%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Keras序贯模型快速开始</title>
     <link href="https://xiaoxiaoaurora.github.io/2018/03/20/Keras%E5%BA%8F%E8%B4%AF%E6%A8%A1%E5%9E%8B%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/"/>
     <id>https://xiaoxiaoaurora.github.io/2018/03/20/Keras序贯模型快速开始/</id>
     <published>2018-03-20T04:19:53.000Z</published>
-    <updated>2019-04-02T11:52:03.423Z</updated>
+    <updated>2019-04-02T12:05:43.981Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Keras序贯模型快速开始"><a href="#Keras序贯模型快速开始" class="headerlink" title="Keras序贯模型快速开始"></a>Keras序贯模型快速开始</h1><p>re:  <a href="http://keras-cn.readthedocs.io/en/latest/getting_started/sequential_model/" target="_blank" rel="noopener">官方-中文文档</a><br>序贯模型是多个网络层的线性堆叠。<br>可以通过向Sequential模型传递一个layer的list来构造该模型：</p><pre><code>“&apos;Pythonfrom keras.models import Sequentialfrom keras.layers import Dense,Activationmodel = Sequential([Dense(32,units=784),Activation(&apos;relu&apos;),Dense(10),Activation(&apos;softmax&apos;),])</code></pre><p>也可以通过.add()方法一个个的添加layer到模型中</p><pre><code>“&apos;Pythonmodel = Sequential()model.add(Dense(32,input_shape=(784,))model.add(Actiovation(&apos;relu&apos;))</code></pre><a id="more"></a><h2 id="指定输入数据的shape"><a href="#指定输入数据的shape" class="headerlink" title="指定输入数据的shape"></a>指定输入数据的shape</h2><p>模型需要知道输入数据的shape，因此Sequential的第一层需要接受一个关于输入数据shape的参数，后面各个层则可以自动的推导出中间数据的shape，因此不需要为每个层都指定这个参数。<strong>有几种方法来为第一层指定输入数据的shape：</strong>  </p><ul><li>传递一个input_shape的关键字参数给第一层，input_shape是一个tuple类型的数据，其中也可以填入None，如果填入None则表示此位置可能是任何正整数。数据的batch大小不应包含在其中。  </li><li><p>有些2D层 ，如Dense,支持通过指定其输入维度input_dim来隐含的指定输入数据shape,是一个Int类型的数据。一些3D的时域层支持通过参数input_dim和input_length来指定输入shape。    </p><pre><code>“&apos;Pythonmodel = Sequential()model.add(Dense(32, input_dim=784))  </code></pre></li><li><p>如果你需要为输入指定一个固定大小的batch_size（常用于stateful RNN网络），可以传递batch_size参数到一个层中，例如你想指定输入张量的batch大小是32，数据shape是（6，8），则你需要传递batch_size=32和input_shape=(6,8)。   </p><pre><code>“&apos;Pythonmodel = Sequential()model.add(Dense(32, input_shape=(784,)))</code></pre></li></ul><h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p>在训练模型之前，我们需要通过compile来对学习过程进行配置。compile接收三个参数：    </p><pre><code>“&apos;Python# For a multi-class classification problemmodel.compile(optimizer=&apos;rmsprop&apos;,          loss=&apos;categorical_crossentropy&apos;,          metrics=[&apos;accuracy&apos;])# For a binary classification problemmodel.compile(optimizer=&apos;rmsprop&apos;,          loss=&apos;binary_crossentropy&apos;,          metrics=[&apos;accuracy&apos;])# For a mean squared error regression problemmodel.compile(optimizer=&apos;rmsprop&apos;,              loss=&apos;mse&apos;)# For custom metricsimport keras.backend as Kdef mean_pred(y_true, y_pred):    return K.mean(y_pred)model.compile(optimizer=&apos;rmsprop&apos;,          loss=&apos;binary_crossentropy&apos;,          metrics=[&apos;accuracy&apos;, mean_pred])</code></pre><h2 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h2><p>Keras以Numpy数组作为输入数据和标签的数据类型。训练模型一般使用fit函数，该函数的详情见这里。下面是一些例子。  </p><pre><code>“&apos;Python  # For a single-input model with 2 classes (binary classification):model = Sequential()model.add(Dense(32, activation=&apos;relu&apos;, input_dim=100))model.add(Dense(1, activation=&apos;sigmoid&apos;))model.compile(optimizer=&apos;rmsprop&apos;,              loss=&apos;binary_crossentropy&apos;,              metrics=[&apos;accuracy&apos;])# Generate dummy dataimport numpy as npdata = np.random.random((1000, 100))labels = np.random.randint(2, size=(1000, 1))# Train the model, iterating on the data in batches of 32 samplesmodel.fit(data, labels, epochs=10, batch_size=32)  </code></pre><p>第二个例子 :  </p><pre><code>“` # For a single-input model with 10 classes (categorical classification):model = Sequential()model.add(Dense(32, activation=&apos;relu&apos;, input_dim=100))model.add(Dense(10, activation=&apos;softmax&apos;))model.compile(optimizer=&apos;rmsprop&apos;,              loss=&apos;categorical_crossentropy&apos;,              metrics=[&apos;accuracy&apos;])# Generate dummy dataimport numpy as npdata = np.random.random((1000, 100))labels = np.random.randint(10, size=(1000, 1))# Convert labels to categorical one-hot encodingone_hot_labels = keras.utils.to_categorical(labels, num_classes=10)# Train the model, iterating on the data in batches of 32 samplesmodel.fit(data, one_hot_labels, epochs=10, batch_size=32)</code></pre>]]></content>
     
@@ -302,18 +577,16 @@ model.add(Actiovation(&amp;apos;relu&amp;apos;))
     <link href="https://xiaoxiaoaurora.github.io/2018/02/02/HelloBlog/"/>
     <id>https://xiaoxiaoaurora.github.io/2018/02/02/HelloBlog/</id>
     <published>2018-02-02T02:07:17.000Z</published>
-    <updated>2019-04-02T11:55:42.726Z</updated>
+    <updated>2019-04-02T11:59:25.574Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="E:\hexo\images\EiffelBelow.jpg" alt="Eiffel">  </p><p><strong>怕什么真理无穷,进一寸有一寸的欢喜</strong>  </p><pre><code>import torchprint(torch.__version__)  </code></pre><p><a href="https://reuixiy.github.io/technology/computer/computer-aided-art/2017/06/09/hexo-next-optimization.html" target="_blank" rel="noopener">next主题</a><br><a href="https://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html" target="_blank" rel="noopener">NexT 主题优化</a><br><a href="http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html" target="_blank" rel="noopener">个性化配置教程</a></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="E:\hexo\images\EiffelBelow.jpg" alt="To strive, to seek, to find, and not to yield. ">  </p><p><strong>怕什么真理无穷,进一寸有一寸的欢喜</strong>  </p><p><a href="https://reuixiy.github.io/technology/computer/computer-aided-art/2017/06/09/hexo-next-optimization.html" target="_blank" rel="noopener">next主题</a><br><a href="https://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html" target="_blank" rel="noopener">NexT 主题优化</a><br><a href="http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html" target="_blank" rel="noopener">个性化配置教程</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;img src=&quot;E:\hexo\images\EiffelBelow.jpg&quot; alt=&quot;Eiffel&quot;&gt;  &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;怕什么真理无穷,进一寸有一寸的欢喜&lt;/strong&gt;  &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import torch
-print(t
+        &lt;p&gt;&lt;img src=&quot;E:\hexo\images\EiffelBelow.jpg&quot; alt=&quot;To strive, to seek, to find, and not to yield. &quot;&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;怕什么真理无穷,进一寸有一寸的欢喜&lt;/stro
       
     
     </summary>
