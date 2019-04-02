@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiaoxiaoaurora.github.io/"/>
-  <updated>2019-04-02T12:37:51.509Z</updated>
+  <updated>2019-04-02T12:57:13.294Z</updated>
   <id>https://xiaoxiaoaurora.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Semantic Role Labeling for Learner Chinese--the Importance of Syntactic Parsing and L2-L1 Parallel Data</title>
+    <link href="https://xiaoxiaoaurora.github.io/2019/04/04/Semantic%20Role%20Labeling%20for%20Learner%20Chinese/"/>
+    <id>https://xiaoxiaoaurora.github.io/2019/04/04/Semantic Role Labeling for Learner Chinese/</id>
+    <published>2019-04-03T16:00:00.000Z</published>
+    <updated>2019-04-02T12:57:13.294Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Semantic-Role-Labeling-for-Learner-Chinese–the-Importance-of-Syntactic-Parsing-and-L2-L1-Parallel-Data"><a href="#Semantic-Role-Labeling-for-Learner-Chinese–the-Importance-of-Syntactic-Parsing-and-L2-L1-Parallel-Data" class="headerlink" title="Semantic Role Labeling for Learner Chinese–the Importance of Syntactic Parsing and L2-L1 Parallel Data"></a>Semantic Role Labeling for Learner Chinese–the Importance of Syntactic Parsing and L2-L1 Parallel Data</h1><p><img src="https://i.loli.net/2019/04/01/5ca1c8b1c76df.jpg" alt>  </p><h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><ol><li>中介语的语义依存标注  </li><li>taking semantic role labeling (SRL) as a case task and learner Chinese as a case language </li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Semantic-Role-Labeling-for-Learner-Chinese–the-Importance-of-Syntactic-Parsing-and-L2-L1-Parallel-Data&quot;&gt;&lt;a href=&quot;#Semantic-Role-Labe
+      
+    
+    </summary>
+    
+      <category term="Papers" scheme="https://xiaoxiaoaurora.github.io/categories/Papers/"/>
+    
+      <category term="SRL" scheme="https://xiaoxiaoaurora.github.io/categories/Papers/SRL/"/>
+    
+    
+      <category term="Papers" scheme="https://xiaoxiaoaurora.github.io/tags/Papers/"/>
+    
+      <category term="SRL" scheme="https://xiaoxiaoaurora.github.io/tags/SRL/"/>
+    
+      <category term="Annotation Guidelines" scheme="https://xiaoxiaoaurora.github.io/tags/Annotation-Guidelines/"/>
+    
+  </entry>
   
   <entry>
     <title></title>
@@ -64,6 +95,33 @@
   </entry>
   
   <entry>
+    <title>阅读笔记 | 语言和认知中的跨语言影响</title>
+    <link href="https://xiaoxiaoaurora.github.io/2018/08/10/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%EF%BC%9A%E8%AF%AD%E8%A8%80%E5%92%8C%E8%AE%A4%E7%9F%A5%E4%B8%AD%E7%9A%84%E8%B7%A8%E8%AF%AD%E8%A8%80%E5%BD%B1%E5%93%8D/"/>
+    <id>https://xiaoxiaoaurora.github.io/2018/08/10/阅读笔记：语言和认知中的跨语言影响/</id>
+    <published>2018-08-10T01:48:21.000Z</published>
+    <updated>2019-04-02T12:49:16.881Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="阅读笔记-语言和认知中的跨语言影响"><a href="#阅读笔记-语言和认知中的跨语言影响" class="headerlink" title="阅读笔记 | 语言和认知中的跨语言影响"></a>阅读笔记 | 语言和认知中的跨语言影响</h1><p><img src="https://i.loli.net/2018/08/10/5b6d49edc57d6.jpg" alt>  </p><ul><li>Crosslinguistic Influence 跨语言影响,CLI</li></ul><h2 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h2><p>我们对于CLI所了解的内容与那些尚待发现的内容相比起来无疑是相形见绌的，但是，自1989年起，关于CLI的研究早已经进入了一个新的时代。与之前在transfer上的工作相比，新的时代表现出了四种特征。  </p><ul><li>第一，CLI不再是一种没有原则标准来确定其在语言数据中存在或不存在的现象(cf. Meisel, 1983)。  </li><li><p>第二，CLI不再被研究者们简单地视为一个背景（background）、中介（mediating）或者中介变量（intervening variable），只是作为一种解释（例如，对所讨论的语言行为的解释），但从来不作为一个待解释的项（例如，要解释的现象）。 <font color="E066FF">这里有点绕，贴出原文</font><br><img src="https://i.loli.net/2018/08/10/5b6d4e79ab112.jpg" alt>  </p></li><li><p>第三，在Transfer研究的新时代下，CLI不再是一个缺乏明确的理论地位的模糊概念。的确，本书的主要目标是探索、突出和详细地阐述其跨学科理论的发展现状</p></li><li>最后，现在对CLI的本质的研究已经超出了语言知识的范畴，并深入探讨了CLI的认知基础。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;阅读笔记-语言和认知中的跨语言影响&quot;&gt;&lt;a href=&quot;#阅读笔记-语言和认知中的跨语言影响&quot; class=&quot;headerlink&quot; title=&quot;阅读笔记 | 语言和认知中的跨语言影响&quot;&gt;&lt;/a&gt;阅读笔记 | 语言和认知中的跨语言影响&lt;/h1&gt;&lt;p&gt;&lt;img s
+      
+    
+    </summary>
+    
+      <category term="Papers" scheme="https://xiaoxiaoaurora.github.io/categories/Papers/"/>
+    
+    
+      <category term="Papers" scheme="https://xiaoxiaoaurora.github.io/tags/Papers/"/>
+    
+      <category term="CLI" scheme="https://xiaoxiaoaurora.github.io/tags/CLI/"/>
+    
+  </entry>
+  
+  <entry>
     <title>NLP|中英文名词对照附录</title>
     <link href="https://xiaoxiaoaurora.github.io/2018/07/23/NLP%E4%B9%8B%E4%B8%AD%E8%8B%B1%E6%96%87%E5%90%8D%E8%AF%8D%E5%AF%B9%E7%85%A7/"/>
     <id>https://xiaoxiaoaurora.github.io/2018/07/23/NLP之中英文名词对照/</id>
@@ -87,6 +145,73 @@
       <category term="NLP" scheme="https://xiaoxiaoaurora.github.io/tags/NLP/"/>
     
       <category term="名词解释" scheme="https://xiaoxiaoaurora.github.io/tags/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习记录之句法结构标注(一)</title>
+    <link href="https://xiaoxiaoaurora.github.io/2018/07/09/%E5%85%B3%E4%BA%8E%E5%8F%A5%E6%B3%95%E7%BB%93%E6%9E%84%E6%A0%87%E6%B3%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    <id>https://xiaoxiaoaurora.github.io/2018/07/09/关于句法结构标注的一些学习记录/</id>
+    <published>2018-07-09T01:34:57.000Z</published>
+    <updated>2019-04-02T12:54:02.051Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="学习记录之句法结构标注（一）"><a href="#学习记录之句法结构标注（一）" class="headerlink" title="学习记录之句法结构标注（一）"></a>学习记录之句法结构标注（一）</h1><hr><p><strong><font color="#836FFF">Note:</font></strong> </p><ul><li>关于学习者文本做句法标注  </li><li>针对汉语学习者尚且没有太多工作，汉语上，香港城市大学有一些相关工作。  </li><li>大致上是<strong>为中介语标注句法结构</strong>，进而可以做以下工作，例如给教师提供语言用例的检索、做中介语NLP等。  </li><li>该篇文章仅是在阅读论文中所做的基础记录，大部分是论文翻译内容。</li></ul><p><strong><font color="#98F5FF">Information：</font></strong>  </p><ul><li>中介语（Interlanguage）：也有人译为”过渡语”或”语际语”，是指在第二语言习得过程中，学习者通过一定的学习策略，在目的语输入的基础上所形成的一种既不同于其第一语言也不同于目的语，随着学习的进展向目的语逐渐过渡的动态的语言系统。  </li></ul><h2 id="一、关于句法标注（Syntactically-Annotating）"><a href="#一、关于句法标注（Syntactically-Annotating）" class="headerlink" title="一、关于句法标注（Syntactically Annotating）"></a>一、关于句法标注（Syntactically Annotating）</h2><p><strong>SALLE（Syntactically Annotating Learner Language of English）</strong></p><p>从英语学习者文本的句法标注相关内容进行了解。该任务主要就是对把英语作为第二语言的学习者所写的文本进行句法结构标注。该项目中的目标是对给定句子中存在的语言属性进行注释（annotate linguistic properties present），而不是对学习者的意思做出太多解释（interpretation），或者正确的形式应该是什么。为了达到这个目的，我们的注释方案根据句子中的上下文，并基于英语规则（目标语言），添加了几个关于每个单词的语言信息。  我们通过对依存关系进行注解来标记句子中的单词之间的句法关系，例如，一个词是另一个词的主语。  </p><p>A beta version of the guidelines we are using are available <a href="http://cl.indiana.edu/~salle/resources/salle-guidelines0.1.pdf" target="_blank" rel="noopener">here</a>.The decisions we have made (certainly needing refinement in some cases) point out many of the essential questions that need to be addressed for linguistically annotating learner data, and we hope they can stimulate discussion.</p><center>—-以上摘自（<a href="http://cl.indiana.edu/~salle/" target="_blank" rel="noopener">http://cl.indiana.edu/~salle/</a>）</center>  <h2 id="二、论文研读–《Universal-Dependencies-for-Learner-English》"><a href="#二、论文研读–《Universal-Dependencies-for-Learner-English》" class="headerlink" title="二、论文研读–《Universal Dependencies for Learner English》"></a>二、论文研读–《Universal Dependencies for Learner English》</h2><p><img src="https://i.loli.net/2018/07/04/5b3c7b17624a6.jpg" alt>  </p><p><img src="https://i.loli.net/2018/07/03/5b3af1a72a4fe.jpg" alt>  </p><p>Abstract: 本篇论文主要介绍了英语学习者的树库（TLE），是一个将英语作为第二语言（ESL）的第一个公共可用的语法树库（syntactic treebank）。<strong>TLE为5124个句子提供了手动注释的POS标签和通用依存（Universal Dependency，UD）树，</strong>这些句子来源于剑桥大学FCE（First Certificate in English ）语料库。UD注解和FCE中已存在的错误注解结合在一起，从而为每个句子的原始版本和错误修正后的版本提供完整的语法分析。进一步的描述了ESL注释指南，该指南允许对不符合语法的英语进行一致的句法处理。最后，<strong>在TLE数据集上对POS标记和依存关系解析性能进行基准测试，并测量语法错误对解析准确性的影响</strong>。我们设想树库支持第二语言习得的广泛的语言和计算研究以及自动处理不符合语法的语言。</p><h3 id="1、Introduction"><a href="#1、Introduction" class="headerlink" title="1、Introduction"></a>1、Introduction</h3><p>大多数世界范围内可用的英语文本都是由非母语者所产生的。这些文本中最明显的挑战就是语法错误，解决这些问题对于语言习得的科学研究和自然语言处理都是至关重要的。<strong>尽管非母语英语无处不在，但是目前还没有公共可用的ESL句法树库。<br>为了解决这个问题，我们提出了英语学习者树库（TLE，the<br>Treebank of Learner English），这是非英语母语的第一个资源，树库包含用POS标签和依存树手动注释的5,124个句子。</strong></p><ul><li>TLE句子是从FCE数据集中获取，这些句子是由来自10个不同母语背景的英语学习者所写。  </li><li>treebank使用了通用依存(UD)形式主义，提供跨不同语言的统一注释框架，且面向多语种NLP。</li></ul><p>以上两种使得treebank能够支持ESL的计算分析，它不仅使用基于英语的，而且还使用多种语言的方法，试图将ESL现象与本地语言语法联系起来。</p><ul><li>以学习者语言分析之前的工作为基础，制定了一套附加的注解约定，旨在对不符合语法的学习者语言进行统一处理。采用一个two-layer 分析，在这个分析中，每个句子的原始版本和纠正版本都提供了不同的语法注释。该方法是通过FCE语料中已存在的错误注释而启用的，该注释用于生成数据集的错误修正变体。</li></ul><p><strong>总的来说这篇论文主要有以下三点贡献：</strong>  </p><ul><li><ol><li>为ESL引入了第一个大型语法树库，该树库包括手工注释的POS标签和通用依存（UD）。  </li></ol></li><li><ol start="2"><li>为不符合语法的学习者英语描述了一种受语言驱动的注释方案，并通过注释者间协议分析为其一致性提供经验支持。  </li></ol></li><li><ol start="3"><li>作者在自己的数据集上对性能最佳的解析器进行了基准测试，并且评估了自动进行POS标注和依存分析的精确度对语法错误的影响。</li></ol></li></ul><p><strong><font color="4B0082">论文结构说明：</font></strong>    </p><ul><li>Section 2：Present an overview of the treebank.  </li><li>Section 3 and Section 4:Provide background information on the annotation project, and review the main annotation stages leading to the current form of the dataset.  </li><li><strong>Section 5: To Summary the ESL annotation guidelines.</strong>  </li><li>Section 6: Present the Inter-annotator agreement analysis.  </li><li><strong>Section 7: Parsing Experiments.</strong>  </li><li>Section 8: Related Work </li><li>Section 9: Conclusion </li></ul><h3 id="2、Treebank概述"><a href="#2、Treebank概述" class="headerlink" title="2、Treebank概述"></a>2、Treebank概述</h3><blockquote><p>使用的是NLTL句子分词器（<a href="http://www.nltk.org/api/nltk.tokenize.html" target="_blank" rel="noopener">http://www.nltk.org/api/nltk.tokenize.html</a>）的改编版进行句子级别切分。<br>Word level tokenization was generated using the Stanford PTB word tokenizer（<a href="http://nlp.stanford.edu/software/tokenizer.shtml" target="_blank" rel="noopener">http://nlp.stanford.edu/software/tokenizer.shtml</a>）。</p></blockquote><p>TLE是第一个以完全手动注释的方式构建的大规模英语树库。  </p><ol><li>TLE包含5124个英语通用依赖关系(UD)形式中带有POS标记和依存注释的句子。这些句子是从FCE语料得到，这是一组中高级英语学习者所写的文章，包含75个错误分类的错误注释。  </li><li>树库中的学习者来自10个母语不同的语言背景：汉语、法语、德语、意大利语、日语、韩语、葡萄牙语、西班牙语、俄语和土耳其语。每种母语背景下都随机挑选500个自动分段的句子，除此之外所选的句子必须至少包含一种不是符号或拼写的语法错误。  </li><li><p>TLE注解有两个版本：  </p><ul><li>学习者写的原始句子（有语法错误）；  </li><li>纠正的句子，是原始句子的语法变体，根据FCE数据集提供的手动错误注释纠正了句子中的所有语法错误。</li></ul></li></ol><p>由此产生的正确句子构成了标准英语的平行语料库。  </p><center><img src="https://i.loli.net/2018/07/04/5b3c88616775d.jpg" alt></center>    <h3 id="3、Annotator-Training"><a href="#3、Annotator-Training" class="headerlink" title="3、Annotator Training"></a>3、Annotator Training</h3><p>手动注释人员的相关培训  </p><h3 id="4、Annotation-Procedure"><a href="#4、Annotation-Procedure" class="headerlink" title="4、Annotation Procedure"></a>4、Annotation Procedure</h3><p>树库的形成分注释、审核、分歧解决和有针对性的调试四个步骤。  </p><h4 id="4-1、Annotation"><a href="#4-1、Annotation" class="headerlink" title="4.1、Annotation"></a>4.1、Annotation</h4><ul><li>annotation from scratch.  </li><li><p>我们使用一个基于CoNLL的文本模板(textual template)，其中每个单词在单独的行（line）中进行注释，每一行包含六列(根据英语UD指南 Version 1)：  </p><ul><li>index(IND)  </li><li>the word itself(WORD)  </li><li>a Universal POS tag(UPOS)  </li><li>a Penn Treebank POS tag(POS)  </li><li>a head word index(HIND)  </li><li>a dependency relation(REL)  </li></ul></li></ul><center><img src="https://i.loli.net/2018/07/04/5b3cb9e2c0fbc.jpg" alt></center>  <p>下图示例是展示给注释者的预先注释的原始句子：  </p><center><img src="https://i.loli.net/2018/07/04/5b3cb974d9d15.jpg" alt></center>   <h4 id="4-2、review"><a href="#4-2、review" class="headerlink" title="4.2、review"></a>4.2、review</h4><p>所有带注释的句子以双盲的方式被随机分配给第二个注释器(也称 reviewer)。reviewer的任务是标记所有注释不同的注释。</p><p>为方便review的工作，编辑了一个常见的注解错误列表（可在已发布的注释手册中找到）。</p><p>引入了一个主动编辑注释的方案来进行review，该方案可以避免reviewer由于passive approval而忽略注释问题。具体来讲：</p><center><img src="https://i.loli.net/2018/07/11/5b45da027d4a3.jpg" alt></center>  <h4 id="4-3、Disagreement-Resolution"><a href="#4-3、Disagreement-Resolution" class="headerlink" title="4.3、Disagreement Resolution"></a>4.3、Disagreement Resolution</h4><p>在注解过程的最后一步里，所有的annotator-reviewer分歧对由第三个注释器解决(annotator，henceforth judge)，其主要任务是在annotator和reviewer之间做出选择。主要是以下两个任务：</p><ul><li>评审人员可以用第三种替代方法解决注释或评论意见的分歧，并为审阅人员所忽略的注释问题引入新的更正。</li><li>另一项任务是为通过审查异议或出现在句子中的歧义结构标记可接受的替代注释（mark acceptable alternative annotations）。</li></ul><h4 id="4-4、Final-Debugging"><a href="#4-4、Final-Debugging" class="headerlink" title="4.4、Final Debugging"></a>4.4、Final Debugging</h4><p>在采用过judge给出的解决方案后，我们用特定的语言学结构的调试测试对语料库进行了查询。附件的测试阶段进一步减少了注释错误的数量和treebank中的不一致性。  </p><h3 id="5、Annotation-Scheme-for-ESL"><a href="#5、Annotation-Scheme-for-ESL" class="headerlink" title="5、Annotation Scheme for ESL"></a>5、Annotation Scheme for ESL</h3><p>注解使用英语的UD POS标记和依存关系的现有目录，并遵循英语的标准UD注释指南。这些指导方针是以英语的语法用法来制定的，不包括由于语法错误而产生的非标准句法结构。<br>指导方针遵循字面阅读（literal reading）的一般原则，强调根据观察到的语言使用进行句法分析。该策略延续了SLA中的一项工作，主张围绕形态语法表面依据对学习者语言进行集中分析。   </p><p>我们的框架包含了对已改正的句子的并行注释，这种策略经常出现在多层注释方案的上下文中，这些注释方案也解释了错误修正的句子形式。   </p><p>在UD中部署一个字面注释策略，这是一种加强注释跨语言一致性的形式主义，将使作者在英语中的非规范结构和作者的母语中的规范结构之间进行有意义的比较。因此，我们的树库的一个重要的新特性是它支持学习者语言的交叉语言研究的能力。  </p><h4 id="5-1-Literal-Annotation"><a href="#5-1-Literal-Annotation" class="headerlink" title="5.1 Literal Annotation"></a>5.1 Literal Annotation</h4><p>关于词性标注，文字标注意味着尽可能地遵循观察到的词形形式。<br>从句法上讲，参数结构是根据单词的用法进行注释的，而不是根据相关上下文中的典型分布进行注释的。<br>下面的惯例列表定义了一些常见的与语法错误相关的非规范结构的字面阅读的概念: 参数结构、时态、词性转换（构词法？）、  </p><ul><li><p><strong>Argument Structure</strong>  </p><ul><li>Extraneous prepositions:我们注释所有由外来的介词作为名词修饰词引入的名词依赖性。在下面的句子中，“his”被标记为一个名词修饰语(nmod)而不是“give”的间接宾语(iobj)。  <center> <img src="https://i.loli.net/2018/07/13/5b4869c8d3c8a.jpg" alt></center>    </li><li>Ommited prepossitions:我们把一个缺少介词的谓语词的名词依赖项作为参数，而不是名词修饰词。例如下面的例子中，将“money”作为一个直接宾语（dobj）而不是视为一个名词修饰语（nmod）,“you”则根据上下文视为一个间接宾语（iobj）而不是一个dobj。</li></ul><center><img src="https://i.loli.net/2018/07/18/5b4f051d7d573.jpg" alt></center>  </li></ul><ul><li><strong>Tense</strong></li></ul><p>根据动词的形态学时态，标注错误的时态用法。例如下图中，“shopping”的时态注释为现在分词(present participle)VBG，而校正后的“shop”则被注解为VBP。</p>  <center><img src="https://i.loli.net/2018/07/18/5b4f1c42837b3.jpg" alt></center>   <ul><li><strong>Word Formation</strong></li></ul><p>字面上注释了在语境上合理并且可以分配PTB标签的错误单词形式。下面例子中“stuffs”就是被视为一个复数名词处理。  </p><center><img src="https://i.loli.net/2018/07/19/5b500d0eba8ed.jpg" alt></center>  <p>类似地，在下面的示例中我们将“necessaryiest”注释为最高级(superlative)。  </p><center><img src="https://i.loli.net/2018/07/19/5b500dfe69501.jpg" alt></center>  <h4 id="5-2-Exceptions-to-Literal-Annotation"><a href="#5-2-Exceptions-to-Literal-Annotation" class="headerlink" title="5.2 Exceptions to Literal Annotation"></a>5.2 Exceptions to Literal Annotation</h4><p>虽然ESL的一般注解策略遵循literal sentence readings，但是有几种类型的构词错误使这种阅读没有信息或不可能，本质上迫使某些词必须用某种程度的解释进行注释。<br>因此，根据从FCE错误纠正中获得的对预定义词的解释，在原句中注释下列情况。   </p><ul><li><strong>Spelling</strong><br>拼写错误是根据单词的正确拼写形式进行注解的。为了支持自动注释工具的错误分析，关于拼写错误的单词形式的最常见用法，在POS标签的元数据字段TYPO中注释恰好形成有效单词的拼写错误的单词。下图的例子中，TYPO字段包含“where”的典型的POS注释，这在句子的上下文中显然是无意的。  </li></ul><center><img src="https://i.loli.net/2018/07/20/5b51350a77503.jpg" alt></center>  <ul><li><strong>Word Formation</strong><br>不能使用现有的PTB标签分配的错误的词结构会被标注为正确的词形式。  <center><img src="https://i.loli.net/2018/07/20/5b51368d57520.jpg" alt></center>  </li></ul><p>有复数后缀的畸形形容词会接收到一个标准的形容词POS标签。当适用时，这种情况还会在使用属性“ua”的错误注释中获得不必要的协议的附加标记。</p><center><img src="https://i.loli.net/2018/07/20/5b51386e77f42.jpg" alt></center>  <center><img src="https://i.loli.net/2018/07/20/5b5138b000c11.jpg" alt></center>  <p>错误的构词法导致有效的，但上下文不可信的构词形式也根据词的更正进行注解。在下面的例子中，名词形式的“sale”很可能是一个畸形动词的意外结果。 与导致有效单词的拼写错误类似，我们在TYPO元数据字段中标记典型的文字POS注释。  </p><center><img src="https://i.loli.net/2018/07/20/5b513b78bd3df.jpg" alt></center> <h4 id="6-Editing-Agreement"><a href="#6-Editing-Agreement" class="headerlink" title="6 Editing Agreement"></a>6 Editing Agreement</h4><p><img src="https://i.loli.net/2018/07/20/5b5171180c80d.jpg" alt></p><h4 id="7-Parsing-Experiments"><a href="#7-Parsing-Experiments" class="headerlink" title="7 Parsing Experiments"></a>7 Parsing Experiments</h4><p>TLE可以学习解析学习者语言并探索语法错误和解析性能之间的关系。因此，在数据集上提出了解析基准，并提供了几种评估语法错误降低了自动POS标记和依存解析质量的范围。  </p><ul><li>第一个实验：  <ul><li>measures tagging and parsing accuracy on the TLE and approximates the gloabal impact of grammatical errors on automatic annotation via performance comparison between the original and error corrected sentence versions.</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;学习记录之句法结构标注（一）&quot;&gt;&lt;a href=&quot;#学习记录之句法结构标注（一）&quot; class=&quot;headerlink&quot; title=&quot;学习记录之句法结构标注（一）&quot;&gt;&lt;/a&gt;学习记录之句法结构标注（一）&lt;/h1&gt;&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;&lt;font col
+      
+    
+    </summary>
+    
+      <category term="Papers" scheme="https://xiaoxiaoaurora.github.io/categories/Papers/"/>
+    
+      <category term="Syntactically Annotating" scheme="https://xiaoxiaoaurora.github.io/categories/Papers/Syntactically-Annotating/"/>
+    
+    
+      <category term="Papers" scheme="https://xiaoxiaoaurora.github.io/tags/Papers/"/>
+    
+      <category term="论文阅读笔记" scheme="https://xiaoxiaoaurora.github.io/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="Syntactically Annotating" scheme="https://xiaoxiaoaurora.github.io/tags/Syntactically-Annotating/"/>
+    
+      <category term="Universal Dependencies" scheme="https://xiaoxiaoaurora.github.io/tags/Universal-Dependencies/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>中文句法结构</title>
+    <link href="https://xiaoxiaoaurora.github.io/2018/07/03/%E4%B8%AD%E6%96%87%E5%8F%A5%E6%B3%95%E7%BB%93%E6%9E%84/"/>
+    <id>https://xiaoxiaoaurora.github.io/2018/07/03/中文句法结构/</id>
+    <published>2018-07-03T06:11:33.000Z</published>
+    <updated>2019-04-02T12:55:33.022Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="中文句法结构"><a href="#中文句法结构" class="headerlink" title="中文句法结构  "></a>中文句法结构  </h1><p>参考：<a href="https://blog.csdn.net/sinat_26917383/article/details/55682996" target="_blank" rel="noopener">NLP+句法结构（三）︱中文句法结构（CIPS2016、依存句法、文法）</a>  </p><p>自然语言处理中的自然语言句子级分析技术，可以大致分为词法分析、句法分析、语义分析三个层面。<br>第二个层面的句法分析（syntactic parsing）是对输入的文本句子进行分析以得到句子的句法结构的处理过程。对句法结构进行分析，一方面是语言理解的自身需求，句法分析是语言理解的重要一环，另一方面也为其它自然语言处理任务提供支持。例如句法驱动的统计机器翻译需要对源语言或目标语言（或者同时两种语言）进行句法分析；语义分析通常以句法分析的输出结果作为输入以便获得更多的指示信息。</p><p>根据句法结构的表示形式不同，最常见的句法分析任务可以分为以下三种：<br> (1) 短语结构句法分析（phrase-structure syntactic parsing），该任务也被称作成分句法分析（constituent syntactic parsing），作用是识别出句子中的短语结构以及短语之间的层次句法关系；<br> (2) 依存句法分析（dependency syntactic parsing），作用是识别句子中词汇与词汇之间的相互依存关系；<br> (3) 深层文法句法分析，即利用深层文法，例如词汇化树邻接<br>文法（Lexicalized Tree Adjoining Grammar， LTAG）、词汇功能文法（Lexical Functional Grammar， LFG）、组合范畴文法（Combinatory Categorial Grammar， CCG）等，对句子进行深层的句法以及语义分析。  </p><p>上述几种句法分析任务比较而言，<strong>依存句法分析属于浅层句法分析</strong>。其实现过程相对简单，比较适合在多语言环境下的应用，但是依存句法分析所能提供的信息也相对较少。深层文法句法分析可以提供丰富的句法和语义信息，但是采用的文法相对复杂，分析器的运行复杂度也较高，这使得深层句法分析当前不适合处理大规模数据。<strong>短语结构句法分析介于依存句法分析和深层文法句法分析之间。</strong></p><p><strong>词法分析是将输入句子从字序列转化为词和词性序列，句法分析将输入句子从词序列形式转化为树状结构，从而刻画句子的词法和句法结构。</strong>  </p><p><img src="https://i.loli.net/2018/07/03/5b3b64866a7b3.jpg" alt></p><blockquote><p>摘录自：CIPS2016 中文信息处理报告《第一章 词法和句法分析研究进展、现状及趋势》P8 -P11<br>CIPS2016&gt; 中文信息处理报告下载链接：<a href="http://cips-upload.bj.bcebos.com/cips2016.pdf" target="_blank" rel="noopener">http://cips-upload.bj.bcebos.com/cips2016.pdf</a>    </p></blockquote><p><img src="https://i.loli.net/2018/07/03/5b3b64c19411a.jpg" alt>  </p><p><img src="https://i.loli.net/2018/07/03/5b3b64dd25914.jpg" alt>   </p><p><img src="https://i.loli.net/2018/07/03/5b3b6c2ee21b5.jpg" alt>  </p><p>不同类型的句法分析体现在句法结构的表示形式不同，实现过程的复杂程度也有所不同。因此，科研人员采用不同的方法构建符合各个语法特点的句法分析系统。下文主要对句法分析技术方法和研究现状进行总结分析。  </p><h2 id="一、依存句法分析"><a href="#一、依存句法分析" class="headerlink" title="一、依存句法分析"></a>一、依存句法分析</h2><p>依存句法存在一个共同的基本假设：句法结构本质上包含词和词之间的依存（修饰）关系。<strong>一个依存关系连接两个词，分别是核心词（head）和依存词（dependent）。依存关系可以细分为不同的类型，表示两个词之间的具体句法关系。</strong>   </p><p>依存句法分析的形式化目标是针对给定输入句子<img src="https://i.loli.net/2018/07/03/5b3b6f0e7664a.jpg" alt>，寻找分值（或概率）最大的依存树<img src="https://i.loli.net/2018/07/03/5b3b6f3356c16.jpg" alt>  </p><p><img src="https://i.loli.net/2018/07/03/5b3b6f5e9639b.jpg" alt>  </p><p>其中， Y(x)表示输入句子x对应的合法依存树集合，即搜索空间； θ 为模型参数， 即特征权重向量。</p><p>目前研究主要集中在数据驱动的依存句法分析方法，即在训练实例集合上学习得到依存句法分析器，而不涉及依存语法理论的研究。数据驱动的方法的主要优势在于给定较大规模的训练数据，不需要过多的人工干预，就可以得到比较好的模型。因此，这类方法很容易应用到新领域和新语言环境。数据驱动的依存句法分析方法主要有两种主流方法：基于图（graph-based）的分析方法和基于转移（transition-based）的分析方法。    </p><h3 id="1、基于图的依存句法分析方法"><a href="#1、基于图的依存句法分析方法" class="headerlink" title="1、基于图的依存句法分析方法"></a>1、基于图的依存句法分析方法</h3><p><strong>基于图的方法将依存句法分析问题看成从完全有向图中寻找最大生成树的问题。</strong>一棵依存树的分值由构成依存树的几种子树的分值累加得到。根据依存树分值中包含的子树的复杂度，基于图的依存分析模型可以简单区分为一阶和高阶模型。高阶模型可以使用更加复杂的子树特征，因此分析准确率更高，但是解码算法的效率也会下降。基于图的方法通常采用基于动态规划的解码算法，也有一些学者采用柱搜索 (beamsearch)来提高效率。学习特征权重时，通常采用在线训练算法，如平均感知（averaged<br>perceptron）。  </p><h3 id="2、基于转移的依存句法分析方法"><a href="#2、基于转移的依存句法分析方法" class="headerlink" title="2、基于转移的依存句法分析方法"></a>2、基于转移的依存句法分析方法</h3><p><strong>基于转移的方法将依存树的构成过程建模为一个动作序列，将依存分析问题转化为寻找最优动作序列的问题</strong>。 早期，研究者们使用局部分类器（如支持向量机等）决定下一个动作。近年来，研究者们采用全局线性模型来决定下一个动作，一个依存树的分值由其对应的动作序列中每一个动作的分值累加得到。特征表示方面，基于转移的方法可以充分利用已形成的子树信息，从而形成丰富的特征，以指导模型决策下一个动作。模型通过贪心搜索或者柱搜索等解码算法找到近似最优的依存树。和基于图的方法类似，基于转移的方法通常也采用在线训练算法学习特征权重。</p><h3 id="3、多模型融合的依存句法分析方法"><a href="#3、多模型融合的依存句法分析方法" class="headerlink" title="3、多模型融合的依存句法分析方法"></a>3、多模型融合的依存句法分析方法</h3><p><strong>基于图和基于转移的方法从不同的角度解决问题，各有优势。</strong>基于图的模型进行全局搜索但只能利用有限的子树特征，而基于转移的模型搜索空间有限但可以充分利用已构成的子树信息构成丰富的特征。详细比较发现，这两种方法存在不同的错误分布。因此，<strong>研究者们使用不同的方法融合两种模型的优势，常见的方法有：stacked learning；对多个模型的结果加权后重新解码(re-parsing)；从训练语料中多次抽样训练多个模型(bagging)。</strong></p><h2 id="二、短语结构句法分析"><a href="#二、短语结构句法分析" class="headerlink" title="二、短语结构句法分析"></a>二、短语结构句法分析</h2><p>短语结构句法分析的研究基于上下文无关文法（Context Free Grammar,CEG）。上下文无关文法可以定义为四元组&lt;T,N,S,R&gt;，其中T表示终结符的集合（即词的集合），N表示非终结符的集合（即文法标注和词性标记的集合），S表示充当句法树根节点的特殊非终结符，而 R 表示文法规则的集合，其中每条文法规则可以表示为 <img src="https://i.loli.net/2018/07/03/5b3b743d0f43b.jpg" alt> ，这里的<img src="https://i.loli.net/2018/07/03/5b3b745418202.jpg" alt> 表示由非终结符与终结符组成的一个序列（允许为空）。  </p><p><img src="https://i.loli.net/2018/07/04/5b3c24d048328.jpg" alt>   </p><p><img src="https://i.loli.net/2018/07/04/5b3c24f0cd318.jpg" alt>  </p><p>当前主流的句法分析模型，无论底层的机器学习方法（生成模型或者判别模型）或是所采用的系统框架（单系统、多系统融合或者两阶段的重排序方法），本质上都可以归到基于词汇化方法或者基于符号重标记方法的句法分析器。</p><h2 id="三、深层文法句法分析"><a href="#三、深层文法句法分析" class="headerlink" title="三、深层文法句法分析"></a>三、深层文法句法分析</h2><p>相对前两种句法分析，深层文法句法分析的研究相对较少。本节简要介绍词汇化树邻接文法（Lexicalized Tree Adjoining Grammar， LTAG）、词汇功能文法（Lexical Functional<br>Grammar， LFG）和组合范畴文法（Combinatory Categorial Grammar， CCG）。</p><p>1、<strong>词汇化树邻接文法，简称LTAG</strong>，是对树邻接文法（TAG）进行词汇化扩展得到的。  </p><ul><li>树邻接文法包含两种基本树（Elementary Tree）：初始树（Initial Tree）和辅助树（Auxiliary Tree）。  </li><li>在树邻接文法中，有两种子树操作：替换（ Substitution）和插接（ Adjunction）。   </li><li>词汇化语法是给所有基本树都和具体词关联起来，使得树更加具有个性化。  </li></ul><p>2、<strong>词汇功能文法，简称 LFG，是一种短语结构文法。</strong>  </p><ul><li>LFG 把语言看成是由多维结构组成的，每一维都用特殊规则、概念和格式表示成一个特殊结构。  </li><li>LFG 包含两种最基本的结构：  <ul><li>1） F-结构，用于表示语法功能；  </li><li>2） C-结构，用于表示句法功能。  </li><li>除此之外还有一些其他结构，用于表示浅层信息，例如谓词论元关系等。</li></ul></li></ul><p>3、<strong>组合范畴文法，简称CCG，一种类型驱动的词汇化文法，通过词汇范畴显式地提供从句法到语义的接口，属于短语结构文法。</strong>  </p><ul><li>CCG 的基本操作包括：  <ul><li>1）原子范畴（Atomic Category），用于表达基本的词汇类别和句法功能；  </li><li>2）组合范畴（Function Category），由原子范畴构<br>成，通常用 X/Y 或 X\Y 来表示可以向左或者向右寻找变元 Y 来获得组合 X。</li></ul></li></ul><p>基于深层文法的句法分析器也取得一些进展。例如，Boullier 和 Sagot 构建基于LFG的分析器-SxLFG。 WenduanXu 等人借鉴依存分析模型，采用 Shift-reduce 框架构建高效的<br>CCG 分析器取得很好的效果。在树库语料方面，大多数深层文法树库是通过从 PTB 自动转换得到的，而黄昌宁老师在清华中文树库基础上结合中文特点，探索如何构建中文 CCG 树库。</p><h2 id="四、基于深度学习的句法分析"><a href="#四、基于深度学习的句法分析" class="headerlink" title="四、基于深度学习的句法分析"></a>四、基于深度学习的句法分析</h2><p>深度学习（Deep Learning）在句法分析课题上主要研究工作集中在特征表示方面。<strong>深度学习把原子特征进行向量化，在利用多层神经元网络提取特征</strong>。所谓向量化就是把词、词性等用低维、连续实数空间上的向量来表示，从而便于寻找特征组合与表示，同时容易进行计算。   </p><p><img src="https://i.loli.net/2018/07/03/5b3b7301e40e9.jpg" alt>  </p><p>在图 1 中，把词、词性、类别标签等原子特征表示为向量，然后利用多层网络进行特征提取。深度学习在特征表示方面有如下优点：  </p><ul><li>1）<strong>只需要原子特征</strong>。这些原子特征以前是通过人工的自由组合形成最终的一元特征、二元特征、三元特征、四元特征甚至更多元的组合。这种人工组合最后取得较好的效果，但是事实上我们不知道怎么组合能形成最佳的特征集合。<strong>深度学习将所有的原子特征向量化之后，直接采用向量乘法以及非线性等各种运算从理论上能实现任意元的特征组合</strong>。  </li></ul><ul><li>2）<strong>能使用更多的原子特征</strong>。比如基于图的模型中，在建立弧时，不仅仅使用左边第一个词、右边第一个词等原子特征，还可以使用左边整个词序列、右边整个词序列的特征。研究人员把这种基于深度学习的特征表示方法分别应用在基于图的句法分析模型和基于转移的句法分析模型上，实验结果表明深度学习方法开始在句法中发挥作用。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;中文句法结构&quot;&gt;&lt;a href=&quot;#中文句法结构&quot; class=&quot;headerlink&quot; title=&quot;中文句法结构  &quot;&gt;&lt;/a&gt;中文句法结构  &lt;/h1&gt;&lt;p&gt;参考：&lt;a href=&quot;https://blog.csdn.net/sinat_26917383/a
+      
+    
+    </summary>
+    
+      <category term="NLP" scheme="https://xiaoxiaoaurora.github.io/categories/NLP/"/>
+    
+      <category term="句法分析" scheme="https://xiaoxiaoaurora.github.io/categories/NLP/%E5%8F%A5%E6%B3%95%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="NLP" scheme="https://xiaoxiaoaurora.github.io/tags/NLP/"/>
+    
+      <category term="Syntactically Annotating" scheme="https://xiaoxiaoaurora.github.io/tags/Syntactically-Annotating/"/>
+    
+      <category term="句法分析" scheme="https://xiaoxiaoaurora.github.io/tags/%E5%8F%A5%E6%B3%95%E5%88%86%E6%9E%90/"/>
+    
+      <category term="中文句法结构" scheme="https://xiaoxiaoaurora.github.io/tags/%E4%B8%AD%E6%96%87%E5%8F%A5%E6%B3%95%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -155,15 +280,15 @@
     <link href="https://xiaoxiaoaurora.github.io/2018/06/09/Fast-and-Robust-Neural-Network-Joint-Models-for-Statistical-Machine-md/"/>
     <id>https://xiaoxiaoaurora.github.io/2018/06/09/Fast-and-Robust-Neural-Network-Joint-Models-for-Statistical-Machine-md/</id>
     <published>2018-06-09T01:40:24.000Z</published>
-    <updated>2019-04-02T11:54:15.468Z</updated>
+    <updated>2019-04-02T12:55:36.637Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Fast-and-Robust-Neural-Network-Joint-Models-for-Statistical-Machine-Translation"><a href="#Fast-and-Robust-Neural-Network-Joint-Models-for-Statistical-Machine-Translation" class="headerlink" title="Fast and Robust Neural Network Joint Models for Statistical Machine Translation"></a>Fast and Robust Neural Network Joint Models for Statistical Machine Translation</h1><p><strong>NNJM:</strong>通过一个源上下文窗口扩展NNLM（which augments the NNJM with a source context window）。该模型是纯词汇化(purely lexicalized)的，可以集成到任何MT的Decoder中。具体来说，该模型利用m-word源窗口扩展一个n-gram目标语言模型。和以往的联合模型不同，该模型能够很容易作为一个feature被整合到任何SMT解码器中。</p><p><img src="https://i.loli.net/2018/06/11/5b1dde6c03fe7.jpg" alt>    </p><p><strong>NNJM近似地估计了以源句子S为条件的目标假设T的概率。遵循目标的标准n-gram LM分解，其中每个目标字ti都受前面的n- 1个目标字的制约。为了使这个模型成为一个联合模型，对源上下文向量 <img src="https://i.loli.net/2018/06/11/5b1de290abead.jpg" alt>进行了条件分析：</strong>  </p><p><img src="https://i.loli.net/2018/06/11/5b1de1e00531f.jpg" alt>  </p><p>每一个目标词ti都直接对应着一个在位置ai的源词，<img src="https://i.loli.net/2018/06/11/5b1de290abead.jpg" alt>是在以ai为中心的m-word的源窗口。<br><img src="https://i.loli.net/2018/06/11/5b1de8f27cf9e.jpg" alt>  </p><p>这种从属（affiliation）概念源自单词对齐，但与单词对齐不同，每个目标单词必须与一个非空(non-NULL)源单词相关联。  </p><p><img src="https://i.loli.net/2018/06/11/5b1de8f27cf9e.jpg" alt>  </p><p><img src="https://i.loli.net/2018/06/11/5b1dec1261a97.jpg" alt>  </p><p>中文-英语平行句子的NNJM上下文模型例子如下图：  </p><p><img src="https://i.loli.net/2018/06/11/5b1deb3bb7995.jpg" alt></p><p>论文中采用的是n=4、m=11的15-gram LM 模型（神经网络语言模型能够优雅地扩展并利用任意大的上下文大小）。  论文中的神经网络结构与Bengio et.al等人的前溃神经网络语言模型结构基本相似，如下图。<br><img src="https://i.loli.net/2018/06/11/5b1dfed06cf34.jpg" alt></p><h3 id="1-NNJM中的神经网络结构"><a href="#1-NNJM中的神经网络结构" class="headerlink" title="1. NNJM中的神经网络结构"></a>1. NNJM中的神经网络结构</h3><p>NNJM中的神经网络架构与Bengio et al.(2003)所描述的原始前馈NNLM体系结构（feed-forward NNJM architecture）几乎相同。<br>隐藏层大小、词汇表大小和源窗口大小选择了这些值:  </p><p><img src="https://i.loli.net/2018/06/11/5b1e2e496fa49.jpg" alt>    </p><h3 id="2-神经网络训练"><a href="#2-神经网络训练" class="headerlink" title="2. 神经网络训练"></a>2. 神经网络训练</h3><p>除了使用平行语料库代替单语语料库外，训练过程与NNLM相同。在形式上，我们寻求使训练数据的逻辑可能性最大化：    </p><p><img src="https://i.loli.net/2018/06/11/5b1e2ed00920a.jpg" alt>  </p><pre><code>* 优化（Optimization）: 带SGD的标准后向传播。  * 权重（Weights）：[-0.05,0.05]之间进行随机初始化  * 学习率： 10^-3* minibatch size: 128* 20,000 minibatches/each epoch, 计算验证集的可能性。* 40 epochs* 我们在没有L2正则化或动量的情况下执行基本的权值更新。* Training is performed on a single Tesla K10 GPU, with each epoch (128*20k = 2.6M samples)</code></pre><h3 id="3-Self-Normalized-Neural-Network"><a href="#3-Self-Normalized-Neural-Network" class="headerlink" title="3. Self-Normalized Neural Network"></a>3. Self-Normalized Neural Network</h3><p>NNLM的计算成本在解码中是一个重要的问题，并且这个成本由整个目标词汇表上的输出softmax所支配。<br>我们的目标是能够使用相当大的且没有词类（word-classes）的词汇表，并且简单地避免在解码时计算整个输出层。为此，我们提出了自规一化（self-normalization）的新技术，其中输出层分数是接近于没有显示执行softmax的概率。<br>我们所定义的标准softmax对数似然函数如下：  </p><p><img src="https://i.loli.net/2018/06/11/5b1e3547018e5.jpg" alt>  </p><p>由上看出，在解码阶段当log(Z(x))等于0时（Z(x)=1）我们就只需要计算输出层的r行而不是计算整个矩阵，但是很难保证用这个来训练神经网络，所以可以通过增加训练目标函数来明确鼓励log-softmax正态化器（explicitly encourage the log-softmax normalizer）尽可能接近0：  </p><p><img src="https://i.loli.net/2018/06/11/5b1e382e98fe0.jpg" alt>  </p><p>在这种情况下，输出层的偏置权值初始化为log(1/|V|)，因此初始网络是自归一化的。在解码时，使用<img src="https://i.loli.net/2018/06/11/5b1e38db8ce39.jpg" alt>作为特征得分，而不是选用log(P(x))。在本篇论文中NNNJM结构中，在解码过程中，self-normalization将查找速度提高了15倍。  </p><p><img src="https://i.loli.net/2018/06/11/5b1e39f09cfac.jpg" alt></p><p>在用噪声对比估计（ Noise Contrastive Estimation ，NCE）训练自归一化的NNLMs时虽然加速了训练时间，但是没有机制能控制自归一化程度。</p><h3 id="4-Pre-Computing-the-Hidden-Layer"><a href="#4-Pre-Computing-the-Hidden-Layer" class="headerlink" title="4. Pre-Computing the Hidden Layer"></a>4. Pre-Computing the Hidden Layer</h3><p>自归一化显著提高了NNJM查找的速度，该模型仍比 back-off LM慢几个数量级。在这里，我们展示了预计算(Pre-Computing)第一个隐藏层的技巧，它进一步将NNJM查找速度提高了1000倍。<br>请注意，这种技术只会导致自归一化，前向反馈，有一个隐藏层的NNLM-style网络的显著加速。</p><h3 id="5-Decoding-with-the-NNJM"><a href="#5-Decoding-with-the-NNJM" class="headerlink" title="5. Decoding with the NNJM"></a>5. Decoding with the NNJM</h3><p><strong>论文所提出的NNJM本质上是一个带有附加源上下文的n-gram NNLM</strong>，所以可以很容易地集成到任何SMT解码器中。  </p><blockquote><p>NNJM is fundamentally an n-gram NNLM with additional source context, it can easily be integrated into any SMT decoder。  </p></blockquote><p>主要介绍将NNJM集成到分层解码器时必须考虑的事项。  </p><ul><li>Hierarchical Parsing（分层句法分析）  </li><li>Affiliation Heuristic（加入启发式）</li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="Fast-and-Robust-Neural-Network-Joint-Models-for-Statistical-Machine-Translation"><a href="#Fast-and-Robust-Neural-Network-Joint-Models-for-Statistical-Machine-Translation" class="headerlink" title="Fast and Robust Neural Network Joint Models for Statistical Machine Translation"></a>Fast and Robust Neural Network Joint Models for Statistical Machine Translation</h2><p><strong>NNJM:</strong>通过一个源上下文窗口扩展NNLM（which augments the NNJM with a source context window）。该模型是纯词汇化(purely lexicalized)的，可以集成到任何MT的Decoder中。具体来说，该模型利用m-word源窗口扩展一个n-gram目标语言模型。和以往的联合模型不同，该模型能够很容易作为一个feature被整合到任何SMT解码器中。</p><p><img src="https://i.loli.net/2018/06/11/5b1dde6c03fe7.jpg" alt>    </p><p><strong>NNJM近似地估计了以源句子S为条件的目标假设T的概率。遵循目标的标准n-gram LM分解，其中每个目标字ti都受前面的n- 1个目标字的制约。为了使这个模型成为一个联合模型，对源上下文向量 <img src="https://i.loli.net/2018/06/11/5b1de290abead.jpg" alt>进行了条件分析：</strong>  </p><p><img src="https://i.loli.net/2018/06/11/5b1de1e00531f.jpg" alt>  </p><p>每一个目标词ti都直接对应着一个在位置ai的源词，<img src="https://i.loli.net/2018/06/11/5b1de290abead.jpg" alt>是在以ai为中心的m-word的源窗口。<br><img src="https://i.loli.net/2018/06/11/5b1de8f27cf9e.jpg" alt>  </p><p>这种从属（affiliation）概念源自单词对齐，但与单词对齐不同，每个目标单词必须与一个非空(non-NULL)源单词相关联。  </p><p><img src="https://i.loli.net/2018/06/11/5b1de8f27cf9e.jpg" alt>  </p><p><img src="https://i.loli.net/2018/06/11/5b1dec1261a97.jpg" alt>  </p><p>中文-英语平行句子的NNJM上下文模型例子如下图：  </p><p><img src="https://i.loli.net/2018/06/11/5b1deb3bb7995.jpg" alt></p><p>论文中采用的是n=4、m=11的15-gram LM 模型（神经网络语言模型能够优雅地扩展并利用任意大的上下文大小）。  论文中的神经网络结构与Bengio et.al等人的前溃神经网络语言模型结构基本相似，如下图。<br><img src="https://i.loli.net/2018/06/11/5b1dfed06cf34.jpg" alt></p><h4 id="1-NNJM中的神经网络结构"><a href="#1-NNJM中的神经网络结构" class="headerlink" title="1. NNJM中的神经网络结构"></a>1. NNJM中的神经网络结构</h4><p>NNJM中的神经网络架构与Bengio et al.(2003)所描述的原始前馈NNLM体系结构（feed-forward NNJM architecture）几乎相同。<br>隐藏层大小、词汇表大小和源窗口大小选择了这些值:  </p><p><img src="https://i.loli.net/2018/06/11/5b1e2e496fa49.jpg" alt>    </p><h4 id="2-神经网络训练"><a href="#2-神经网络训练" class="headerlink" title="2. 神经网络训练"></a>2. 神经网络训练</h4><p>除了使用平行语料库代替单语语料库外，训练过程与NNLM相同。在形式上，我们寻求使训练数据的逻辑可能性最大化：    </p><p><img src="https://i.loli.net/2018/06/11/5b1e2ed00920a.jpg" alt>  </p><pre><code>* 优化（Optimization）: 带SGD的标准后向传播。  * 权重（Weights）：[-0.05,0.05]之间进行随机初始化  * 学习率： 10^-3* minibatch size: 128* 20,000 minibatches/each epoch, 计算验证集的可能性。* 40 epochs* 我们在没有L2正则化或动量的情况下执行基本的权值更新。* Training is performed on a single Tesla K10 GPU, with each epoch (128*20k = 2.6M samples)</code></pre><h4 id="3-Self-Normalized-Neural-Network"><a href="#3-Self-Normalized-Neural-Network" class="headerlink" title="3. Self-Normalized Neural Network"></a>3. Self-Normalized Neural Network</h4><p>NNLM的计算成本在解码中是一个重要的问题，并且这个成本由整个目标词汇表上的输出softmax所支配。<br>我们的目标是能够使用相当大的且没有词类（word-classes）的词汇表，并且简单地避免在解码时计算整个输出层。为此，我们提出了自规一化（self-normalization）的新技术，其中输出层分数是接近于没有显示执行softmax的概率。<br>我们所定义的标准softmax对数似然函数如下：  </p><p><img src="https://i.loli.net/2018/06/11/5b1e3547018e5.jpg" alt>  </p><p>由上看出，在解码阶段当log(Z(x))等于0时（Z(x)=1）我们就只需要计算输出层的r行而不是计算整个矩阵，但是很难保证用这个来训练神经网络，所以可以通过增加训练目标函数来明确鼓励log-softmax正态化器（explicitly encourage the log-softmax normalizer）尽可能接近0：  </p><p><img src="https://i.loli.net/2018/06/11/5b1e382e98fe0.jpg" alt>  </p><p>在这种情况下，输出层的偏置权值初始化为log(1/|V|)，因此初始网络是自归一化的。在解码时，使用<img src="https://i.loli.net/2018/06/11/5b1e38db8ce39.jpg" alt>作为特征得分，而不是选用log(P(x))。在本篇论文中NNNJM结构中，在解码过程中，self-normalization将查找速度提高了15倍。  </p><p><img src="https://i.loli.net/2018/06/11/5b1e39f09cfac.jpg" alt></p><p>在用噪声对比估计（ Noise Contrastive Estimation ，NCE）训练自归一化的NNLMs时虽然加速了训练时间，但是没有机制能控制自归一化程度。</p><h4 id="4-Pre-Computing-the-Hidden-Layer"><a href="#4-Pre-Computing-the-Hidden-Layer" class="headerlink" title="4. Pre-Computing the Hidden Layer"></a>4. Pre-Computing the Hidden Layer</h4><p>自归一化显著提高了NNJM查找的速度，该模型仍比 back-off LM慢几个数量级。在这里，我们展示了预计算(Pre-Computing)第一个隐藏层的技巧，它进一步将NNJM查找速度提高了1000倍。<br>请注意，这种技术只会导致自归一化，前向反馈，有一个隐藏层的NNLM-style网络的显著加速。</p><h4 id="5-Decoding-with-the-NNJM"><a href="#5-Decoding-with-the-NNJM" class="headerlink" title="5. Decoding with the NNJM"></a>5. Decoding with the NNJM</h4><p><strong>论文所提出的NNJM本质上是一个带有附加源上下文的n-gram NNLM</strong>，所以可以很容易地集成到任何SMT解码器中。  </p><blockquote><p>NNJM is fundamentally an n-gram NNLM with additional source context, it can easily be integrated into any SMT decoder。  </p></blockquote><p>主要介绍将NNJM集成到分层解码器时必须考虑的事项。  </p><ul><li>Hierarchical Parsing（分层句法分析）  </li><li>Affiliation Heuristic（加入启发式）</li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;Fast-and-Robust-Neural-Network-Joint-Models-for-Statistical-Machine-Translation&quot;&gt;&lt;a href=&quot;#Fast-and-Robust-Neural-Network-Joint-Mode
+        &lt;h2 id=&quot;Fast-and-Robust-Neural-Network-Joint-Models-for-Statistical-Machine-Translation&quot;&gt;&lt;a href=&quot;#Fast-and-Robust-Neural-Network-Joint-Mode
       
     
     </summary>
@@ -172,6 +297,8 @@
     
       <category term="SMT" scheme="https://xiaoxiaoaurora.github.io/categories/Papers/SMT/"/>
     
+    
+      <category term="Papers" scheme="https://xiaoxiaoaurora.github.io/tags/Papers/"/>
     
       <category term="论文阅读笔记" scheme="https://xiaoxiaoaurora.github.io/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"/>
     
@@ -231,13 +358,13 @@
       <category term="GEC" scheme="https://xiaoxiaoaurora.github.io/categories/Papers/GEC/"/>
     
     
+      <category term="Papers" scheme="https://xiaoxiaoaurora.github.io/tags/Papers/"/>
+    
       <category term="论文阅读笔记" scheme="https://xiaoxiaoaurora.github.io/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"/>
     
       <category term="GEC" scheme="https://xiaoxiaoaurora.github.io/tags/GEC/"/>
     
       <category term="NNJM" scheme="https://xiaoxiaoaurora.github.io/tags/NNJM/"/>
-    
-      <category term="Papers" scheme="https://xiaoxiaoaurora.github.io/tags/Papers/"/>
     
   </entry>
   
@@ -473,133 +600,6 @@
       <category term="OPP" scheme="https://xiaoxiaoaurora.github.io/tags/OPP/"/>
     
       <category term="类" scheme="https://xiaoxiaoaurora.github.io/tags/%E7%B1%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>3-25-3-31学习计划</title>
-    <link href="https://xiaoxiaoaurora.github.io/2018/03/25/3-25-3-31%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/"/>
-    <id>https://xiaoxiaoaurora.github.io/2018/03/25/3-25-3-31学习计划/</id>
-    <published>2018-03-25T02:15:31.000Z</published>
-    <updated>2019-04-02T11:12:30.744Z</updated>
-    
-    <content type="html"><![CDATA[<center><strong>3.25-3.31 学习计划</strong></center><ol><li>学习tensorflow, 实现bilstm+crf模型  </li><li>seq2seq+Attention 机制模型详解</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;center&gt;&lt;strong&gt;3.25-3.31 学习计划&lt;/strong&gt;&lt;/center&gt;
-
-&lt;ol&gt;
-&lt;li&gt;学习tensorflow, 实现bilstm+crf模型  &lt;/li&gt;
-&lt;li&gt;seq2seq+Attention 机制模型详解&lt;/li&gt;
-&lt;/ol&gt;
-
-      
-    
-    </summary>
-    
-      <category term="学习计划" scheme="https://xiaoxiaoaurora.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/"/>
-    
-    
-      <category term="学习计划" scheme="https://xiaoxiaoaurora.github.io/tags/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Keras之BiLSTM+CRF实现语法错误判断出现shape不符合问题</title>
-    <link href="https://xiaoxiaoaurora.github.io/2018/03/23/keras%E4%B9%8BBiLSTM-CRF%E5%AE%9E%E7%8E%B0%E8%AF%AD%E6%B3%95%E9%94%99%E8%AF%AF%E5%88%A4%E6%96%AD%E5%87%BA%E7%8E%B0shape%E4%B8%8D%E7%AC%A6%E5%90%88%E9%97%AE%E9%A2%98/"/>
-    <id>https://xiaoxiaoaurora.github.io/2018/03/23/keras之BiLSTM-CRF实现语法错误判断出现shape不符合问题/</id>
-    <published>2018-03-23T00:38:01.000Z</published>
-    <updated>2019-04-02T12:05:51.093Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="keras之BiLSTM-CRF实现语法错误判断出现shape不符合问题"><a href="#keras之BiLSTM-CRF实现语法错误判断出现shape不符合问题" class="headerlink" title="keras之BiLSTM+CRF实现语法错误判断出现shape不符合问题"></a>keras之BiLSTM+CRF实现语法错误判断出现shape不符合问题</h1><p>在用keras构建BiLSTM+CRF模型实现汉语语法错误诊断过程中，进行训练的时候总是报错：  </p><pre><code>ValueError: Cannot feed value of shape (128, 1) for Tensor u&apos;crf_1_target:0&apos;, which has shape &apos;(?,?,?)  </code></pre><p>出现错误位置在：  </p><pre><code>#bilstm layerbilstm_layer = Bidirectional(LSTM(hidden_dim, return_sequences=False))model.add(bilstm_layer)print(&apos;bilstm_layer.input_shape:&apos;, bilstm_layer.input_shape)print(&apos;bilstm_layer.output_shape:&apos;, bilstm_layer.output_shape)drop_layer = Dropout(dropout_rate)model.add(drop_layer)dense = Dense(num_class)model.add(dense)print(&apos;drop_layer.input_shape:&apos;, drop_layer.input_shape)print(&apos;drop_layer.output_shape:&apos;, drop_layer.output_shape)time_layer = TimeDistributed(Dense(num_class))model.add(time_layer) print(&apos;time_layer.input_shape:&apos;, time_layer.input_shape)print(&apos;time_layer.output_shape:&apos;, time_layer.output_shape)#加载CRF层crf_layer = CRF(num_class, sparse_target=True)model.add(crf_layer)print(&apos;crf_layer.input_shape:&apos;, crf_layer.input_shape)print(&apos;crf_layer.output_shape:&apos;, crf_layer.output_shape)#pdb.set_trace()model.compile(loss=&apos;sparse_categorical_crossentropy&apos;, optimizer=&apos;sgd&apos;)</code></pre><p>BiLSTM是一个时序序列，添加层的参数设置中return_sequence值应为Fasle，若设置为True则每个时间步都会有一个输出值返回，设为False只会返回序列中最后一个时间步的输出值。其次在BiLSTM后接的CRF层也是时许序列，对应着的输出也是每个时间有输出，因此CRF的最终输出为（batch_size,timesteps,num_class）。而在本次任务中，只要求判断输入句子是否有语法错误，真值是一个shape为（batch_size,num_class）d的输出。还有time_layer = TimeDistributed(Dense(num_class))，其中TimeDistributed这个包装器将一个层应用于输入的每个时间切片，所以都是导致最后shape不符的原因，因此会出现上述错误。</p><p><strong>解决方法：</strong><br>弃用CRF层和TimeDistributed层。发现不报错了……<br>但目前还不知道怎么能让CRF和TimeDistributed层存在的情况下不报错，后续有了解决方法会有更新。</p><p>代码参考：<a href="http://blog.csdn.net/qq_16912257/article/details/78969966" target="_blank" rel="noopener">用keras搭建bilstm crf</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;keras之BiLSTM-CRF实现语法错误判断出现shape不符合问题&quot;&gt;&lt;a href=&quot;#keras之BiLSTM-CRF实现语法错误判断出现shape不符合问题&quot; class=&quot;headerlink&quot; title=&quot;keras之BiLSTM+CRF实现语法
-      
-    
-    </summary>
-    
-      <category term="Keras" scheme="https://xiaoxiaoaurora.github.io/categories/Keras/"/>
-    
-      <category term="CodingErrors" scheme="https://xiaoxiaoaurora.github.io/categories/Keras/CodingErrors/"/>
-    
-    
-      <category term="Keras" scheme="https://xiaoxiaoaurora.github.io/tags/Keras/"/>
-    
-      <category term="CodingErrors" scheme="https://xiaoxiaoaurora.github.io/tags/CodingErrors/"/>
-    
-      <category term="CRF" scheme="https://xiaoxiaoaurora.github.io/tags/CRF/"/>
-    
-      <category term="BiLSTM" scheme="https://xiaoxiaoaurora.github.io/tags/BiLSTM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python之Logging</title>
-    <link href="https://xiaoxiaoaurora.github.io/2018/03/20/Python%E4%B9%8BLogging/"/>
-    <id>https://xiaoxiaoaurora.github.io/2018/03/20/Python之Logging/</id>
-    <published>2018-03-20T05:23:26.000Z</published>
-    <updated>2019-04-02T12:39:51.866Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Python-logging"><a href="#Python-logging" class="headerlink" title="Python | logging??"></a>Python | logging??</h1><p>(?<a href="https://www.cnblogs.com/liujiacai/p/7804848.html" target="_blank" rel="noopener">https://www.cnblogs.com/liujiacai/p/7804848.html</a>)  </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Python-logging&quot;&gt;&lt;a href=&quot;#Python-logging&quot; class=&quot;headerlink&quot; title=&quot;Python | logging??&quot;&gt;&lt;/a&gt;Python | logging??&lt;/h1&gt;&lt;p&gt;(?&lt;a href=&quot;htt
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="https://xiaoxiaoaurora.github.io/categories/Python/"/>
-    
-    
-      <category term="Python" scheme="https://xiaoxiaoaurora.github.io/tags/Python/"/>
-    
-      <category term="logging" scheme="https://xiaoxiaoaurora.github.io/tags/logging/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深度学习之序列模型</title>
-    <link href="https://xiaoxiaoaurora.github.io/2018/03/20/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B/"/>
-    <id>https://xiaoxiaoaurora.github.io/2018/03/20/深度学习之序列模型/</id>
-    <published>2018-03-20T05:23:26.000Z</published>
-    <updated>2019-04-02T12:43:02.619Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>序列模型  —吴恩达深度学习第五课</strong>   </p><h1 id="Week-1循环序列模型"><a href="#Week-1循环序列模型" class="headerlink" title="Week 1循环序列模型"></a>Week 1循环序列模型</h1><h2 id="1-1-为什么选择序列模型？"><a href="#1-1-为什么选择序列模型？" class="headerlink" title="1.1 为什么选择序列模型？"></a>1.1 为什么选择序列模型？</h2><p> 在本次课程中会学习自行创建这些序列模型，先从一些使用了序列模型的例子来进行了解。</p><ol><li>语音识别<br>给出一段输入音频片段X,并要求输出片段对应的文字记录Y，在这个例子中输入数据和输出数据都是序列数据。因为X是一个按时序播放的音频片段，输出Y时一系列单词。所以之后将要学习到的一些序列模型，如循环神经网络等对于语音识别方面都是比较有用。  </li><li>音乐生成问题<br>也是序列模型的一个例子。而且<strong>只有输出数据是序列数据，它的输入数据可以是空集，也可以是个单一的整数</strong>，这个数可能指代你想要生成的音乐风格也可能是你想要生成的曲子的头几个音符.</li><li>情感分类<br>输入数据是序列，例如“There is nothing to like in this movie.”,这句评论应为几星？—&gt;  *</li><li>DNA序列分析<br>DNA序列可以用A G C T来表示，当给出一段DNA序列：AGCCCCTGTGAGGAACTAG，你能够标记出（AG<strong>CCCCTGTGAGGAACT</strong>AG）哪部分是匹配哪种蛋白质。</li><li>机器翻译<br>输入：Voulez-vous chanter avecmoi?  输出：Do you want to sing with me?</li><li>视频行为识别<br>输入：一系列的视频帧    输出：识别视频帧中的行为  </li><li>命名实体识别<br>给定一个句子，要求你识别出句子中的人名。<br>所有这些问题都可以可以称为：使用标签数据（X,Y）作为训练集的监督学习。但是从这些例子中也可以看出序列问题有很多不同类型，有些问题里输入数据和输出数据都是序列，即使是在这种情况下X和Y有时也会不一样长，但是在例子4和例子7中是一样长的。在另一些问题里，只有X或是只有Y是序列。通过本课程会学到一些使用不同情况的序列模型。<br><img src="深度学习之序列模型/1.1.png" alt></li></ol><h2 id="1-2-数学符号-（Notation）"><a href="#1-2-数学符号-（Notation）" class="headerlink" title="1.2 数学符号    （Notation）"></a>1.2 数学符号    （Notation）</h2><p>定义序列学习符号，以便于一步步构建序列模型。<br><strong> Motivating Example  </strong><br>当想要一个能够自动识别句中人名位置的序列模型时（显然是一个命名实体识别问题），这常用于搜索引擎，比如想要搜取过去24小时内所有新闻报道提及的人名，用这个方法就能够恰当的进行索引，命名实体识别系统可以用来查找不同类型文件中的人名、公司名、时间、地点、国家名等信息。<br>给定了一个输入语句x，假如想要一个序列模型输出y,是的输入的每个单词都对应一个输出值，同时y又能够表明单词是否是人名的一部分，如果是人名则输出1，否则输出0。<br><img src="深度学习之序列模型/2_1.png" alt>    </p><table><thead><tr><th>输入语句x:</th><th>Harry</th><th>Potter</th><th>and</th><th>Hermione</th><th>Granger</th><th>invented</th><th>a</th><th>new</th><th>spell</th><th>.  </th></tr></thead><tbody><tr><td></td><td>x1</td><td>x2</td><td>x3</td><td>x4</td><td>x5</td><td>x6</td><td>x7</td><td>x8</td><td>x9</td><td>(上标尖括号)  </td></tr><tr><td>输出y:</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td></td></tr><tr><td></td><td>y1</td><td>y2</td><td>y3</td><td>y4</td><td>y5</td><td>y6</td><td>y7</td><td>y8</td><td>y9</td><td>(上标尖括号)  </td></tr></tbody></table><p>上面这种输出方式也许并不是最好的，还有其它的复杂输出方式，不仅能够知道这个输入词是否是人名的一部分，还能知道这个人名在这个句子里从哪里开始到哪里结束。但是在上述这个例子中会讨论这种简单的输出方式。上述例子中的输入数据是有9个单词组成的序列，所以最后会有9个特征集合来表示这9个单词，并按序列中的位置（x^1）进行索引。用x^t来表示这个序列的中间位置，t表示这是一个时序序列，但不论是否是时许序列在这里都用t来表示索引序列中的位置，输出数据也一样。  </p><ul><li><strong>y^t</strong>:表示输出数据  </li><li><strong>T_x</strong>：表示输入序列的长度  </li><li><strong>T_y</strong>：表示输出序列的长度，在本例中T_x = T_y = 9，但是在有些问题中两者的值也会不一样。  </li><li><strong>x^(i)尖括号t</strong>：表示第i个训练样本的第t个元素  </li><li><strong>T_x^(i)</strong>：表示的第i个训练样本的输入序列长度  </li></ul><p>一件需要我们事先决定的是：应该怎样表示句子中的一个单词？例如Harry这样的单词。而x^1究竟是什么。<br>想要表示一个句子里的单词第一件事是做一张词表，[a,aaron,…,and,…,Harry,…Potter,…zulu],词表以列的的形式存在。<br>构建这么一个词表的方法是：遍历你的训练集，然后查找到前10000个常用的单词，可以去浏览一些网络词典获得英语中常用的前10000个单词。<br>接下来可以用one-hot表示法来表示词典里的每个单词，例如x^1表示Harry（在词典中位于第4075个位置）这个单词，那么就是一个第4075行是1其余位置都是0的列向量。<br>用这种方式表示X的目的是,用序列模型在X和目标输出Y之间，学习建立一个映射。<br>还剩最后一件事：如果遇到的单词不在词表中时，创建一个新的标记，也就是一个叫做Unknown Word的伪造单词，用“UNK”作为标记来表示不在词表中的单词。</p><h2 id="1-3-循环神经网络模型"><a href="#1-3-循环神经网络模型" class="headerlink" title="1.3 循环神经网络模型"></a>1.3 循环神经网络模型</h2><p>如何建立一个模型/神经网络来学习X到Y的映射。<br>可以尝试的方法之一是：使用标准的神经网络。<br><img src="深度学习之序列模型/3.1.png" alt>  </p><p>把上述例子中9个单词输入到一个标准的神经网络中，经过一些隐藏层后会输出9个值为0或1的项，它表明9个输入单词是否是人名的一部分。但是结果表明这种方法并不好，主要有两个问题： </p><ol><li>输入输出数据在不同的样本中的长度不一样  </li><li>在文本的不同位置上学到的特征并不共享（单词和单词之间的特性无法被捕捉到）。    </li></ol><p>比如神经网络在x^1的位置上发现harry是人名的一部分，在其他位置发现harry时你也希望也能识别出是人名出来。在卷积网络中我们是这样学习的，最大单词数乘以10000维的维度，那么在第一层的权重矩阵中会有巨量的参数。假设我们有10000个常用词，为其构建一个10000*1 的矩阵(column matrix)，假如第一个词是苹果(apple), 那么对应的第一个位置为1，其他都为0，所以称之为one-hot。这样每个单词都有对应的矩阵进行表示，如果这个词没有出现在我们的字典中，那么我们可以给一个特殊的符号代替，常用的是 [UNK] (unknown)    </p><p><strong>但是在下面要讲的循环神经网络却没有上述两种问题，那么什么是循环神经网络？</strong><br><img src="深度学习之序列模型/3.2.png" alt><br>如果从左到右读句子第一个单词假如说是x[^1]，将第一个单词输入到神经网络中的隐藏层，尝试预测输出y（判断是否是人名的一部分），那么循环神经网络做了些什么？当我们输入第二个单词时，同样通过隐层输出y，它不仅仅是利用了第二个单词的信息，它还利用了时间步1的信息，具体而言就是时间步1的激活值就会传递到时间步子2.在下一个时间步，在第三个单词输出y，直到最后一个时间布输入了x[^Tx]，输出y[^Ty]。在这个例子中Tx = Ty,但是如果Tx和Ty不同上面的神经网络结构也会有变化。所以在每一个时间步，循环神经网络传递一个激活值a到下一个时间布中用于计算。为了开始整个流程，在时间步0处设置一个激活值a^0,通常是一个零向量（伪激活值0最常见），也可以随即用其他方法初始化a^0。<br>还有一种循环神经网络结构，为了表示循环画一个圈表示输回网络层，在这个圈上有一个黑色方块表示会延迟一个时间步。  </p><p><strong>用W_ax表示管理着从x^1到隐藏层的连接的一系列参数</strong>，每个时间步使用的都是相同的参数W_ax，而激活值是水平联系，是由参数W_aa决定的，同时每一个时间步使用的都是相同的参数W_aa,每一个时间步的输出由W_ya决定。    </p><p>循环神经网络是从左向右扫描数据，同时每个时间步是共享参数的，共享参数，但有一个缺点是它只使用了当前位置在序列中之前的输入信息来预测并没有使用序列中后部分的信息。而双向循环神经网络解决了这个问题，它同时使用前面和后面的信息。   </p><p><strong>那么这些参数是如何起作用的？</strong><br><img src="深度学习之序列模型/3.3.png" alt><br>上图是一张清理后的神经网络图示，一开始先输入a^0(是个零向量)，接下来就是前向传播过程,为了算出a(1):<br>a(1)=g(W_aa<em>a^(0)+W_ax</em>x^(1)+B_a) –&gt;循环神经网络常用激活函数：tanh/Relu<br>y(1)=g(W_ya*a^(1)+B_y) –&gt;根据输出选择sigmooid/softmax  </p><p>(矩阵下标的符号说明：W_ax，第二个下标意味着W_ax要乘以某个x类型的量，a是表明要计算的某个a类型的量)    </p><p>更常用:<br>a(t)=g(W_aa<em>a^(t-1)+W_ax</em>(x^t)+B_a)<br>y(t)=g(W_ya<em>a^(t)+b_y)<br><strong>简化上面两个等式：</strong><br>a(t)=g(W_a[a^(t-1),x^(t)]+B_a)<br>定义W_a = [W_aa|W_ax],假设W_aa是一个（100，100）维的矩阵，那么W_ax是(100,10000),W_a是(100,10100)<br>[a^(t-1),x^(t)]的意思是将这两个向量行堆在一起，形成了一个10100维度的向量。这样做的好处是把参数矩阵压缩成一个W_a,当建立更加复杂的模型时可以简化符号。<br>同样地，y^t = g(W_y</em>a^(t) + B_y),W_y和B_y仅有一个下标表明输出什么类型的量。  </p><h2 id="1-4-通过时间的反向传播"><a href="#1-4-通过时间的反向传播" class="headerlink" title="1.4 通过时间的反向传播"></a>1.4 通过时间的反向传播</h2><p>损失函数,定义为标准的logistic回归损失函数，也称为交叉熵损失函数。<br><img src="深度学习之序列模型/4_1.png" alt><br>在这个反向传播过程中，最重要的信息传递或者说最重要的递归运算就是从右到左的运算，这种运算有一个别致的名字：通过时间（“穿越时间”）反向传播。  </p><h2 id="1-5不同类型的循环神经网络"><a href="#1-5不同类型的循环神经网络" class="headerlink" title="1.5不同类型的循环神经网络"></a>1.5不同类型的循环神经网络</h2><p>在前面几节已经了解了T_x和T_y相等情况下的循环神经网络。但是T_x和T_y并不总是相等的。   </p><p><strong>Examples</strong><br><img src="深度学习之序列模型/5_1.png" alt>  </p><ul><li><p>Music generation:T_x长度可以是0（空集）或1，one-to-many形式，就是一个序列生成问题。</p></li><li><p>文本情感分类：输出y可以是1到5的，而输入是一个序列我们在RNN结构中读入所有单词后再输出y’(预测值，一个数字)，many-to-one</p></li></ul><ul><li>机器翻译：many-to-many，输入输出的长度不同。  </li></ul><p><img src="深度学习之序列模型/5_2.png" alt>  </p><p><img src="深度学习之序列模型/5_3.png" alt><br>  对于Many to many 结构有两种：  </p><ol><li>T_x和T_y相等。  </li><li>T_x和T_y不相等。  </li></ol><p><img src="深度学习之序列模型/5_4.png" alt></p><h2 id="1-6语言模型与序列生成-Language-model-and-sequence-generation"><a href="#1-6语言模型与序列生成-Language-model-and-sequence-generation" class="headerlink" title="1.6语言模型与序列生成(Language model and sequence generation)"></a>1.6语言模型与序列生成(Language model and sequence generation)</h2><p>什么是语言模型呢？<br>  <img src="深度学习之序列模型/6_1.png" alt><br>语音识别系统<br> the apple and <em>pair</em> salad.<br> the apple and <em>pear</em> salad.  </p><ul><li>p(the apple and pair salad)=3.2*10^(-13)  </li><li>p(the apple and pear salad)=3.2*10^(-10)<br>语言模型所做的就是：一个句子出现的概率是多少？p(sentences)= ?<br>语言模型所的基础工作：输入一个句子（准确的说是一个文本序列y^1,…,y^(T_y)），语言模型会估计某个句子中各个单词出现的概率。<br>So,如何来用RNN来建语言模型呢？<br><img src="深度学习之序列模型/6_2.png" alt><br>首先需要一个训练集，包含一个很大的英文文本语料库或者其他的语料库。<br>假如有一个句子：<br>Cats average 15 hours of sleep a day.<br>首先把这个句子标记化（tokenize），即像之前那样创建一个词典，把每个单词转换成对应的one-hot向量，也就是字典中的索引，另外增加一个’EOS’为句子的结束标记。EOS也可以做为训练集中每一个句子的结尾。如果训练集中有一些词不在词典中，unk标记这个单词。我们只针对UNK这个词来进行概率模型构建而不针对这个具体的词。完成标记化的过程后表示将这个句子都映射到了各个标志上或者说字典中的各个词上。接下来我们会构建一个RNN模型来构建这些序列的概率模型。  </li></ul><p><strong>构建RNN模型</strong><br><img src="深度学习之序列模型/6_3.png" alt><br>（把x^t设为y^(t-1)）<br>Cats average 15 hours of sleep a day.《EOS》<br>在第0个时间不，计算激活项a^1,它是以x^1作为输入的函数，在这里x^1是被设为零向量的，在之前的a^0，按照惯例也是被设为零向量的，于是a^1要做的是它会通过softmax进行一些预测来计算出第一个词，其结果就是y’^1。这一步其实是通过一个soft max层来预测字典中的任意一个单词会是第一个词的概率。 所以y’^1只是来预测第一个词的概率，而不必管结果是什么。所有当字典中有10000个词时通过softmax就会有10000种结果（或包括UNK和EOS两种在内的10002中）。然后RNN进入下个时间步，仍然使用激活项a^1,然后在这一步要做出的计算是第二个词会是什么，现在我们依然传给它正确的第一个词y^1（cats），其实也就是x^2，使用激活项a^2，通过softmax层得到y’^2,也就是p<br>(average/cats)为多少，然后依照之前传入下一时间步。然后最后会传递到如上图所示第九个时间步，然后把x^9也就是y^8=”day”传递给它，得到y’^9(“EOS”)。看图理解！  </p><p>接下来为了用RNN来训练这个网络，我们要定义代价函数：<br><img src="深度学习之序列模型/6_5costfunc.png" alt>  </p><blockquote><p>或者也可以理解为：预测每个词的概率是多少，y<t>是一个10000+2维（字典大小+unk+结束标记）。<br>现在有一个新的序列 y1,y2,y3.现在要计算出整个句子各个单词的出现概率P(y^1,y^2,y^3) = p(y^1)<em>p(y^2|y^1)</em>p(y^3|y^1,y^2),第一个softmax层告诉你p(y1)第二个softmax,p(y2|y1),第三个p(y3|y1,y2)。  </t></p></blockquote><p> 接下来讨论如何用语言模型从模型中采样。</p><h2 id="1-7-对新序列采样"><a href="#1-7-对新序列采样" class="headerlink" title="1.7 对新序列采样"></a>1.7 对新序列采样</h2><p><strong>当你训练了一个模型后，要想了解这个模型学到了什么，一个非正式的方法是进行一次新序列采样。</strong><br>记住，一个序列模型，模拟了任意特定单词序列的概率，我们要做的是对这个概率分布进行采样，来生成一个新的单词序列。 这个网络已经被下图中的所示结构训练过了， 而为了进行采样要做一些截然不同的事情。<br><img src="深度学习之序列模型/7_1.png" alt><br>比如说现在有一个训练好的模型，为了进行采样，第一步要做的事就是，对你想要模型生成的第一个词进行采样，于是输入x^1=0,a^1=0,而第一个时间步得到的是所有可能的输出，是经过softmax层后得到的概率，然后 <strong>根据这个softmax的分布进行随机取样</strong>。<br>softmax给你的就是第一个单词是a的概率是多少，是aaron的概率是多少，…是zulu或是unk的概率是多少， 然后对这个向量使用例如np.random.choice来根据向量中这些概率的分布进行采样，这样就能对第一个词进行采样了。<br>然后继续下一个时间步，记住，第二个时间步需要y^1作为输入，而现在要做的是把刚刚进行采样的词y’^1当作下一时间步的输入x^2，无论在上一个时间步得到的是什么词都要把他传递到下一个位置作为输入，(x2=y’^1),然后softmax就会预测得到y’^2。<br>比如，你在第一个时间步得到的是the,  然后把它作为x^2，<br>同样依次进行。不管得到什么都把它传递下去知道最后一个时间步。  怎么判断这个句子结束？方法就是，如果代表句子结尾的EOS标记在你的字典中，你可以一直进行采样直到得到EOS标记，这代表着你已经抵达结尾，可以停止采样了。<br>另外一种情况是，如果字典中没有这个词，你可以决定从20个或100个或其他个词中进行采样 ，然后一直将抽样进行下去，直到达到所设定的时间步。不过这种过程会产生一些未知标记，如果你要确保你的算法不会输出这种标识，就要拒绝采样过程中产生任何未知的标记，一旦出现就继续在剩下的词中重新进行采样，直到得到一个不是未知标识的词，不介意未知标识产生的话你也可以不管。以上就是如何从一个RNN语言模型生成一个随机选择的句子。<br>直到现在我们所建立的是基于词汇的RNN模型，意思就是字典中的词都是英语单词。根据实际应用也可以构建一个基于字符的RNN结构，字典中仅包含从a到z的字母，也可以有空格符、数字0到9，大写字幕A到Z，[a，b，c，..z， ，。，,，;，0，…，9，A，…，Z]，可以看一看实际的训练集中可能会出现的字符，一起来构建一个字典。相较于基于词汇的模型，基于字符模型的y^1,y^2等都是单独的字符而不是单独的词汇。基于字符的语言模型，不会产生unk标志，一得到很多、很长的序列，基于字符的语言模型，在捕捉句子中也只是捕捉句子较前部分如何影响较后部分，不如基于词汇的模型能够捕捉长范围的信息。</p><p><img src="深度学习之序列模型/7_2.png" alt>  </p><h2 id="1-8-带有神经网络的梯度消失（Vanishing-gradients-with-RNNs）"><a href="#1-8-带有神经网络的梯度消失（Vanishing-gradients-with-RNNs）" class="headerlink" title="1.8 带有神经网络的梯度消失（Vanishing gradients with RNNs）"></a>1.8 带有神经网络的梯度消失（Vanishing gradients with RNNs）</h2><p><img src="深度学习之序列模型/8_1.png" alt><br>以一个语言模型为例子，有一句话如下：</p><blockquote><ul><li>The cat which already ate and maybe already ate a bunch of food that was delicious … was full.<br>其中cat是单数所以是“was full”。</li><li>The cats which already ate …,were full.  cats对应的是”were full”。</li></ul></blockquote><p>这个句子中的信息有长期的依赖，最前面的单词对后面的单词有影响。但是目前我们所见到的RNN语言模型结构，不擅长捕捉这种长期依赖效应。<br>之前讨论过训练很深的网络会有梯度消失的问题。比如说有一个很深很深的网络，对这个网络从左到右做前向传播然后再反向传播，  我们知道如果是个很深的网络难么得到的y’很难传播回去，很难影响到靠前面的权重，很难影响前面层的计算。对于有同样问题的RNN，很难让一个很深的网络层能够意识到要记住前面的信息然后告诉后面的序列信息生成依赖效应从而选择是用was 还是were。<br>基本的RNN模型有很多限制，很难调整序列前面的计算。如果不解决的话RNN会不擅长这种长期依赖问题。在反向传播时，随着层数的增多，梯度不仅可能指数型的下降，还会出现指数级的上升（梯度爆炸问题）。事实上，梯度下降在训练RNN时是首要的问题，尽管梯度爆炸也会出现，但是梯度爆炸很明显，因为指数级大的梯度会让参数变得很大，以至于网络参数崩溃，所以梯度爆炸很容易发现，会看到很多NaN或者不是数字的情况，这意味着你的网络计算出现了数值溢出。如果发现了梯度爆炸的问题，一个解决方法就是用<strong>梯度修剪</strong>，即观察梯度向量如果它大于某个阈值，缩放梯度向量保证它不会太大， 这就是通过一些最大值来修剪的方法。<br>梯度消失更难解决。  </p><h2 id="1-9-GRU（Gated-Recurrent-Unit，门控循环单元）"><a href="#1-9-GRU（Gated-Recurrent-Unit，门控循环单元）" class="headerlink" title="1.9 GRU（Gated Recurrent Unit，门控循环单元）"></a>1.9 GRU（Gated Recurrent Unit，门控循环单元）</h2><p><strong>GRU改变了RNN的隐藏层，使其更好的捕捉深层连接(捕捉长范围的依赖)并改善了梯度消失的问题。</strong><br><img src="深度学习之序列模型/9_1.png" alt><br>上图（是RNN隐藏层的单元的可视化呈现）中的公式是指：在一个RNN结构的时间序列t处计算激活值， 把RNN的单元画个图，输入a^(t-1),即上一个时间步的激活值，然后在输入一个x^t，把它们两个合并起来，然后加上权重项，经过计算后，假设g是tanh函数，经过tanh得到激活值a^t，然后这个激活值会传递给一个softmax单元或者其它用于产生输出y’^t的东西。  </p><p><img src="深度学习之序列模型/9_2.png" alt><br>许多GRU的想法来自于两篇paper。上图中给出的句子，如下：  </p><pre><code>the cat which already ate ...,was full.  </code></pre><p>当我们从左到右读这个句子，GRU会有一个新的变量c代表记忆细胞（memory cell），当它看到一只猫是单数还是复数之再看到后面的句子后仍能够判断句子的主语究竟是单数还是复数。于是在时间t处，记忆细胞有关于t的值c。然而实际上GRU输出了激活值a^t，c^t = a^t。于是我们使用不同的符号c和a来表示记忆细胞的值和输出的激活值，即使他们是一样的。（<em>注意：在LSTM中这两个值是不一样的。</em>）<br>在每一个时间步，我们将用一个候选值(即c~^t的值,就是个替代值)重写记忆细胞，候选值替代了c^t的值，然后用tanh函数来计算这个候选值。公式如下</p><pre><code>c~^t=tanh(W_c[c^(t-1),x^t]+b_c) --用c~更新c的等式 </code></pre><p><strong>然而GRU中最重要的思想是：</strong> 我们有一个门（gate）,把这个门叫做Γ_u ，其中Γ是大写的希腊字母读作gamma，u是下标，代表更新门（update gate），这是一个0到1之间的值。  </p><pre><code>Γ_u=sigmoid(W_u[c^(t-1),x^t]+b_u)  --用F_u更新门决定是否要真的更新  </code></pre><p>于是我们可以这么看待,记忆细胞c将被设定为0或1，这取决于你考虑的单词在句子中是单数还是复数，然后GRU单元会一直记住c^t的值（假设为1），一直到（”was”）处还是1，所以用was。于是gate的作用就是决定什么时候你会更新这个值，特别是当你看到词组 the cat（句子的主语）时，你会知道在说一个新的概念，这就是一个好时机去更新，然后当你使用它的时候，就不需要记住它了（这个地方我有疑问）。<br>So，接下来要给GRU用的式子是：  </p><pre><code>c^t = Γ_u * c~^t + (1-Γ_u)*c^(t-1)     </code></pre><p>注意到，如果更新值Γ_u是1，也就是说把这个新值c^t设为候选值，然后相同的将门值设为1，然后往前，再更新这个值，对于所有在这直接按的值应该把门的值设为0（不更新用旧的值）。  </p><p>因为gate很容易取到0，只要（W_u[c^(t-1),x^t]+b_u）这个值是一个很大的负数，就基本为0，这样有利于维持细胞的值，因为gamma很接近0，可能是0.0000001或者更小，这样就不会有梯度消失的问题，这就是说c^t基本等于c^(t-1),而c^t的值也很好的被维持了，即使经过很多的时间步还是可以很好的维持下来，这就是缓解梯度消失的关键。<br>一些实现细节：c^t可以是向量，假如有一个100维的隐藏的激活值，那么c^t也是100维的，c~^t、Γ_u也是相同的维度。  </p><p><img src="深度学习之序列模型/9_3.png" alt><br><strong>完整的GRU</strong><br>对于full  GRU要做的一个改变就是：在第一个式子中给记忆细胞的新候选值，加上一个新的项Γ_r，您可以认为r代表相关性，Γ_r（相关门）用来计算出下一个c^t的候选值和c^(t-1)的相关性程度。  </p><pre><code>Γ_r=sigmoid(W_r[c^(t-1),x^t]+b_r)  </code></pre><h2 id="1-10-长短期记忆（Long-Short-Term-Memory-LSTM）"><a href="#1-10-长短期记忆（Long-Short-Term-Memory-LSTM）" class="headerlink" title="1.10 长短期记忆（Long Short Term Memory,LSTM）"></a>1.10 长短期记忆（Long Short Term Memory,LSTM）</h2><p>比GRU更有效、更广泛应用。  </p><p><img src="深度学习之序列模型/10_1.png" alt>  </p><p>注意到，在LSTM中不再有a^t=c^t的情况，一个LSTM的新特性是不只有一个更新门Γ_u控制，还有一个遗忘门Γ_f，一个新的输出门Γ_o， 于是更新值    </p><p><code>c^t = Γ_u*c~^t + Γ_f*c^(t-1)</code>   </p><p>所以这给了记忆细胞选择权去维持旧的值c^(t-1)或者就加上新的值c~^t，这时 a^t = Γ_o*c^t 。下图中就是控制LSTM的几个公式：<br><img src="深度学习之序列模型/10_2.png" alt>   </p><p>选择使用GRU或LSTM并没有统一的准则。GRU的结构更简单，更容易去构建一个更大的网络，它只有两个门在计算性上也运行的更快，扩大模型的规模。但是LSTM有三个门，更加强大和灵活。</p><h2 id="1-11-双向神经网络（Bidirectional-RNN，BRNN）"><a href="#1-11-双向神经网络（Bidirectional-RNN，BRNN）" class="headerlink" title="1.11 双向神经网络（Bidirectional RNN，BRNN）"></a>1.11 双向神经网络（Bidirectional RNN，BRNN）</h2><p>以上已经了解过RNN模型的关键的结构，还有两种方法能构建更好的模型，其中之一就是双向RNN模型，这个模型不仅可以让你在序列的某点处获取之前的信息还可以获取未来的信息；第二个就是深层的RNN。  </p><p><img src="深度学习之序列模型/11_1.png" alt>   </p><p>为了了解双向RNN的动机，我们先看下命名实体识别那个例子上图所示。<br>Teddy判断是不是人名有个问题，只看前几个单词是无法准确判断的，<br>双向RNN可以解决这个问题。下图解释双向RNN的工作原理。  </p><p><img src="深度学习之序列模型/11_2.png" alt> </p><p>给定一个输入序列，这个网络的前向先计算a^1，a^2,…,a^(T_x)，然后反向的序列计算a^(T_x),…,a^2,a^1，这两个方向的计算都是前向传播，一个是从左到右的前向计算，一个是从右到左的反向计算。把这些反向的网络激活值都算完了就可以计算预测结果了。  </p><p>事实上，很多的NLP问题对于大量有自然语言处理问题的文本，有LSTM单元的双向RNN模型是用的最多的，所以如果有NLP问题，并且文本句子都是完整的，首先需要标定这些句子，一个有LSTM单元的双向RNN模型有前向和反向传播过程是个不错的首选。  </p><h2 id="1-12-深度RNN"><a href="#1-12-深度RNN" class="headerlink" title="1.12 深度RNN"></a>1.12 深度RNN</h2><p>有的时候为了得到更好的模型，需要把很多个RNN堆叠加在一起，这种网络我们称之为深层RNN。<br>用a^([1]0)表示原来的激活值a^0。<br>a^([l]t)：l表示第l层，t表示第t个时间点。<br>比如我们要计算 a^（[2]3），它有两个输入。  </p><pre><code>a^([2]3)=g((W_a)^[2] [a^([2]2),a^([1]3]+(b_a)^[3])</code></pre><p><img src="深度学习之序列模型/12_1.png" alt></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;strong&gt;序列模型  —吴恩达深度学习第五课&lt;/strong&gt;   &lt;/p&gt;
-&lt;h1 id=&quot;Week-1循环序列模型&quot;&gt;&lt;a href=&quot;#Week-1循环序列模型&quot; class=&quot;headerlink&quot; title=&quot;Week 1循环序列模型&quot;&gt;&lt;/a&gt;Week 
-      
-    
-    </summary>
-    
-      <category term="DeepLearning" scheme="https://xiaoxiaoaurora.github.io/categories/DeepLearning/"/>
-    
-      <category term="RNN" scheme="https://xiaoxiaoaurora.github.io/categories/DeepLearning/RNN/"/>
-    
-    
-      <category term="DeepLearning" scheme="https://xiaoxiaoaurora.github.io/tags/DeepLearning/"/>
-    
-      <category term="Neural Network" scheme="https://xiaoxiaoaurora.github.io/tags/Neural-Network/"/>
-    
-      <category term="RNN" scheme="https://xiaoxiaoaurora.github.io/tags/RNN/"/>
-    
-      <category term="LSTM" scheme="https://xiaoxiaoaurora.github.io/tags/LSTM/"/>
-    
-      <category term="GRU" scheme="https://xiaoxiaoaurora.github.io/tags/GRU/"/>
     
   </entry>
   
