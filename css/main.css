@@ -1735,10 +1735,7 @@ pre .javascript .function {
   max-width: 120px;
   height: auto;
   border: 1px solid #eee;
-  opacity: 0.8;
-}
-.site-author-image {
-  border-radius: 100%;
+  opacity: 1;
 }
 .site-author-name {
   margin: 0;
@@ -1849,7 +1846,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #94b101;
+  background: #fff;
 }
 .feed-link,
 .chat {
