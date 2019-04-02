@@ -35,9 +35,9 @@
     <link href="https://xiaoxiaoaurora.github.io/2019/04/02/HelloBlog/"/>
     <id>https://xiaoxiaoaurora.github.io/2019/04/02/HelloBlog/</id>
     <published>2019-04-02T02:07:17.000Z</published>
-    <updated>2019-04-02T08:59:39.587Z</updated>
+    <updated>2019-04-02T09:47:23.400Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="E:\hexo\images\EiffelBelow.jpg" alt="Eiffel">  </p><p><strong>怕什么真理无穷,进一寸有一寸的欢喜</strong>  </p><pre><code>[python3.6]import torchprint(torch.__version__)  </code></pre><p><a href="http://shenzekun.cn/hexo%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E5%8A%A8%E6%80%81%E8%83%8C%E6%99%AF.html" target="_blank" rel="noopener">a.添加动态背景</a><br><a href="http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html" target="_blank" rel="noopener">b.实现点击出现桃心效果</a><br><a href>c.</a><br><a href>d.</a><br><a href>e.</a></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="E:\hexo\images\EiffelBelow.jpg" alt="Eiffel">  </p><p><strong>怕什么真理无穷,进一寸有一寸的欢喜</strong>  </p><pre><code>import torchprint(torch.__version__)  </code></pre>]]></content>
     
     <summary type="html">
     
@@ -45,8 +45,8 @@
       
         &lt;p&gt;&lt;img src=&quot;E:\hexo\images\EiffelBelow.jpg&quot; alt=&quot;Eiffel&quot;&gt;  &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;怕什么真理无穷,进一寸有一寸的欢喜&lt;/strong&gt;  &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[python3.6]
-import t
+&lt;pre&gt;&lt;code&gt;import torch
+print(t
       
     
     </summary>
