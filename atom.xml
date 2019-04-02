@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiaoxiaoaurora.github.io/"/>
-  <updated>2019-04-02T12:20:05.593Z</updated>
+  <updated>2019-04-02T12:32:03.586Z</updated>
   <id>https://xiaoxiaoaurora.github.io/</id>
   
   <author>
@@ -17,24 +17,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://xiaoxiaoaurora.github.io/2019/04/02/range()%E5%9C%A8Python3%E4%B8%AD%E4%B8%8Epython2%E4%B8%AD%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
-    <id>https://xiaoxiaoaurora.github.io/2019/04/02/range()在Python3中与python2中的区别/</id>
-    <published>2019-04-02T12:23:09.482Z</published>
-    <updated>2019-04-02T12:20:05.593Z</updated>
+    <title>Python | range()在Python3中与python2中的区别</title>
+    <link href="https://xiaoxiaoaurora.github.io/2019/03/23/range()%E5%9C%A8Python3%E4%B8%AD%E4%B8%8Epython2%E4%B8%AD%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>https://xiaoxiaoaurora.github.io/2019/03/23/range()在Python3中与python2中的区别/</id>
+    <published>2019-03-23T01:48:21.000Z</published>
+    <updated>2019-04-02T12:32:03.586Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>title: Python | range()在Python3中与python2中的区别<br>date: 2019/03/23 9:48:21<br>categories: [Python]<br>tags: [Python,range]<br>photos: </p><pre><code>- &quot;https://bing.ioliu.cn/photo/BM1759_EN-AU0329493905?force=home_7&quot; </code></pre><hr><h1 id="Python-range-在Python3中与python2中的区别"><a href="#Python-range-在Python3中与python2中的区别" class="headerlink" title="Python | range()在Python3中与python2中的区别"></a>Python | range()在Python3中与python2中的区别</h1><p>python2中的range返回的是一个列表</p><p>python3中的range返回的是一个迭代值</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Python-range-在Python3中与python2中的区别"><a href="#Python-range-在Python3中与python2中的区别" class="headerlink" title="Python | range()在Python3中与python2中的区别"></a>Python | range()在Python3中与python2中的区别</h1><p>python2中的range返回的是一个列表</p><p>python3中的range返回的是一个迭代值</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;hr&gt;
-&lt;p&gt;title: Python | range()在Python3中与python2中的区别&lt;br&gt;date: 2019/03/23 9:48:21&lt;br&gt;categories: [Python]&lt;br&gt;tags: [Python,range]&lt;br&gt;photos: 
+        &lt;h1 id=&quot;Python-range-在Python3中与python2中的区别&quot;&gt;&lt;a href=&quot;#Python-range-在Python3中与python2中的区别&quot; class=&quot;headerlink&quot; title=&quot;Python | range()在Python3
       
     
     </summary>
     
+      <category term="Python" scheme="https://xiaoxiaoaurora.github.io/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://xiaoxiaoaurora.github.io/tags/Python/"/>
+    
+      <category term="range" scheme="https://xiaoxiaoaurora.github.io/tags/range/"/>
     
   </entry>
   
@@ -483,43 +488,45 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>Python | logging模块</title>
     <link href="https://xiaoxiaoaurora.github.io/2018/03/20/python-logging%E6%A8%A1%E5%9D%97/"/>
     <id>https://xiaoxiaoaurora.github.io/2018/03/20/python-logging模块/</id>
-    <published>2018-03-20T05:19:24.221Z</published>
-    <updated>2019-04-02T12:15:34.923Z</updated>
+    <published>2018-03-20T05:23:26.000Z</published>
+    <updated>2019-04-02T12:31:36.527Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>title: python logging模块<br>date: 2018-03-20 13:23:26<br>categories: [Python]<br>tags: [Python，logging]<br>photos: </p><pre><code>- &quot;https://bing.ioliu.cn/photo/BM1759_EN-AU0329493905?force=home_7&quot; </code></pre><hr><h1 id="python-logging模块"><a href="#python-logging模块" class="headerlink" title="python logging模块"></a>python logging模块</h1><p>（转<a href="https://www.cnblogs.com/liujiacai/p/7804848.html" target="_blank" rel="noopener">https://www.cnblogs.com/liujiacai/p/7804848.html</a>）  </p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Python-logging模块"><a href="#Python-logging模块" class="headerlink" title="Python | logging模块"></a>Python | logging模块</h1><p>（转<a href="https://www.cnblogs.com/liujiacai/p/7804848.html" target="_blank" rel="noopener">https://www.cnblogs.com/liujiacai/p/7804848.html</a>）  </p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;hr&gt;
-&lt;p&gt;title: python logging模块&lt;br&gt;date: 2018-03-20 13:23:26&lt;br&gt;categories: [Python]&lt;br&gt;tags: [Python，logging]&lt;br&gt;photos: &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;- 
+        &lt;h1 id=&quot;Python-logging模块&quot;&gt;&lt;a href=&quot;#Python-logging模块&quot; class=&quot;headerlink&quot; title=&quot;Python | logging模块&quot;&gt;&lt;/a&gt;Python | logging模块&lt;/h1&gt;&lt;p&gt;（转&lt;a href=
       
     
     </summary>
     
+      <category term="Python" scheme="https://xiaoxiaoaurora.github.io/categories/Python/"/>
+    
+    
+      <category term="Python，logging" scheme="https://xiaoxiaoaurora.github.io/tags/Python%EF%BC%8Clogging/"/>
     
   </entry>
   
   <entry>
-    <title>Python正则表达式</title>
+    <title>Python | 正则表达式</title>
     <link href="https://xiaoxiaoaurora.github.io/2018/03/20/Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     <id>https://xiaoxiaoaurora.github.io/2018/03/20/Python正则表达式/</id>
     <published>2018-03-20T04:57:25.000Z</published>
-    <updated>2019-04-02T12:16:11.385Z</updated>
+    <updated>2019-04-02T12:31:12.455Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><hr><p>正则表达式修饰符 - 可选标志<br>正则表达式可以包含一些可选标志修饰符来控制匹配的模式。修饰符被指定为一个可选的标志。多个标志可以通过按位 OR(|) 它们来指定。如 re.I | re.M 被设置成 I 和 M 标志：  </p><center><img src="https://i.loli.net/2018/07/19/5b506b1c2d437.jpg" alt></center>  <center><img src="https://i.loli.net/2018/07/19/5b506b6a00d73.jpg" alt></center><h2 id="正则表达式小知识"><a href="#正则表达式小知识" class="headerlink" title="正则表达式小知识"></a>正则表达式小知识</h2><pre><code>**总结**^ 匹配字符串的开始$ 匹配字符串的结尾  \b 匹配一个单词的边界。\d 匹配任意数字。\D 匹配任意非数字字符。p? 匹配一个可选的 p 字符 (换言之，它匹配 1 次或者 0 次 p 字符)。p* 匹配0次或者多次 p 字符。p+ 匹配1次或者多次 p 字符。p{n,m} 匹配 p 字符，至少 n 次，至多 m 次。(a|b|c) 要么匹配 a，要么匹配 b，要么匹配 c。(p) 一般情况下表示一个记忆组 (remembered group)。你可以利用 re.search 函数返回对象的 groups() 函数获取它的值。. 正则表达式中的点号通常意味着 “匹配任意单字符”  </code></pre><p>###匹配标签对:<a href="http://blog.csdn.net/eastmount/article/details/51082253" target="_blank" rel="noopener">http://blog.csdn.net/eastmount/article/details/51082253</a></p><p>###正则总结转自：<a href="http://blog.csdn.net/u014052851/article/details/76640149" target="_blank" rel="noopener">http://blog.csdn.net/u014052851/article/details/76640149</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Python-正则表达式"><a href="#Python-正则表达式" class="headerlink" title="Python | 正则表达式"></a>Python | 正则表达式</h1><hr><p>正则表达式修饰符 - 可选标志<br>正则表达式可以包含一些可选标志修饰符来控制匹配的模式。修饰符被指定为一个可选的标志。多个标志可以通过按位 OR(|) 它们来指定。如 re.I | re.M 被设置成 I 和 M 标志：  </p><center><img src="https://i.loli.net/2018/07/19/5b506b1c2d437.jpg" alt></center>  <center><img src="https://i.loli.net/2018/07/19/5b506b6a00d73.jpg" alt></center><h2 id="正则表达式小知识"><a href="#正则表达式小知识" class="headerlink" title="正则表达式小知识"></a>正则表达式小知识</h2><pre><code>**总结**^ 匹配字符串的开始$ 匹配字符串的结尾  \b 匹配一个单词的边界。\d 匹配任意数字。\D 匹配任意非数字字符。p? 匹配一个可选的 p 字符 (换言之，它匹配 1 次或者 0 次 p 字符)。p* 匹配0次或者多次 p 字符。p+ 匹配1次或者多次 p 字符。p{n,m} 匹配 p 字符，至少 n 次，至多 m 次。(a|b|c) 要么匹配 a，要么匹配 b，要么匹配 c。(p) 一般情况下表示一个记忆组 (remembered group)。你可以利用 re.search 函数返回对象的 groups() 函数获取它的值。. 正则表达式中的点号通常意味着 “匹配任意单字符”  </code></pre><p>###匹配标签对:<a href="http://blog.csdn.net/eastmount/article/details/51082253" target="_blank" rel="noopener">http://blog.csdn.net/eastmount/article/details/51082253</a></p><p>###正则总结转自：<a href="http://blog.csdn.net/u014052851/article/details/76640149" target="_blank" rel="noopener">http://blog.csdn.net/u014052851/article/details/76640149</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;正则表达式&quot;&gt;&lt;a href=&quot;#正则表达式&quot; class=&quot;headerlink&quot; title=&quot;正则表达式&quot;&gt;&lt;/a&gt;正则表达式&lt;/h1&gt;&lt;hr&gt;
-&lt;p&gt;正则表达式修饰符 - 可选标志&lt;br&gt;正则表达式可以包含一些可选标志修饰符来控制匹配的模式。修饰符被指定为
+        &lt;h1 id=&quot;Python-正则表达式&quot;&gt;&lt;a href=&quot;#Python-正则表达式&quot; class=&quot;headerlink&quot; title=&quot;Python | 正则表达式&quot;&gt;&lt;/a&gt;Python | 正则表达式&lt;/h1&gt;&lt;hr&gt;
+&lt;p&gt;正则表达式修饰符 - 可选标志&lt;br&gt;正则
       
     
     </summary>
