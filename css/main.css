@@ -1846,7 +1846,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #2670c3;
+  background: #f0f;
 }
 .feed-link,
 .chat {
@@ -3040,10 +3040,27 @@ ul.breadcrumb li+li:last-child {
 }
 body {
   background: url("/images/world.jpg");
+}
+.main-inner {
+  margin-top: 60px;
+  padding: 60px 60px 60px 60px;
+  background: url("/images/world.jpg");
+  opacity: 1;
+  min-height: 500px;
+}
+.header {
+  background: url("/images/world.jpg") none repeat scroll !important;
+}
+#sidebar {
+  background: url("/images/world.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   background-position: center;
+  background-repeat: no-repeat;
+}
+#sidebar p,
+#sidebar span,
+#sidebar a {
+  color: #000;
 }
 .tag-cloud a {
   color: #5073b8;
