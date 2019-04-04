@@ -105,7 +105,7 @@
 <meta property="og:description" content="Python 命令行解析工具Argparse的介绍及使用Argparse Tutorial:smile:argparse是python的命令行解析工具，是Python标准库推荐使用的命令行参数解析模块，负责从sys.argv中解析程序所需的参数，同时argparse还可以自动生成帮助信息和错误提示。 Example以下代码是一个Python程序，它采用整数列表并生成总和或最大值:       假设">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/04/04/5ca5cc3c2711d.jpg">
-<meta property="og:updated_time" content="2019-04-04T10:52:49.752Z">
+<meta property="og:updated_time" content="2019-04-04T10:56:12.522Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python之argparse使用">
 <meta name="twitter:description" content="Python 命令行解析工具Argparse的介绍及使用Argparse Tutorial:smile:argparse是python的命令行解析工具，是Python标准库推荐使用的命令行参数解析模块，负责从sys.argv中解析程序所需的参数，同时argparse还可以自动生成帮助信息和错误提示。 Example以下代码是一个Python程序，它采用整数列表并生成总和或最大值:       假设">
@@ -439,7 +439,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-04 18:52:49" itemprop="dateModified" datetime="2019-04-04T18:52:49+08:00">2019-04-04</time>
+                <time title="修改时间：2019-04-04 18:56:12" itemprop="dateModified" datetime="2019-04-04T18:56:12+08:00">2019-04-04</time>
               
             
           </span>
@@ -542,15 +542,15 @@
 <pre><code>python argparse_tu1.py 5 6 7 8 --sum
 </code></pre><p><img src="https://i.loli.net/2018/07/13/5b488a38483e6.jpg" alt>  </p>
 <p>如果传入无效的参数，它将发出一个错误:  </p>
-<pre><code>python argparse_tu1.py x i a o
-</code></pre><p><img src="https://i.loli.net/2018/07/13/5b488abee045c.jpg" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python argparse_tu1.py x i a o</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2018/07/13/5b488abee045c.jpg" alt></p>
 <p>以下部分将引导完成此示例:</p>
 <h3 id="创建一个parser"><a href="#创建一个parser" class="headerlink" title="创建一个parser"></a>创建一个parser</h3><p>使用argparse的第一步就是创建一个ArgumentParser对象：</p>
-<pre><code>&gt;&gt;&gt; parser = argparse.ArgumentParser(description &apos;Process some integers.&apos;)  
-</code></pre><p>创建的ArgumentParser对象保存了将命令行参数解析为Python数据类型的所需要的所有信息。    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parser = argparse.ArgumentParser(description &apos;Process some integers.&apos;)</span><br></pre></td></tr></table></figure>
+<p>创建的ArgumentParser对象保存了将命令行参数解析为Python数据类型的所需要的所有信息。    </p>
 <h3 id="添加参数"><a href="#添加参数" class="headerlink" title="添加参数"></a>添加参数</h3><p>创建ArgumentParser对象之后，需要向其声明指定程序所需的参数信息（几个参数、是否必须、参数类型等等），这一步需要调用add_argument()方法实现。add_argument()方法会告诉ArgumentParser对象如何在命令行上获取字符串（注意：所有的命令行参数都是string类型）并将它们转换为程序所需的对象。调用parse_args（）时会存储和使用此信息。例如：</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parser.add_argument(&apos;integers&apos;, metavar=&apos;N&apos;, type=int, nargs=&apos;+&apos;, help=&apos;an integer for the accumulator&apos;)</span><br><span class="line">parser.add_argument(&apos;--sum&apos;, dest=&apos;accumulator&apos;, action=&apos;store_const&apos;, const=sum, default=max, help=&apos;sum the integers(default: find the max)&apos;)</span><br></pre></td></tr></table></figure>
-</code></pre><p>参考：<a href="https://docs.python.org/3/library/argparse.html" target="_blank" rel="noopener">https://docs.python.org/3/library/argparse.html</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parser.add_argument(&apos;integers&apos;, metavar=&apos;N&apos;, type=int, nargs=&apos;+&apos;, help=&apos;an integer for the accumulator&apos;)</span><br><span class="line">parser.add_argument(&apos;--sum&apos;, dest=&apos;accumulator&apos;, action=&apos;store_const&apos;, const=sum, default=max, help=&apos;sum the integers(default: find the max)&apos;)</span><br></pre></td></tr></table></figure>
+<p>参考：<a href="https://docs.python.org/3/library/argparse.html" target="_blank" rel="noopener">https://docs.python.org/3/library/argparse.html</a></p>
 
       
     </div>
