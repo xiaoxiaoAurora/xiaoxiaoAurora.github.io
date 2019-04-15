@@ -105,7 +105,7 @@
 <meta property="og:description" content="Dependency Biaffine Attention Neural Dependency Parsing [TOC] 摘要本文主要针对 Dependency Parsing 提出了一个新的模型，该文以Kiperwasser &amp;amp; Goldberg (2016)  最近的工作为基础，在graph-based的dependency parser的基础上引入了 neural attentio">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/04/04/5ca5d524ec8fa.jpg">
-<meta property="og:updated_time" content="2019-04-15T01:18:45.615Z">
+<meta property="og:updated_time" content="2019-04-15T02:58:00.518Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deep Biaffine Attention for Neural Dependency Parsing">
 <meta name="twitter:description" content="Dependency Biaffine Attention Neural Dependency Parsing [TOC] 摘要本文主要针对 Dependency Parsing 提出了一个新的模型，该文以Kiperwasser &amp;amp; Goldberg (2016)  最近的工作为基础，在graph-based的dependency parser的基础上引入了 neural attentio">
@@ -439,7 +439,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-15 09:18:45" itemprop="dateModified" datetime="2019-04-15T09:18:45+08:00">2019-04-15</time>
+                <time title="修改时间：2019-04-15 10:58:00" itemprop="dateModified" datetime="2019-04-15T10:58:00+08:00">2019-04-15</time>
               
             
           </span>
@@ -634,7 +634,135 @@
 <p>​    这在概念上的优势是，可以直接在对单词 <em>j</em>  在术语$$ \mathbf{r}_j^T u$$中接收任何dependents的先验概率 和 j 在$$ \mathbf{r}_j^T  \mathbf{U}^{(1)} \mathbf{r}_i $$中接受特定依存项 i 的可能性之间进行建模。还使用双仿射分类器来预测给定的head或预测head $$ \mathbf{y}_i $$的依存标签(3)。</p>
 <p><img src="https://i.loli.net/2019/04/11/5caf5134cb098.jpg" alt></p>
 <p>同样地为每个类的每个先验概率建模：</p>
-<p>只给出一个词 i 的可能性(一个词带有一个特定的标签的概率为多少)，</p>
+<ul>
+<li><p>只给出一个词 i 的可能性(一个词带有一个特定的标签的概率为多少)，</p>
+</li>
+<li><p>只给出head word $$ y_i $$的可能性(一个词带有一个特定标签的依存项的概率为多少)，</p>
+</li>
+<li>给出单词 i 和它的head的类的可能性(给定一个单词的head，且该单词带有某个特定标签的概率为多少)。</li>
+</ul>
+<p>在Biaffine分类器之前将较小的MLPs应用于循环输出状态，其优点是可以剥离与当前决策无关的信息。</p>
+<p><img src="https://i.loli.net/2019/04/12/5cb03d62d75e8.jpg" alt></p>
+<p>在标签分类器中使用递归状态之前，还将MLP应用于递归状态。和其它Graph-based模型一样，在训练时,预测的解析树是每一个单词都依存于其得分最高的head（虽然在测试时也会通过MST算法确保解析树是一个格式良好的树）。</p>
+<p>除了和其他Graph-based解析器之间存在架构差异之外，作者还做出了一些超参数选择，使得解析器性能优于其他解析器。</p>
+<p><img src="https://i.loli.net/2019/04/11/5caf541f85a36.jpg" alt></p>
+<table>
+<thead>
+<tr>
+<th>Hyperparameters</th>
+<th>Decriptions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>外部词向量</td>
+<td>计算一个在训练数据集中至少出现两次的单词组成的“训练过的”embedding矩阵，并将这些embedding添加到它们相应的预先训练过的embedding中。任何不在这两种嵌入矩阵中出现的单词都将由一个OOV符号替换。100维</td>
+</tr>
+<tr>
+<td>POS tag vectors</td>
+<td>100d</td>
+</tr>
+<tr>
+<td>three BiLSTM layers</td>
+<td>400 dimensions in each direction</td>
+</tr>
+<tr>
+<td>ReLU MLP Layers</td>
+<td>500 and 100 dimensions</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h2><h3 id="数据集及评价标准介绍"><a href="#数据集及评价标准介绍" class="headerlink" title="数据集及评价标准介绍"></a>数据集及评价标准介绍</h3><ul>
+<li><p>English Penn Treebank</p>
+<ul>
+<li>采用版本为3.3.0和3.5.0的Stanford Dependency转换工具将PTB数据集转换为<strong>PTB-SD 3.3.0</strong>和<strong>PTB-SD 3.5.0</strong>两个版本。</li>
+<li>POS标签：Stanford POS tagger 生成</li>
+</ul>
+</li>
+<li><p>Chinese Penn Treebank</p>
+<ul>
+<li>POS tags：Gold tags</li>
+</ul>
+</li>
+<li>CoNLL2009 shared task dataset<ul>
+<li>POS tags：提供的预测标签</li>
+</ul>
+</li>
+</ul>
+<p>注意：在评估PTB-SD和CTB时省略标点符号</p>
+<p>通过PTB-SD 3.5.0验证集来实现超参搜索，为最小化到PTB-SD 3.3.0基准测试的过度拟合。在PTB-SD 3.5.0测试集上来进行超参分析。</p>
+<p><img src="https://i.loli.net/2019/04/12/5cb058fe84822.jpg" alt></p>
+<h4 id="超参选择"><a href="#超参选择" class="headerlink" title="超参选择"></a>超参选择</h4><ul>
+<li>Attention机制</li>
+</ul>
+<p>研究了不同分类器对准确度和性能的影响，发现：<strong>深层双线性模型在速度和精度方面都优于其他模型</strong>。</p>
+<p>其中，浅层双线性的arc和label分类器在与深层双线性模型设置相同时，两者UAS性能相当（deep: 95.75%, shallow：95.74%）。但是由于label分类器较大 ($$ {801 &lt; c &lt; 801} $$)，所以解析过程中速度慢且<strong>发生过拟合</strong>。解决过拟合的方法有两种：</p>
+<p>（1）增大MLP的dropout – 对解析速度并无改善；</p>
+<p>（2）将recurrent cell大小降到300 – 这将降低UAS的准确性，也不会提升解析速度到论文中提出的deep模型中。</p>
+<p><strong>结果：</strong>实现了Kiperwasser &amp; Goldberg (2016) 提出的基于MLP的注意力和分类方法，发现在LAS和UAS的准确性方面都明显低于deep biaffine方法。</p>
+<h4 id="Network-Size"><a href="#Network-Size" class="headerlink" title="Network Size"></a>Network Size</h4><p>那么网络大小是如何影响速度和准确性的？</p>
+<ul>
+<li>Kiperwasser &amp; Goldberg’s 2016：两层维度为125的BiLSTM</li>
+<li>Hashimoto et al.’s 2016：一层100维的BiLSTM用于解析过程(两个较低的层也被训练用于其他目标)</li>
+<li>Cheng et al.’s 2016：一层368维的GRU</li>
+</ul>
+<p><strong>结论：</strong>使用三层或四层比使用两层可以获得更好的性能，并将LSTM大小从200增加到300或400个维度同样显著地提高了性能。<strong>BUT：</strong>具有400维递归状态的模型在验证集上的性能显著优于300维模型，但在测试集上则不是这样。</p>
+<h4 id="Recurrent-Cell"><a href="#Recurrent-Cell" class="headerlink" title="Recurrent Cell"></a>Recurrent Cell</h4><ul>
+<li><p>虽然GRU( Cheng et al, 2016)比LSTM的结构简单速度更快，但是在作者提出的模型中，GRU的表现不如LSTM的好。</p>
+</li>
+<li><p>Greff et al. (2015) 提出的Cif-LSTM(the coupled input-forget gate LSTM cells)模型的性能仍然略低于LSTM，但两者之间的差异要小得多，但是速度比GRU快。</p>
+</li>
+</ul>
+<p><strong>猜想：</strong>Cif-LSTM模型中的输出门能够保证稀疏的递归输出状态，这有助于设定较高的dropout，以防止GRU无法做到的过度拟合。</p>
+<h4 id="Embedding-Dropout"><a href="#Embedding-Dropout" class="headerlink" title="Embedding Dropout"></a>Embedding Dropout</h4><p>由于解析性能的提升，所以还需增加正则化(regularization)。</p>
+<ul>
+<li>输入层进行了正则化</li>
+<li>在训练过程中减少了33%的单词和33%的标签</li>
+<li>只用单词或标签dropout来训练的模型，两者都没有明显地过拟合，后者使得label准确度和attachment准确度都有所降低。</li>
+</ul>
+<p><strong>结论：</strong>不使用任何tags却比使用tags dropout的性能更好。</p>
+<h4 id="Optimizer"><a href="#Optimizer" class="headerlink" title="Optimizer"></a>Optimizer</h4><ul>
+<li><p>选择Adam优化器</p>
+</li>
+<li><p>$$ \mathbf{β}_2 = 0.9$$ 的性能优于  $$ \mathbf{β}_2 = 0.999$$</p>
+<h4 id="评价标准"><a href="#评价标准" class="headerlink" title="评价标准"></a>评价标准</h4></li>
+</ul>
+<p>对每个单词标上序号(从1开始，0为“ROOT”)，列出每个依存关系对应的序号和类型。分为两种正确率的计算。</p>
+<ul>
+<li>UAS：不考虑标签只考虑弧。</li>
+<li>LAS：同时考虑标签和弧。</li>
+</ul>
+<p><img src="https://i.loli.net/2019/04/12/5cb076b139c0f.jpg" alt></p>
+<h3 id="Baseline介绍"><a href="#Baseline介绍" class="headerlink" title="Baseline介绍"></a>Baseline介绍</h3><p><img src="https://i.loli.net/2019/04/12/5cb05cc84d0ba.jpg" alt></p>
+<h3 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h3><ul>
+<li><p>虽然Deep Biaffine模型结构要简单得多，但是在PTB-SD 3.3.0上的UAS性能几乎与Kuncoro等人(2016)提出的模型相同。</p>
+</li>
+<li><p>在CTB 5.17和CoNLL 09所有语言上的UAS也是最佳性能。</p>
+</li>
+<li>但是，CoNLL 09数据集包含许多非投射(non-projective )依存项，这些依存项很难或不可能通过基于转移的解析器预测出来。所以这也解释了本文提出的模型和Andor等人(2016) 的模型在这个数据集上差异较大的情况。</li>
+</ul>
+<p><strong>针对上述所提出的对于非投射情况的解析，Graph-Based具有优势，而在中介语的依存句法解析中，显然Graph-Based更适用。</strong>这也是接下来需要跟进的地方。目前对该模型进行了复现，在CTB数据上经过测试，UAS达到88+（忘记具体数字了，后面补上）。</p>
+<p>LAS的结果较低：</p>
+<blockquote>
+<p>Firstly, it may be the result of inefficiencies or errors in the GloVe embeddings or POS tagger, in which case using alternative pretrained embeddings or a more accurate tagger might improve label classification. </p>
+<p>Secondly, the SOTA model is specifically designed to capture phrasal compositionality; so another possibility is that ours doesn t capture this compositionality as effectively, and that this results in a worse label score. Similarly, it may be the result of a more general limitation of graph-based parsers, which have access to less explicit syntactic information than transition-based parsers when making decisions. </p>
+</blockquote>
+<p>要想解决以上两种限制性因素，需要一个相较于当前结构简单的Graph-based神经解析器更具创新性的模型。不过在我对于中介语的解析中，不考虑标签类别，所以对LAS无要求….</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><h3 id="你觉得这篇paper创新与贡献是（不一定如作者所说）？为什么？"><a href="#你觉得这篇paper创新与贡献是（不一定如作者所说）？为什么？" class="headerlink" title="你觉得这篇paper创新与贡献是（不一定如作者所说）？为什么？"></a>你觉得这篇paper创新与贡献是（不一定如作者所说）？为什么？</h3><ul>
+<li>在神经依存解析器加入BIaffine Attention，希望在不影响性能的前提下提高解析速）。</li>
+<li>Larger and more Regularied Network, and SOTA Performance</li>
+</ul>
+<h3 id="有没有进一步深入的价值？为什么？”-gt-lt-a-href-”-有没有进一步深入的价值？为什么？"><a href="#有没有进一步深入的价值？为什么？”-gt-lt-a-href-”-有没有进一步深入的价值？为什么？" class="headerlink" title="有没有进一步深入的价值？为什么？”&gt;&lt;a href=”#有没有进一步深入的价值？为什么？"></a>有没有进一步深入的价值？为什么？”&gt;&lt;a href=”#有没有进一步深入的价值？为什么？</h3><p>虽然Graph-based Parser目前与 SOTA Transition-based Parser的性能相当，在English Penn Treebank上达到UAS 95.7%，但是在LAS上还有差距，另外在Chinese Penn Treebank上UAS=89.3%，都有进一步研究的价值。</p>
+<h3 id="列出该文弱点（或者是你觉得应该是什么问题，他解决的不好，你会如何解决？）"><a href="#列出该文弱点（或者是你觉得应该是什么问题，他解决的不好，你会如何解决？）" class="headerlink" title="列出该文弱点（或者是你觉得应该是什么问题，他解决的不好，你会如何解决？）"></a>列出该文弱点（或者是你觉得应该是什么问题，他解决的不好，你会如何解决？）</h3><p>没有发现，没有什么想法…..</p>
+<h3 id="该文对你的启发是？"><a href="#该文对你的启发是？" class="headerlink" title="该文对你的启发是？"></a>该文对你的启发是？</h3><ul>
+<li>超参的设置与选择进行了比较详细的分析，为我接下来的实验提供了一些经验帮助。</li>
+<li>我将使用该模型应用于对中介语依存结构的解析中，虽然希望改进模型，但是对于模型改进毫无思路。。。。。。。。</li>
+</ul>
+<h3 id="列出其中有价值的需要进一步阅读的参考文献"><a href="#列出其中有价值的需要进一步阅读的参考文献" class="headerlink" title="列出其中有价值的需要进一步阅读的参考文献"></a>列出其中有价值的需要进一步阅读的参考文献</h3><ul>
+<li>Daniel Andor, Chris Alberti, David Weiss, Aliaksei Severyn, Alessandro Presta, Kuzman Ganchev, Slav Petrov, and Michael Collins. Globally normalized transitionbased neural networks. In Association for Computational Linguistics, 2016.  URL <a href="https://arxiv.org/abs/1603.06042" target="_blank" rel="noopener">https://arxiv.org/abs/1603.06042</a></li>
+<li>Adhiguna Kuncoro, Miguel Ballesteros, Lingpeng Kong, Chris Dyer, Graham Neubig, and Noah A. Smith. What do recurrent neural network grammars learn about syntax? CoRR, abs/1611.05774, 2016.  URL <a href="http://arxiv.org/abs/1611.05774" target="_blank" rel="noopener">http://arxiv.org/abs/1611.05774</a></li>
+<li>Danqi Chen and Christopher D Manning. A fast and accurate dependency parser using neural networks. In Proceedings of the conference on empirical methods in natural language processing, pp. 740–750, 2014</li>
+</ul>
 
       
     </div>
@@ -1013,7 +1141,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Dependency-Biaffine-Attention-Neural-Dependency-Parsing"><span class="nav-number">1.</span> <span class="nav-text">Dependency Biaffine Attention Neural Dependency Parsing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.1.</span> <span class="nav-text">摘要</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本文针对任务：Dependency-Parsing"><span class="nav-number">1.1.1.</span> <span class="nav-text">本文针对任务：Dependency Parsing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本文发现了什么问题？该文大体是怎么解决的？解决得如何？"><span class="nav-number">1.1.2.</span> <span class="nav-text">本文发现了什么问题？该文大体是怎么解决的？解决得如何？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解释下题目。题目起得如何？能概括内容并吸引人吗？"><span class="nav-number">1.1.3.</span> <span class="nav-text">解释下题目。题目起得如何？能概括内容并吸引人吗？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.2.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#这个任务以往是如何解决的？作者沿着哪条路径继续研究的？为什么？"><span class="nav-number">1.2.1.</span> <span class="nav-text">这个任务以往是如何解决的？作者沿着哪条路径继续研究的？为什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Transition-based-Parser"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">Transition-based Parser</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Graph-based-Parser"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">Graph-based Parser</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目前摘要存在什么问题？为什么？你觉得可能还存在什么其他问题？为什么？"><span class="nav-number">1.2.2.</span> <span class="nav-text">目前摘要存在什么问题？为什么？你觉得可能还存在什么其他问题？为什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#该文准备如何解决这个问题？为什么可以这样解决？你觉得该文解决这个问题的方法如何？为什么？你觉得可以如何-或更好的解决这个问题？为什么？"><span class="nav-number">1.2.3.</span> <span class="nav-text">该文准备如何解决这个问题？为什么可以这样解决？你觉得该文解决这个问题的方法如何？为什么？你觉得可以如何/或更好的解决这个问题？为什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列出该文贡献（该文自己觉得的）"><span class="nav-number">1.2.4.</span> <span class="nav-text">列出该文贡献（该文自己觉得的）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Model"><span class="nav-number">1.3.</span> <span class="nav-text">Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型"><span class="nav-number">1.3.1.</span> <span class="nav-text">模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型创新点"><span class="nav-number">1.3.2.</span> <span class="nav-text">模型创新点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#详细介绍模型，从输入到输出，输入矩阵维度，公式等"><span class="nav-number">1.3.3.</span> <span class="nav-text">详细介绍模型，从输入到输出，输入矩阵维度，公式等</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Dependency-Biaffine-Attention-Neural-Dependency-Parsing"><span class="nav-number">1.</span> <span class="nav-text">Dependency Biaffine Attention Neural Dependency Parsing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.1.</span> <span class="nav-text">摘要</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本文针对任务：Dependency-Parsing"><span class="nav-number">1.1.1.</span> <span class="nav-text">本文针对任务：Dependency Parsing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本文发现了什么问题？该文大体是怎么解决的？解决得如何？"><span class="nav-number">1.1.2.</span> <span class="nav-text">本文发现了什么问题？该文大体是怎么解决的？解决得如何？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解释下题目。题目起得如何？能概括内容并吸引人吗？"><span class="nav-number">1.1.3.</span> <span class="nav-text">解释下题目。题目起得如何？能概括内容并吸引人吗？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.2.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#这个任务以往是如何解决的？作者沿着哪条路径继续研究的？为什么？"><span class="nav-number">1.2.1.</span> <span class="nav-text">这个任务以往是如何解决的？作者沿着哪条路径继续研究的？为什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Transition-based-Parser"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">Transition-based Parser</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Graph-based-Parser"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">Graph-based Parser</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目前摘要存在什么问题？为什么？你觉得可能还存在什么其他问题？为什么？"><span class="nav-number">1.2.2.</span> <span class="nav-text">目前摘要存在什么问题？为什么？你觉得可能还存在什么其他问题？为什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#该文准备如何解决这个问题？为什么可以这样解决？你觉得该文解决这个问题的方法如何？为什么？你觉得可以如何-或更好的解决这个问题？为什么？"><span class="nav-number">1.2.3.</span> <span class="nav-text">该文准备如何解决这个问题？为什么可以这样解决？你觉得该文解决这个问题的方法如何？为什么？你觉得可以如何/或更好的解决这个问题？为什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列出该文贡献（该文自己觉得的）"><span class="nav-number">1.2.4.</span> <span class="nav-text">列出该文贡献（该文自己觉得的）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Model"><span class="nav-number">1.3.</span> <span class="nav-text">Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型"><span class="nav-number">1.3.1.</span> <span class="nav-text">模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型创新点"><span class="nav-number">1.3.2.</span> <span class="nav-text">模型创新点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#详细介绍模型，从输入到输出，输入矩阵维度，公式等"><span class="nav-number">1.3.3.</span> <span class="nav-text">详细介绍模型，从输入到输出，输入矩阵维度，公式等</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Experiments"><span class="nav-number">1.4.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据集及评价标准介绍"><span class="nav-number">1.4.1.</span> <span class="nav-text">数据集及评价标准介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#超参选择"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">超参选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Network-Size"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">Network Size</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Recurrent-Cell"><span class="nav-number">1.4.1.3.</span> <span class="nav-text">Recurrent Cell</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Embedding-Dropout"><span class="nav-number">1.4.1.4.</span> <span class="nav-text">Embedding Dropout</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Optimizer"><span class="nav-number">1.4.1.5.</span> <span class="nav-text">Optimizer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#评价标准"><span class="nav-number">1.4.1.6.</span> <span class="nav-text">评价标准</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Baseline介绍"><span class="nav-number">1.4.2.</span> <span class="nav-text">Baseline介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果分析"><span class="nav-number">1.4.3.</span> <span class="nav-text">结果分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion"><span class="nav-number">1.5.</span> <span class="nav-text">Conclusion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#你觉得这篇paper创新与贡献是（不一定如作者所说）？为什么？"><span class="nav-number">1.5.1.</span> <span class="nav-text">你觉得这篇paper创新与贡献是（不一定如作者所说）？为什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有没有进一步深入的价值？为什么？”-gt-lt-a-href-”-有没有进一步深入的价值？为什么？"><span class="nav-number">1.5.2.</span> <span class="nav-text">有没有进一步深入的价值？为什么？”&gt;&lt;a href=”#有没有进一步深入的价值？为什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列出该文弱点（或者是你觉得应该是什么问题，他解决的不好，你会如何解决？）"><span class="nav-number">1.5.3.</span> <span class="nav-text">列出该文弱点（或者是你觉得应该是什么问题，他解决的不好，你会如何解决？）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#该文对你的启发是？"><span class="nav-number">1.5.4.</span> <span class="nav-text">该文对你的启发是？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列出其中有价值的需要进一步阅读的参考文献"><span class="nav-number">1.5.5.</span> <span class="nav-text">列出其中有价值的需要进一步阅读的参考文献</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1069,7 +1197,7 @@
   
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共36.2k字</span>
+  <span class="post-count">博客全站共38.2k字</span>
 </div>
         
 
