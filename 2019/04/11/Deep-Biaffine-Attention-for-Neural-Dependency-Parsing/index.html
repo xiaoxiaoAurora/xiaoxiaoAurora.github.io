@@ -105,7 +105,7 @@
 <meta property="og:description" content="Dependency Biaffine Attention Neural Dependency Parsing 摘要本文主要针对 Dependency Parsing 提出了一个新的模型，该文以Kiperwasser &amp;amp; Goldberg (2016)  最近的工作为基础，在graph-based的dependency parser的基础上引入了 neural attention。  We">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/04/04/5ca5d524ec8fa.jpg">
-<meta property="og:updated_time" content="2019-04-15T03:05:20.731Z">
+<meta property="og:updated_time" content="2019-05-10T09:23:31.568Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deep Biaffine Attention for Neural Dependency Parsing">
 <meta name="twitter:description" content="Dependency Biaffine Attention Neural Dependency Parsing 摘要本文主要针对 Dependency Parsing 提出了一个新的模型，该文以Kiperwasser &amp;amp; Goldberg (2016)  最近的工作为基础，在graph-based的dependency parser的基础上引入了 neural attention。  We">
@@ -439,7 +439,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-15 11:05:20" itemprop="dateModified" datetime="2019-04-15T11:05:20+08:00">2019-04-15</time>
+                <time title="修改时间：2019-05-10 17:23:31" itemprop="dateModified" datetime="2019-05-10T17:23:31+08:00">2019-05-10</time>
               
             
           </span>
@@ -624,13 +624,13 @@
 <h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><h3 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h3><p>将Kiperwasser &amp; Goldberg (2016),Hashimoto et al. (2016), and Cheng et al. (2016)提出的模型加以变形：</p>
 <p><img src="https://i.loli.net/2019/04/11/5caf34ed899a1.jpg" alt></p>
 <h3 id="模型创新点"><a href="#模型创新点" class="headerlink" title="模型创新点"></a>模型创新点</h3><ul>
-<li><strong>使用<u>双仿射注意力机制</u></strong>(Biaffine Attention)代替双线性（bilinear）或传统的MLP-based的注意力机制, <u>结构更加简单</u>，运用了一个双线性层而不是两个线性层和一个非线性层—<u>选择双仿射使得我们模型中的分类器类似于传统的仿射分类器</u>，后者在单个LSTM输出状态$$ \mathbf{r}_i$$(或其他向量输入)上使用仿射变换来预测所有类的得分向量$$ \mathbf{s}_i  ​$$。</li>
+<li><strong>使用<u>双仿射注意力机制</u></strong>(Biaffine Attention)代替双线性（bilinear）或传统的MLP-based的注意力机制, <u>结构更加简单</u>，运用了一个双线性层而不是两个线性层和一个非线性层—<u>选择双仿射使得我们模型中的分类器类似于传统的仿射分类器</u>，后者在单个LSTM输出状态$$ \mathbf{r}_i$$(或其他向量输入)上使用仿射变换来预测所有类的得分向量$$ \mathbf{s}_i  $$。</li>
 <li>使用Biaffine依存项标签分类器</li>
-<li>在应用双仿射变换(Biaffine transformation)之前，我们将降维MLPs应用于每个递归输出向量 $$  \mathbf{r}_i  ​$$。</li>
+<li>在应用双仿射变换(Biaffine transformation)之前，我们将降维MLPs应用于每个递归输出向量 $$  \mathbf{r}_i  $$。</li>
 </ul>
-<h3 id="详细介绍模型，从输入到输出，输入矩阵维度，公式等"><a href="#详细介绍模型，从输入到输出，输入矩阵维度，公式等" class="headerlink" title="详细介绍模型，从输入到输出，输入矩阵维度，公式等"></a>详细介绍模型，从输入到输出，输入矩阵维度，公式等</h3><p>可将双仿射注意力机制看作一个传统的放射分类器，但是使用<u>堆叠</u><strong>LSTM</strong>的输出$$ \mathbf{R} \mathbf{U}^{(1)}​$$的一个 (d×d)线性变换代替权重矩阵<em>W</em>，用一个(d×1)变换$$ \mathbf{R} \mathbf{u}^{(2)}​$$来替代偏置项<em>b</em>。</p>
+<h3 id="详细介绍模型，从输入到输出，输入矩阵维度，公式等"><a href="#详细介绍模型，从输入到输出，输入矩阵维度，公式等" class="headerlink" title="详细介绍模型，从输入到输出，输入矩阵维度，公式等"></a>详细介绍模型，从输入到输出，输入矩阵维度，公式等</h3><p>可将双仿射注意力机制看作一个传统的放射分类器，但是使用<u>堆叠</u><strong>LSTM</strong>的输出$ \mathbf{R} \mathbf{U}^{(1)}$的一个 (d×d)线性变换代替权重矩阵<em>W</em>，用一个(d×1)变换$ \mathbf{R} \mathbf{u}^{(2)} $来替代偏置项<em>b</em>。</p>
 <p><img src="https://i.loli.net/2019/04/11/5caf4bdba664c.jpg" alt></p>
-<p>​    这在概念上的优势是，可以直接在对单词 <em>j</em>  在术语$$ \mathbf{r}_j^T u$$中接收任何dependents的先验概率 和 j 在$$ \mathbf{r}_j^T  \mathbf{U}^{(1)} \mathbf{r}_i $$中接受特定依存项 i 的可能性之间进行建模。还使用双仿射分类器来预测给定的head或预测head $$ \mathbf{y}_i $$的依存标签(3)。</p>
+<p>​    这在概念上的优势是，可以直接在对单词 <em>j</em>  在术语$$ \mathbf{r}_j^T u$$中接收任何dependents的先验概率 和 j 在$$ \mathbf{r}_j^T  \mathbf{U}^{(1)} \mathbf{r}_i $$中接受特定依存项 i 的可能性之间进行建模。还使用双仿射分类器来预测给定的head或预测head $ {y}_i $的依存标签(3)。</p>
 <p><img src="https://i.loli.net/2019/04/11/5caf5134cb098.jpg" alt></p>
 <p>同样地为每个类的每个先验概率建模：</p>
 <ul>
@@ -824,10 +824,6 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/15/神经网络之激活函数/" rel="prev" title="神经网络之激活函数">
-                神经网络之激活函数 <i class="fa fa-chevron-right"></i>
-              </a>
-            
           </div>
         </div>
       
@@ -895,7 +891,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1057,9 +1053,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">46</span>
+                    <span class="site-state-item-count">45</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1200,7 +1194,7 @@
   
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共38.3k字</span>
+  <span class="post-count">博客全站共37.9k字</span>
 </div>
         
 
