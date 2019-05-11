@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Deep contextualized word representations (ELMO) [TOC]  1. 题目与摘要本文针对什么任务？任务简要介绍下。 任务： 词表征(Word Representation) 任务介绍： 句子是序列化，里面携带了大量的信息。在NLP发展的进程里面， 采用了one-hot vector的形式来表示一个句子里面的词是一种方式。表示这个句子的方式如下：  首先">
+<meta name="keywords" content="Papers,论文阅读笔记,ELMO">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Paper：Deep contextualized word representations">
+<meta property="og:url" content="https://xiaoxiaoaurora.github.io/2019/04/30/Paper：Deep-contextualized-word-representations/index.html">
+<meta property="og:site_name" content="XiaoXiao">
+<meta property="og:description" content="Deep contextualized word representations (ELMO) [TOC]  1. 题目与摘要本文针对什么任务？任务简要介绍下。 任务： 词表征(Word Representation) 任务介绍： 句子是序列化，里面携带了大量的信息。在NLP发展的进程里面， 采用了one-hot vector的形式来表示一个句子里面的词是一种方式。表示这个句子的方式如下：  首先">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2019/04/04/5ca5d524ec8fa.jpg">
+<meta property="og:updated_time" content="2019-05-10T12:30:14.172Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Paper：Deep contextualized word representations">
+<meta name="twitter:description" content="Deep contextualized word representations (ELMO) [TOC]  1. 题目与摘要本文针对什么任务？任务简要介绍下。 任务： 词表征(Word Representation) 任务介绍： 句子是序列化，里面携带了大量的信息。在NLP发展的进程里面， 采用了one-hot vector的形式来表示一个句子里面的词是一种方式。表示这个句子的方式如下：  首先">
+<meta name="twitter:image" content="https://i.loli.net/2019/04/04/5ca5d524ec8fa.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="XiaoXiao" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://xiaoxiaoaurora.github.io/2019/04/30/Paper：Deep-contextualized-word-representations/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Paper：Deep contextualized word representations | XiaoXiao</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/xiaoxiaoAurora" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XiaoXiao</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-top">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/top/" rel="section"><i class="menu-item-icon fa fa-fw fa-signal"></i> <br>top</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-search">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/search/" rel="section"><i class="menu-item-icon fa fa-fw fa-search"></i> <br>搜索</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiaoxiaoaurora.github.io/2019/04/30/Paper：Deep-contextualized-word-representations/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xiao">
+      <meta itemprop="description" content="怕什么真理无穷，进一寸有进一寸的欢喜。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoXiao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Paper：Deep contextualized word representations
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-30 09:17:36" itemprop="dateCreated datePublished" datetime="2019-04-30T09:17:36+08:00">2019-04-30</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-10 20:30:14" itemprop="dateModified" datetime="2019-05-10T20:30:14+08:00">2019-05-10</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Papers/" itemprop="url" rel="index"><span itemprop="name">Papers</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Papers/论文阅读笔记/" itemprop="url" rel="index"><span itemprop="name">论文阅读笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数"></span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长"></span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <img src="https://i.loli.net/2019/04/04/5ca5d524ec8fa.jpg" itemprop="contentUrl">
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <h1 id="Deep-contextualized-word-representations-ELMO"><a href="#Deep-contextualized-word-representations-ELMO" class="headerlink" title="Deep contextualized word representations (ELMO)"></a>Deep contextualized word representations (ELMO)</h1><hr>
+<p>[TOC]</p>
+<p><img src="https://i.loli.net/2019/05/10/5cd511b6ba704.jpg" alt="image"></p>
+<h2 id="1-题目与摘要"><a href="#1-题目与摘要" class="headerlink" title="1. 题目与摘要"></a>1. 题目与摘要</h2><h3 id="本文针对什么任务？任务简要介绍下。"><a href="#本文针对什么任务？任务简要介绍下。" class="headerlink" title="本文针对什么任务？任务简要介绍下。"></a>本文针对什么任务？任务简要介绍下。</h3><ul>
+<li>任务： <a href="http://licstar.net/archives/328" target="_blank" rel="noopener">词表征(Word Representation)</a></li>
+<li>任务介绍： <strong>句子是序列化</strong>，里面携带了大量的信息。在NLP发展的进程里面， 采用了<strong>one-hot vector</strong>的形式来表示一个句子里面的词是一种方式。表示这个句子的方式如下： <ul>
+<li>首先是创建一张词汇表(Vocabulary)，然后每个词都有对应的位置，假设现在我们有10000个单词。本例子来自于吴恩达的Deeplearningai。图中所示的词汇表大小就是10000。<br><img src="https://upload-images.jianshu.io/upload_images/11011890-6589018636d37cd8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt="image"></li>
+<li>将句子里面的每个单词转换为one-hot vector。one-hot vector从字面上来理解就是向量里面只有1个1，也就是找到这个词在词汇表里面的位置处填上1，然后其他的位置都是0。可以看出one-hot vector的模长为1。<br><strong>one-hot vector表示向量的缺陷：<br>这种表示把每个词都孤立出来了，使得算法对相关词的泛化能力弱</strong>。两个不同人名的one-hot vector的内积为0，这样来表示就不能体现出词汇在某些方面的相关性。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(x\_Harry)^T * x\_Hermione = 0</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="本文发现了什么问题？该文大体是怎么解决的？解决得如何？"><a href="#本文发现了什么问题？该文大体是怎么解决的？解决得如何？" class="headerlink" title="本文发现了什么问题？该文大体是怎么解决的？解决得如何？"></a>本文发现了什么问题？该文大体是怎么解决的？解决得如何？</h3><p><strong>本文提出了一种新的深层上下文的word reresentation。这种模型不仅能够【1】表征词汇使用的复杂特性（例如句法和语义层面的特征，syntax and semantics）；还能【2】表征出如何随着上下文语境的变化而改变，例如一词多义（polysemy）。</strong></p>
+<ul>
+<li>发现问题&amp;解决：作者认为认为好的word representation模型应该同时兼顾【1】【2】两个特点，因此提出了deep contextualized word representation方法来解决以上两个问题。</li>
+<li>本文中的模型本质上是一个基于大规模语料训练后的深层双向语言模型(biLM)内部隐状态的学习函数。</li>
+<li>实验证明，新的词向量模型能够很轻松的与NLP的现有主流模型相结合，并且在六大NLP任务的结果上有着显著的提升。同时，作者也发现对模型的预训练是十分关键的，能够让下游模型去融合不同类型的半监督训练出的特征。</li>
+</ul>
+<hr>
+<h3 id="解释下题目。题目起得如何？能概括内容并吸引人吗？"><a href="#解释下题目。题目起得如何？能概括内容并吸引人吗？" class="headerlink" title="解释下题目。题目起得如何？能概括内容并吸引人吗？"></a><del>解释下题目。题目起得如何？能概括内容并吸引人吗？</del></h3><h2 id="2-介绍"><a href="#2-介绍" class="headerlink" title="2. 介绍"></a>2. 介绍</h2><h3 id="这个任务以往是如何解决的？作者沿着哪条路径继续研究的？为什么？"><a href="#这个任务以往是如何解决的？作者沿着哪条路径继续研究的？为什么？" class="headerlink" title="这个任务以往是如何解决的？作者沿着哪条路径继续研究的？为什么？"></a>这个任务以往是如何解决的？作者沿着哪条路径继续研究的？为什么？</h3><p>之前提出的方法从以下两个方面克服了传统词向量的一些缺点：</p>
+<pre><code>- 通过subword信息丰富词向量
+- 为每个单词的词义学习单独的向量
+</code></pre><ul>
+<li><p>最近的工作也主要集中在学习与上下文相关的表示：</p>
+<ul>
+<li>context2vec (Melamud et al., 2016)：使用BiLSTM对一个中心词的上下文进行编码。</li>
+<li><p>学习contextual embeddings的其他方法包括表示中的中心词本身，并使用监督神经机器翻译(MT)系统或者无监督语言模型(Peters et al.， 2017)的编码器进行计算。</p>
+<p>但是上面这两种方法都比较适用于大型数据集，但是MT方法受到并行语料库大小的限制。<br>在本文中，作者充分利用了丰富的单语数据，将biLM训练在一个包含约3000万个句子的语料库上(Chelba et al.，2014)。还将这些方法推广到深层上下文表示，这些方法可以很处理各种NLP任务。</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>本文提出了一种新的、能解决当前两个问题的深层上下文的word reresentation，每个word representation是整个输入语句的函数。在大型文本语料库上，以language model为目标训练出bidirectional LSTM模型从而产生词语的表征。</p>
+</li>
+<li><p>以前的工作也表明，不同层次的深度biRNNs编码不同类型的信息。</p>
+</li>
+</ul>
+<h3 id="目前作者研究存在什么问题？为什么？你觉得可能还存在什么其他问题？为什么？"><a href="#目前作者研究存在什么问题？为什么？你觉得可能还存在什么其他问题？为什么？" class="headerlink" title="目前作者研究存在什么问题？为什么？你觉得可能还存在什么其他问题？为什么？"></a><del>目前作者研究存在什么问题？为什么？你觉得可能还存在什么其他问题？为什么？</del></h3><h3 id="该文准备如何解决这个问题？为什么可以这样解决？你觉得该文解决这个问题的方法如何？为什么？你觉得可以如何-或更好的解决这个问题？为什么？"><a href="#该文准备如何解决这个问题？为什么可以这样解决？你觉得该文解决这个问题的方法如何？为什么？你觉得可以如何-或更好的解决这个问题？为什么？" class="headerlink" title="该文准备如何解决这个问题？为什么可以这样解决？你觉得该文解决这个问题的方法如何？为什么？你觉得可以如何/或更好的解决这个问题？为什么？"></a>该文准备如何解决这个问题？为什么可以这样解决？<del>你觉得该文解决这个问题的方法如何？为什么？你觉得可以如何/或更好的解决这个问题？为什么？</del></h3><ul>
+<li><p><strong>本文中的Word Representation不同于传统的word type embeddings</strong>：</p>
+<ul>
+<li>作者提出的word representation：每个词都被分配了一个表示，每个word representation是整个输入语句的函数。</li>
+<li>在大型文本语料库上，以language model为目标训练出bidirectional LSTM模型，然后利用BiLSTM产生词语的表征。<strong>ELMo故而得名(Embeddings from Language Models)</strong>。</li>
+<li>与以前学习上下文词向量的方法不同，ELMo表征是“深层”的，也就是说它们是biLM的所有内部层表征的函数。</li>
+<li>本文还通过使用字符卷积从子单词单元中获益，并且还无缝地将多义信息(multi-sense)合并到下游任务中，而不需要显式地训练来预测预定义的义类</li>
+</ul>
+</li>
+<li><p>这样做的好处是能够产生丰富的词语表征。高层的LSTM的状态可以捕捉词义中和语境相关的那方面的特征(比如可以用来做语义的消歧)，而低层的LSTM可以捕捉到句法方面的特征(比如可以做词性标注)。如果把它们结合在一起，在下游的NLP任务中会体现优势。</p>
+</li>
+</ul>
+<h3 id="列出该文贡献（该文自己觉得的）"><a href="#列出该文贡献（该文自己觉得的）" class="headerlink" title="列出该文贡献（该文自己觉得的）"></a>列出该文贡献（该文自己觉得的）</h3><ul>
+<li>ELMO可以很容易地添加到现有的模型中</li>
+<li>用于解决6个不同且具有挑战性的语言理解问题（包括文本蕴涵、问题回答和情感分析），仅添加ELMo表示就可以显著提高每种任务的结果，包括减少20%的相对错误。</li>
+<li>对于可能进行直接比较的任务，ELMo的性能优于CoVe (McCann et al.， 2017)， CoVe使用神经机器翻译编码器计算上下文表示。</li>
+<li>最后，对ELMo和CoVe的分析表明，深度表示优于仅来自LSTM顶层的表示。</li>
+</ul>
+<hr>
+<h2 id="3-模型：ELMo-Embeddings-from-Language-Models"><a href="#3-模型：ELMo-Embeddings-from-Language-Models" class="headerlink" title="3. 模型：ELMo(Embeddings from Language Models)"></a>3. 模型：ELMo(Embeddings from Language Models)</h2><p>与大多数广泛使用的词嵌入(Pennington et al., 2014)不同，<strong>ELMo词表示是整个输入语句的函数</strong>。<br>它们是在具有字符卷积的两层biLMs之上计算的(第3.1节)，作为内部网络状态的线性函数(第3.2节)。这种设置使得可以进行半监督学习，其中biLM被大规模地预先训练(第3.4节)，并且很容易地融入到现有的广泛的神经NLP体系结构中(第3.3节)。</p>
+<h3 id="整体介绍（主要是图）"><a href="#整体介绍（主要是图）" class="headerlink" title="整体介绍（主要是图）"></a>整体介绍（主要是图）</h3><p><img src="https://i.loli.net/2019/05/10/5cd533b7e6bc1.jpg" alt="ELMO"></p>
+<p>ELMO（Embeddings from Language Models）模型本质是从语言模型而来的。</p>
+<ol>
+<li><strong>Language Model</strong><br><img src="https://i.loli.net/2019/05/10/5cd534478803e.jpg" alt="Language Model"></li>
+</ol>
+<p>  给定一个句子($t_1, t_2, t_N$) 构建的语言模型就是通过一个词汇的上下文去预测一个词$t_k$：</p>
+<p><img src="https://i.loli.net/2019/05/10/5cd53de4a9292.jpg" alt="image"></p>
+<p>最新的神经语言模型(Jozefowicz et al. ´ , 2016; Melis et al., 2017; Merity et al., 2017)先 计算一个与上下文无关的字符表示 ${x_k^{LM}}$ (通过token embedding或者一个CNN覆盖字符)，然后将它传递进L层前向LSTM。在每个位置k，每个LSTM层输出一个上下文相关的表示$\overrightarrow{h}_{k,j}^{LM}$，其中j = 1，…，L。顶层LSTM输出，$\overrightarrow{h}_{k,j}^{LM}$通过一个Softmax层用于预测下一个token$t_{k+1}$。</p>
+<p>反向LM与前向LM类似，只是它以相反的方式遍历序列，根据未来上下文预测前面的token。</p>
+<p><img src="https://i.loli.net/2019/05/10/5cd550adece17.jpg" alt></p>
+<p>biLM结合了前向LM和反向LM。我们的公式共同最大化了前向和反向的对数似然性：<br>$$<br>\sum_{k=1}^N(\log p(t_k | t_1,…,t_{k-i}; \circleddash_x, \overrightarrow{\circleddash}_{LSTM}, \circleddash_s) + \log p(t_k | t_{k+1},…,t_{N}; \circleddash_x, \overleftarrow{\circleddash}_{LSTM}, \circleddash_s)))<br>$$</p>
+<ol start="2">
+<li><p><strong>Bidirectional Language Model</strong></p>
+<p>其中两个方向的LSTM的参数不是共享的，$\circleddash_x$就是一开始输入的词向量，$\circleddash_s$就是softmax层参数。因此，双向语言模型的结构图，可以表达如下:</p>
+<p><img src="https://i.loli.net/2019/05/10/5cd534712bb3c.jpg" alt="Bidirectional Language Models"></p>
+</li>
+</ol>
+<ol start="3">
+<li>ELMO：一种学习单词表示的新方法，该方法是biLM层的线性组合。具体的描述在<a href="模型创新点">模型创新点</a>。</li>
+</ol>
+<h3 id="模型创新点"><a href="#模型创新点" class="headerlink" title="模型创新点"></a>模型创新点</h3><h3 id="（仅对要进一步跟进的paper）详细介绍模型，从输入到输出，输入矩阵维度，公式等"><a href="#（仅对要进一步跟进的paper）详细介绍模型，从输入到输出，输入矩阵维度，公式等" class="headerlink" title="（仅对要进一步跟进的paper）详细介绍模型，从输入到输出，输入矩阵维度，公式等"></a>（仅对要进一步跟进的paper）详细介绍模型，从输入到输出，输入矩阵维度，公式等</h3><p>ELMo is a task specific combination of the intermediate layer representations in the biLM.</p>
+<p>对于每一个词$t_k$，一个L层的biLM可以计算出$2*L+1$个表达如下：</p>
+<p><img src="https://i.loli.net/2019/05/10/5cd55747f158c.jpg" alt></p>
+<p>其中$h_{k,0}^{LM}$来表示第一层向量，$h_{k,j}^{LM} = [\overrightarrow{h}_{k,j}^{LM}; {\overleftarrow{h}}_{k,j}^{LM}]$。\</p>
+<p>为了包含在下游模型中，ELMo将R中的所有层折叠成一个向量，$ELMO_k = E(R_k; \circleddash_e) $。</p>
+<p>在最简单的情况下，ELMo只选择顶层，$E(R_k) = h_{k,L}^{LM}$，和TagLM和CoVe一样。</p>
+<p>ELMO本质上就是一个任务导向的、双向语言模型（biLM）内部的隐状态层的组合。通用的表达式如下：</p>
+<p><img src="C:\Users\uliux\AppData\Roaming\Typora\typora-user-images\1557486044972.png" alt></p>
+<p>在（1）中，s^task^是softmax-normalized权重，标量参数$\gamma^{task}$允许任务模型缩放整个ELMo向量。其中$\gamma $有助于进行优化。考虑到每个biLM层的激活度分布不同，在某些情况下，在加权前对每个biLM层应用归一化层(Ba et al.， 2016)也有所帮助。</p>
+<blockquote>
+<p>$ \gamma $是用来控制ELMO模型生成的向量大小，原文中说该系数对于后续的模型优化过程有好处（在附件中，作者强调了这个参数的重要性，因为biLM的内核表达，与任务需要表达，存在一定的差异性，所以需要这么一个参数去转换。并且，这个参数对于，last-only的情况（就是只取最后一层，ELMO的特殊情况），尤其重要），另一个参数s，原论文只说了softmax-normalized weights，所以我的理解，其实它的作用等同于层间的归一化处理。（<a href="https://www.jianshu.com/p/d93912d5280e" target="_blank" rel="noopener">引用自</a>)</p>
+</blockquote>
+<h3 id="Using-biLMs-for-supervised-NLP-tasks"><a href="#Using-biLMs-for-supervised-NLP-tasks" class="headerlink" title="Using biLMs for supervised NLP tasks"></a>Using biLMs for supervised NLP tasks</h3><p>在给定目标NLP任务的预训练biLM和监督体系结构的情况下，利用biLM改进任务模型是一个简单的过程。我们只需运行biLM并记录每个单词的所有层表示。然后，我们让终端任务模型学习这些表示的线性组合，如下所述：</p>
+<ul>
+<li>首先考虑无biLM的监督模型的最低层。大部分的NLP的模型都会有一层词向量层，而我们要做的无非就是用ELMO与词向量层结合。然后，模型生成一个上下文敏感的表示$h_k$，通常使用双向RNNs、CNNs或前馈网络。</li>
+<li>为了将ELMo添加到监督模型中，我们首先冻结biLM的权值，然后将ELMo向量$ELMo_k^{task}$与 $x_k$ 连接，并将ELMo增强表示$[ x_k ; ELMo_k^{task}]$c传递到RNN中。</li>
+<li>发现：在ELMo中添加合适的dropout和某些情况下在loss中添加$\lambda ||w||_2^2$正则化ELMo权重都是有益的。这对ELMo权重施加了一个归纳偏差，使其接近所有biLM层的平均值。</li>
+</ul>
+<h3 id="Pre-trained-bidirectional-language-model-architecture"><a href="#Pre-trained-bidirectional-language-model-architecture" class="headerlink" title="Pre-trained bidirectional language model architecture"></a>Pre-trained bidirectional language model architecture</h3><p>本文预训练的biLMs与Jozefowicz等人(2016)和Kim等人 (2015) 的体系结构相似，但加以修改以便支持两个方向的联合训练，并在LSTM层之间添加了剩余连接。在这项工作中，作者重点关注大规模的biLMs，正如Peters等人(2017)强调了使用biLMs比只使用前向LMs和大规模训练更重要。</p>
+<p>最终作者用于实验的预训练模型，为了平衡语言模型之间的困惑度以及后期NLP模型的计算复杂度，采用了2层Bi-Big-Lstm，共计4096个单元，输入及输出纬度为512，并且在第一层和第二层之间有残差连接，包括最初的那一层文本向量（用了2048个过滤器, 进行基于字符的卷积计算，详细可查看字符卷积的原论文），整个ELMO会为每一个词提供一个3层的输出，而下游模型学习的就是这3层输出的组合。另外，作者强调了一下，对该模型进行FINE-TUNE训练的话，对具体的NLP任务会有提升的作用。</p>
+<h2 id="4-实验"><a href="#4-实验" class="headerlink" title="4. 实验"></a>4. <strong>实验</strong></h2><p><img src="https://i.loli.net/2019/05/10/5cd55ff7788d5.jpg" alt></p>
+<p>论文的实验部分，具体展示了ELMO在六大nlp任务上的表现（如Tabel 1），证实了该模型的有效性。此处未具体展开，只罗列了SRL。</p>
+<h3 id="数据集及评价标准介绍"><a href="#数据集及评价标准介绍" class="headerlink" title="数据集及评价标准介绍"></a>数据集及评价标准介绍</h3><p><strong>Semantic Role Labeling(SRL)</strong>是对句子的predicate-argument结构进行解析的过程，通常被描述为“回答谁对谁做了什么(Who did what to whom )”。He(2017)等人将SRL作为一个BIO标记问题，并使用了一个8层的前后方向交错的深层biLSTM。</p>
+<h3 id="Baseline介绍"><a href="#Baseline介绍" class="headerlink" title="Baseline介绍"></a><del>Baseline介绍</del></h3><h3 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h3><ul>
+<li><p>在下游任务中使用深层上下文表示比仅使用顶层的先前工作提高了性能，无论它们是由biLM或MT编码器生成的，而且ELMo表示提供了最佳的总体性。整体趋势与CoVe相似，但在基线上增幅较小。</p>
+<p><img src="https://i.loli.net/2019/05/10/5cd56750d6a7f.jpg" alt></p>
+</li>
+</ul>
+<ul>
+<li>探索了在biLMs中捕获的不同类型的上下文信息，并使用了两个内在的评估来表明，语法信息在较低的层中更好地表示，而语义信息在较高的层中捕获，这与MT编码器一致。它还表明，本文中的biLM始终提供比CoVe更丰富的表示。ELMO不同的层，能从不同的纬度表达一个词，作者经过实验发现，低层的输出能更好的从句法语法的层面表达一个词，而高层的输出能更好的从语意的层面表达一个词</li>
+</ul>
+<ul>
+<li><p>ELMo在任务模型(第5.2节)、训练集大小(第5.4节)中的敏感性，并可视化了ELMo在任务中学习到的权重(第5.5节)。</p>
+<p><img src="https://i.loli.net/2019/05/10/5cd568549540c.jpg" alt></p>
+<ul>
+<li>加ELMO的位置：是与之前的词向量层一起，在最开始的地方。作者还实验了一把，发现在特定于任务的体系结构中，在biRNN的输出中包含ELMo可以改进某些任务的总体结果。如表3所示，在SNLI和SQuAD的输入层和输出层都包含ELMo，这比仅仅在输入层有所改进，但是对于SRL(以及没有显示的协引用分辨率)，当它只包含在输入层时，性能是最高的。一个可能的解释是SNLI和小队架构在biRNN之后都使用了注意层，所以在这一层引入ELMo允许模型直接关注biLM的内部表示。</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-结论"><a href="#5-结论" class="headerlink" title="5. 结论"></a>5. 结论</h2><p>本论文主要集中在于阐述ELMO结构及其预训练的思想，并且用具体NLP实验证明了使用这一套结构的原理，并证实了其可行性。</p>
+<h3 id="你觉得这篇paper创新与贡献是（不一定如作者所说）？为什么？"><a href="#你觉得这篇paper创新与贡献是（不一定如作者所说）？为什么？" class="headerlink" title="你觉得这篇paper创新与贡献是（不一定如作者所说）？为什么？"></a>你觉得这篇paper创新与贡献是（不一定如作者所说）？为什么？</h3><ul>
+<li><p>本文介绍了一种从biLMs学习高质量的深度上下文相关表示的通用方法，并在将ELMo应用于广泛的NLP任务时显示了很大的改进。</p>
+</li>
+<li><p>通过一些实验也证实了biLM层可以有效地编码关于语境用词的不同类型的语法和语义信息，并且使用所有层可以提高整体任务性能。</p>
+</li>
+</ul>
+<h3 id="有没有进一步深入的价值？为什么？"><a href="#有没有进一步深入的价值？为什么？" class="headerlink" title="有没有进一步深入的价值？为什么？"></a>有没有进一步深入的价值？为什么？</h3><p>目前只停留在使用的过程中。</p>
+<h3 id="列出该文弱点（或者是你觉得应该是什么问题，他解决的不好，你会如何解决？）"><a href="#列出该文弱点（或者是你觉得应该是什么问题，他解决的不好，你会如何解决？）" class="headerlink" title="列出该文弱点（或者是你觉得应该是什么问题，他解决的不好，你会如何解决？）"></a><del>列出该文弱点（或者是你觉得应该是什么问题，他解决的不好，你会如何解决？）</del></h3><h3 id="该文对你的启发是？"><a href="#该文对你的启发是？" class="headerlink" title="该文对你的启发是？"></a>该文对你的启发是？</h3><p>将ELMO用于Sytactic Parsing中。</p>
+<h3 id="列出其中有价值的需要进一步阅读的参考文献"><a href="#列出其中有价值的需要进一步阅读的参考文献" class="headerlink" title="列出其中有价值的需要进一步阅读的参考文献"></a>列出其中有价值的需要进一步阅读的参考文献</h3><p>1、BERT: Pre-training of Deep Bidirectional Transformers for<br>Language Understanding </p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+      
+      <div>
+    
+    <div style="text-align:center;color:#ccc;font-size:14px;">
+        -------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------
+    </div>
+    
+</div>
+      
+    </div>
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Papers/" rel="tag"><i class="fa fa-tag"></i>Papers</a>
+          
+            <a href="/tags/论文阅读笔记/" rel="tag"><i class="fa fa-tag"></i>论文阅读笔记</a>
+          
+            <a href="/tags/ELMO/" rel="tag"><i class="fa fa-tag"></i>ELMO</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/11/Deep-Biaffine-Attention-for-Neural-Dependency-Parsing/" rel="next" title="Deep Biaffine Attention for Neural Dependency Parsing">
+                <i class="fa fa-chevron-left"></i> Deep Biaffine Attention for Neural Dependency Parsing
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/11/Pytorch-Bugs/" rel="prev" title="Pytorch Bugs">
+                Pytorch Bugs <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Xiao</p>
+              <div class="site-description motion-element" itemprop="description">怕什么真理无穷，进一寸有进一寸的欢喜。</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/xiaoxiaoAurora" title="GitHub &rarr; https://github.com/xiaoxiaoAurora" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="/uliuxiao@163.com" title="E-Mail &rarr; uliuxiao@163.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                神奇的链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://xiaoxiaoaurora.github.io/about/" title="https://xiaoxiaoaurora.github.io/about/">关于此博客</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Deep-contextualized-word-representations-ELMO"><span class="nav-number">1.</span> <span class="nav-text">Deep contextualized word representations (ELMO)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-题目与摘要"><span class="nav-number">1.1.</span> <span class="nav-text">1. 题目与摘要</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本文针对什么任务？任务简要介绍下。"><span class="nav-number">1.1.1.</span> <span class="nav-text">本文针对什么任务？任务简要介绍下。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本文发现了什么问题？该文大体是怎么解决的？解决得如何？"><span class="nav-number">1.1.2.</span> <span class="nav-text">本文发现了什么问题？该文大体是怎么解决的？解决得如何？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解释下题目。题目起得如何？能概括内容并吸引人吗？"><span class="nav-number">1.1.3.</span> <span class="nav-text">解释下题目。题目起得如何？能概括内容并吸引人吗？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-介绍"><span class="nav-number">1.2.</span> <span class="nav-text">2. 介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#这个任务以往是如何解决的？作者沿着哪条路径继续研究的？为什么？"><span class="nav-number">1.2.1.</span> <span class="nav-text">这个任务以往是如何解决的？作者沿着哪条路径继续研究的？为什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目前作者研究存在什么问题？为什么？你觉得可能还存在什么其他问题？为什么？"><span class="nav-number">1.2.2.</span> <span class="nav-text">目前作者研究存在什么问题？为什么？你觉得可能还存在什么其他问题？为什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#该文准备如何解决这个问题？为什么可以这样解决？你觉得该文解决这个问题的方法如何？为什么？你觉得可以如何-或更好的解决这个问题？为什么？"><span class="nav-number">1.2.3.</span> <span class="nav-text">该文准备如何解决这个问题？为什么可以这样解决？你觉得该文解决这个问题的方法如何？为什么？你觉得可以如何/或更好的解决这个问题？为什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列出该文贡献（该文自己觉得的）"><span class="nav-number">1.2.4.</span> <span class="nav-text">列出该文贡献（该文自己觉得的）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-模型：ELMo-Embeddings-from-Language-Models"><span class="nav-number">1.3.</span> <span class="nav-text">3. 模型：ELMo(Embeddings from Language Models)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整体介绍（主要是图）"><span class="nav-number">1.3.1.</span> <span class="nav-text">整体介绍（主要是图）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型创新点"><span class="nav-number">1.3.2.</span> <span class="nav-text">模型创新点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（仅对要进一步跟进的paper）详细介绍模型，从输入到输出，输入矩阵维度，公式等"><span class="nav-number">1.3.3.</span> <span class="nav-text">（仅对要进一步跟进的paper）详细介绍模型，从输入到输出，输入矩阵维度，公式等</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-biLMs-for-supervised-NLP-tasks"><span class="nav-number">1.3.4.</span> <span class="nav-text">Using biLMs for supervised NLP tasks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pre-trained-bidirectional-language-model-architecture"><span class="nav-number">1.3.5.</span> <span class="nav-text">Pre-trained bidirectional language model architecture</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-实验"><span class="nav-number">1.4.</span> <span class="nav-text">4. 实验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据集及评价标准介绍"><span class="nav-number">1.4.1.</span> <span class="nav-text">数据集及评价标准介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Baseline介绍"><span class="nav-number">1.4.2.</span> <span class="nav-text">Baseline介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果分析"><span class="nav-number">1.4.3.</span> <span class="nav-text">结果分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-结论"><span class="nav-number">1.5.</span> <span class="nav-text">5. 结论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#你觉得这篇paper创新与贡献是（不一定如作者所说）？为什么？"><span class="nav-number">1.5.1.</span> <span class="nav-text">你觉得这篇paper创新与贡献是（不一定如作者所说）？为什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有没有进一步深入的价值？为什么？"><span class="nav-number">1.5.2.</span> <span class="nav-text">有没有进一步深入的价值？为什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列出该文弱点（或者是你觉得应该是什么问题，他解决的不好，你会如何解决？）"><span class="nav-number">1.5.3.</span> <span class="nav-text">列出该文弱点（或者是你觉得应该是什么问题，他解决的不好，你会如何解决？）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#该文对你的启发是？"><span class="nav-number">1.5.4.</span> <span class="nav-text">该文对你的启发是？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列出其中有价值的需要进一步阅读的参考文献"><span class="nav-number">1.5.5.</span> <span class="nav-text">列出其中有价值的需要进一步阅读的参考文献</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xiao</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数"></span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长"></span>
+  
+</div>
+
+
+
+
+
+
+
+
+  
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共41.9k字</span>
+</div>
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>
+

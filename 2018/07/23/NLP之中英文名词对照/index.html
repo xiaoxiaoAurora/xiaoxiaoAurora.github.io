@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="NLP|中英文名词对照附录英语不好，记性差，碰到专业术语总是抓狂（@_@）。主要是一些缩略词、语言学常用词。     句法标注 TLE: Treebank of Learner English  学习者英语树库   SALLE: Syntacticlly Annotating Learner Language of English 英语学习者语言的句法标注（也是一个treebank）   UD:">
+<meta name="keywords" content="NLP,名词解释">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NLP|中英文名词对照附录">
+<meta property="og:url" content="https://xiaoxiaoaurora.github.io/2018/07/23/NLP之中英文名词对照/index.html">
+<meta property="og:site_name" content="XiaoXiao">
+<meta property="og:description" content="NLP|中英文名词对照附录英语不好，记性差，碰到专业术语总是抓狂（@_@）。主要是一些缩略词、语言学常用词。     句法标注 TLE: Treebank of Learner English  学习者英语树库   SALLE: Syntacticlly Annotating Learner Language of English 英语学习者语言的句法标注（也是一个treebank）   UD:">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2019/04/04/5ca5d4fb76e7d.jpg">
+<meta property="og:updated_time" content="2019-04-04T10:00:53.138Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NLP|中英文名词对照附录">
+<meta name="twitter:description" content="NLP|中英文名词对照附录英语不好，记性差，碰到专业术语总是抓狂（@_@）。主要是一些缩略词、语言学常用词。     句法标注 TLE: Treebank of Learner English  学习者英语树库   SALLE: Syntacticlly Annotating Learner Language of English 英语学习者语言的句法标注（也是一个treebank）   UD:">
+<meta name="twitter:image" content="https://i.loli.net/2019/04/04/5ca5d4fb76e7d.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="XiaoXiao" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://xiaoxiaoaurora.github.io/2018/07/23/NLP之中英文名词对照/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>NLP|中英文名词对照附录 | XiaoXiao</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/xiaoxiaoAurora" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XiaoXiao</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-top">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/top/" rel="section"><i class="menu-item-icon fa fa-fw fa-signal"></i> <br>top</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-search">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/search/" rel="section"><i class="menu-item-icon fa fa-fw fa-search"></i> <br>搜索</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiaoxiaoaurora.github.io/2018/07/23/NLP之中英文名词对照/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xiao">
+      <meta itemprop="description" content="怕什么真理无穷，进一寸有进一寸的欢喜。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoXiao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">NLP|中英文名词对照附录
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-07-23 16:12:18" itemprop="dateCreated datePublished" datetime="2018-07-23T16:12:18+08:00">2018-07-23</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-04 18:00:53" itemprop="dateModified" datetime="2019-04-04T18:00:53+08:00">2019-04-04</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/NLP/" itemprop="url" rel="index"><span itemprop="name">NLP</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数"></span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长"></span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <img src="https://i.loli.net/2019/04/04/5ca5d4fb76e7d.jpg" itemprop="contentUrl">
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <h1 id="NLP-中英文名词对照附录"><a href="#NLP-中英文名词对照附录" class="headerlink" title="NLP|中英文名词对照附录"></a><center>NLP|中英文名词对照附录</center></h1><font size="1" color="#9A32CD">英语不好，记性差，碰到专业术语总是抓狂（@_@）。主要是一些缩略词、语言学常用词。</font>  
+
+
+<h2 id="句法标注"><a href="#句法标注" class="headerlink" title="句法标注"></a>句法标注</h2><ol>
+<li>TLE: Treebank of Learner English  学习者英语树库  </li>
+<li>SALLE: Syntacticlly Annotating Learner Language of English 英语学习者语言的句法标注（也是一个treebank）  </li>
+<li>UD: Universal Dependencies 通用依存  </li>
+<li>POS： Part of Speech  词性</li>
+<li>Literal Annotation  字面标注</li>
+<li>Lemma 词元</li>
+<li>Dependency Annotation 依存标注</li>
+<li>Word Segmentation 分词；中文切词（即把一句话分成一个词的序列。）  </li>
+<li>Morphological 形态学的; 构形<ul>
+<li>morphologically 词法地；形态学上地  </li>
+<li>morphology 形态学，形态论；[语] 词法，[语] 词态学  </li>
+<li>morph 词态；语素；变体  </li>
+<li>morpheme [语] 词素；形态素  </li>
+</ul>
+</li>
+</ol>
+<ol start="10">
+<li><p>Distributional     分布式的； 分布</p>
+<ul>
+<li>distributive     [语] 分配词    </li>
+</ul>
+</li>
+<li><p>Word formation     构词 词性转换 单词构成  </p>
+</li>
+<li>linguistic form     语言形式(如后缀、词素、单词、短词、句子等); 语言形态; 语言结构  </li>
+</ol>
+<h2 id="other"><a href="#other" class="headerlink" title="other"></a><strong>other</strong></h2><p>activation 激活值<br>activation function 激活函数<br>additive noise 加性噪声<br>autoencoder 自编码器<br>Autoencoders 自编码算法<br>average firing rate 平均激活率<br>average sum-of-squares error 均方差<br>backpropagation 后向传播<br>basis 基<br>basis feature vectors 特征基向量<br>batch gradient ascent 批量梯度上升法<br>Bayesian regularization method 贝叶斯规则化方法<br>Bernoulli random variable 伯努利随机变量<br>bias term 偏置项<br>binary classfication 二元分类<br>class labels 类型标记<br>concatenation 级联<br>conjugate gradient 共轭梯度<br>contiguous groups 联通区域<br>convex optimization software 凸优化软件<br>convolution 卷积<br>cost function 代价函数<br>covariance matrix 协方差矩阵<br>DC component 直流分量<br>decorrelation 去相关<br>degeneracy 退化<br>demensionality reduction 降维<br>derivative 导函数<br>diagonal 对角线<br>diffusion of gradients 梯度的弥散<br>eigenvalue 特征值<br>eigenvector 特征向量<br>error term 残差<br>feature matrix 特征矩阵<br>feature standardization 特征标准化<br>feedforward architectures 前馈结构算法<br>feedforward neural network 前馈神经网络<br>feedforward pass 前馈传导<br>fine-tuned 微调<br>first-order feature 一阶特征<br>forward pass 前向传导<br>forward propagation 前向传播<br>Gaussian prior 高斯先验概率<br>generative model 生成模型<br>gradient descent 梯度下降<br>Greedy layer-wise training 逐层贪婪训练方法<br>grouping matrix 分组矩阵<br>Hadamard product 阿达马乘积<br>Hessian matrix Hessian 矩阵<br>hidden layer 隐含层<br>hidden units 隐藏神经元<br>Hierarchical grouping 层次型分组<br>higher-order features 更高阶特征<br>highly non-convex optimization problem 高度非凸的优化问题<br>histogram 直方图<br>hyperbolic tangent 双曲正切函数<br>hypothesis 估值，假设<br>identity activation function 恒等激励函数<br>IID 独立同分布<br>illumination 照明<br>inactive 抑制<br>independent component analysis 独立成份分析<br>input domains 输入域<br>input layer 输入层<br>intensity 亮度/灰度<br>intercept term 截距<br>KL divergence 相对熵<br>KL divergence KL分散度<br>k-Means K-均值<br>learning rate 学习速率<br>least squares 最小二乘法<br>linear correspondence 线性响应<br>linear superposition 线性叠加<br>line-search algorithm 线搜索算法<br>local mean subtraction 局部均值消减<br>local optima 局部最优解<br>logistic regression 逻辑回归<br>loss function 损失函数<br>low-pass filtering 低通滤波<br>magnitude 幅值<br>MAP 极大后验估计<br>maximum likelihood estimation 极大似然估计<br>mean 平均值<br>MFCC Mel 倒频系数<br>multi-class classification 多元分类<br>neural networks 神经网络<br>neuron 神经元<br>Newton’s method 牛顿法<br>non-convex function 非凸函数<br>non-linear feature 非线性特征<br>norm 范式<br>norm bounded 有界范数<br>norm constrained 范数约束<br>normalization 归一化<br>numerical roundoff errors 数值舍入误差<br>numerically checking 数值检验<br>numerically reliable 数值计算上稳定<br>object detection 物体检测<br>objective function 目标函数<br>off-by-one error 缺位错误<br>orthogonalization 正交化<br>output layer 输出层<br>overall cost function 总体代价函数<br>over-complete basis 超完备基<br>over-fitting 过拟合<br>parts of objects 目标的部件<br>part-whole decompostion 部分-整体分解<br>PCA 主元分析<br>penalty term 惩罚因子<br>per-example mean subtraction 逐样本均值消减<br>pooling 池化<br>pretrain 预训练<br>principal components analysis 主成份分析<br>quadratic constraints 二次约束<br>RBMs 受限Boltzman机<br>reconstruction based models 基于重构的模型<br>reconstruction cost 重建代价<br>reconstruction term 重构项<br>redundant 冗余<br>reflection matrix 反射矩阵<br>regularization 正则化<br>regularization term 正则化项<br>rescaling 缩放<br>robust 鲁棒性<br>run 行程<br>second-order feature 二阶特征<br>sigmoid activation function S型激励函数<br>significant digits 有效数字<br>singular value 奇异值<br>singular vector 奇异向量<br>smoothed L1 penalty 平滑的L1范数惩罚<br>Smoothed topographic L1 sparsity penalty 平滑地形L1稀疏惩罚函数<br>smoothing 平滑<br>Softmax Regresson Softmax回归<br>sorted in decreasing order 降序排列<br>source features 源特征<br>sparse autoencoder 消减归一化<br>Sparsity 稀疏性<br>sparsity parameter 稀疏性参数<br>sparsity penalty 稀疏惩罚<br>square function 平方函数<br>squared-error 方差<br>stationary 平稳性（不变性）<br>stationary stochastic process 平稳随机过程<br>step-size 步长值<br>supervised learning 监督学习<br>symmetric positive semi-definite matrix 对称半正定矩阵<br>symmetry breaking 对称失效<br>tanh function 双曲正切函数<br>the average activation 平均活跃度<br>the derivative checking method 梯度验证方法<br>the empirical distribution 经验分布函数<br>the energy function 能量函数<br>the Lagrange dual 拉格朗日对偶函数<br>the log likelihood 对数似然函数<br>the pixel intensity value 像素灰度值<br>the rate of convergence 收敛速度<br>topographic cost term 拓扑代价项<br>topographic ordered 拓扑秩序<br>transformation 变换<br>translation invariant 平移不变性<br>trivial answer 平凡解<br>under-complete basis 不完备基<br>unrolling 组合扩展<br>unsupervised learning 无监督学习<br>variance 方差<br>vecotrized implementation 向量化实现<br>vectorization 矢量化<br>visual cortex 视觉皮层<br>weight decay 权重衰减<br>weighted average 加权平均值<br>whitening 白化<br>zero-mean 均值为零</p>
+<p>Letter A<br>Accumulated error backpropagation 累积误差逆传播<br>Activation Function 激活函数<br>Adaptive Resonance Theory/ART 自适应谐振理论<br>Addictive model 加性学习<br>Adversarial Networks 对抗网络<br>Affine Layer 仿射层<br>Affinity matrix 亲和矩阵<br>Agent 代理 / 智能体<br>Algorithm 算法<br>Alpha-beta pruning α-β剪枝<br>Anomaly detection 异常检测<br>Approximation 近似<br>Area Under ROC Curve／AUC Roc 曲线下面积<br>Artificial General Intelligence/AGI 通用人工智能<br>Artificial Intelligence/AI 人工智能<br>Association analysis 关联分析<br>Attention mechanism 注意力机制<br>Attribute conditional independence assumption 属性条件独立性假设<br>Attribute space 属性空间<br>Attribute value 属性值<br>Autoencoder 自编码器<br>Automatic speech recognition 自动语音识别<br>Automatic summarization 自动摘要<br>Average gradient 平均梯度<br>Average-Pooling 平均池化</p>
+<p>Letter B<br>Backpropagation Through Time 通过时间的反向传播<br>Backpropagation/BP 反向传播<br>Base learner 基学习器<br>Base learning algorithm 基学习算法<br>Batch Normalization/BN 批量归一化<br>Bayes decision rule 贝叶斯判定准则<br>Bayes Model Averaging／BMA 贝叶斯模型平均<br>Bayes optimal classifier 贝叶斯最优分类器<br>Bayesian decision theory 贝叶斯决策论<br>Bayesian network 贝叶斯网络<br>Between-class scatter matrix 类间散度矩阵<br>Bias 偏置 / 偏差<br>Bias-variance decomposition 偏差-方差分解<br>Bias-Variance Dilemma 偏差 – 方差困境<br>Bi-directional Long-Short Term Memory/Bi-LSTM 双向长短期记忆<br>Binary classification 二分类<br>Binomial test 二项检验<br>Bi-partition 二分法<br>Boltzmann machine 玻尔兹曼机<br>Bootstrap sampling 自助采样法／可重复采样／有放回采样<br>Bootstrapping 自助法<br>Break-Event Point／BEP 平衡点</p>
+<p>Letter C<br>Calibration 校准<br>Cascade-Correlation 级联相关<br>Categorical attribute 离散属性<br>Class-conditional probability 类条件概率<br>Classification and regression tree/CART 分类与回归树<br>Classifier 分类器<br>Class-imbalance 类别不平衡<br>Closed -form 闭式<br>Cluster 簇/类/集群<br>Cluster analysis 聚类分析<br>Clustering 聚类<br>Clustering ensemble 聚类集成<br>Co-adapting 共适应<br>Coding matrix 编码矩阵<br>COLT 国际学习理论会议<br>Committee-based learning 基于委员会的学习<br>Competitive learning 竞争型学习<br>Component learner 组件学习器<br>Comprehensibility 可解释性<br>Computation Cost 计算成本<br>Computational Linguistics 计算语言学<br>Computer vision 计算机视觉<br>Concept drift 概念漂移<br>Concept Learning System /CLS 概念学习系统<br>Conditional entropy 条件熵<br>Conditional mutual information 条件互信息<br>Conditional Probability Table／CPT 条件概率表<br>Conditional random field/CRF 条件随机场<br>Conditional risk 条件风险<br>Confidence 置信度<br>Confusion matrix 混淆矩阵<br>Connection weight 连接权<br>Connectionism 连结主义<br>Consistency 一致性／相合性<br>Contingency table 列联表<br>Continuous attribute 连续属性<br>Convergence 收敛<br>Conversational agent 会话智能体<br>Convex quadratic programming 凸二次规划<br>Convexity 凸性<br>Convolutional neural network/CNN 卷积神经网络<br>Co-occurrence 同现<br>Correlation coefficient 相关系数<br>Cosine similarity 余弦相似度<br>Cost curve 成本曲线<br>Cost Function 成本函数<br>Cost matrix 成本矩阵<br>Cost-sensitive 成本敏感<br>Cross entropy 交叉熵<br>Cross validation 交叉验证<br>Crowdsourcing 众包<br>Curse of dimensionality 维数灾难<br>Cut point 截断点<br>Cutting plane algorithm 割平面法</p>
+<p>Letter D<br>Data mining 数据挖掘<br>Data set 数据集<br>Decision Boundary 决策边界<br>Decision stump 决策树桩<br>Decision tree 决策树／判定树<br>Deduction 演绎<br>Deep Belief Network 深度信念网络<br>Deep Convolutional Generative Adversarial Network/DCGAN 深度卷积生成对抗网络<br>Deep learning 深度学习<br>Deep neural network/DNN 深度神经网络<br>Deep Q-Learning 深度 Q 学习<br>Deep Q-Network 深度 Q 网络<br>Density estimation 密度估计<br>Density-based clustering 密度聚类<br>Differentiable neural computer 可微分神经计算机<br>Dimensionality reduction algorithm 降维算法<br>Directed edge 有向边<br>Disagreement measure 不合度量<br>Discriminative model 判别模型<br>Discriminator 判别器<br>Distance measure 距离度量<br>Distance metric learning 距离度量学习<br>Distribution 分布<br>Divergence 散度<br>Diversity measure 多样性度量／差异性度量<br>Domain adaption 领域自适应<br>Downsampling 下采样<br>D-separation （Directed separation） 有向分离<br>Dual problem 对偶问题<br>Dummy node 哑结点<br>Dynamic Fusion 动态融合<br>Dynamic programming 动态规划</p>
+<p>Letter E<br>Eigenvalue decomposition 特征值分解<br>Embedding 嵌入<br>Emotional analysis 情绪分析<br>Empirical conditional entropy 经验条件熵<br>Empirical entropy 经验熵<br>Empirical error 经验误差<br>Empirical risk 经验风险<br>End-to-End 端到端<br>Energy-based model 基于能量的模型<br>Ensemble learning 集成学习<br>Ensemble pruning 集成修剪<br>Error Correcting Output Codes／ECOC 纠错输出码<br>Error rate 错误率<br>Error-ambiguity decomposition 误差-分歧分解<br>Euclidean distance 欧氏距离<br>Evolutionary computation 演化计算<br>Expectation-Maximization 期望最大化<br>Expected loss 期望损失<br>Exploding Gradient Problem 梯度爆炸问题<br>Exponential loss function 指数损失函数<br>Extreme Learning Machine/ELM 超限学习机</p>
+<p>Letter F<br>Factorization 因子分解<br>False negative 假负类<br>False positive 假正类<br>False Positive Rate/FPR 假正例率<br>Feature engineering 特征工程<br>Feature selection 特征选择<br>Feature vector 特征向量<br>Featured Learning 特征学习<br>Feedforward Neural Networks/FNN 前馈神经网络<br>Fine-tuning 微调<br>Flipping output 翻转法<br>Fluctuation 震荡<br>Forward stagewise algorithm 前向分步算法<br>Frequentist 频率主义学派<br>Full-rank matrix 满秩矩阵<br>Functional neuron 功能神经元</p>
+<p>Letter G<br>Gain ratio 增益率<br>Game theory 博弈论<br>Gaussian kernel function 高斯核函数<br>Gaussian Mixture Model 高斯混合模型<br>General Problem Solving 通用问题求解<br>Generalization 泛化<br>Generalization error 泛化误差<br>Generalization error bound 泛化误差上界<br>Generalized Lagrange function 广义拉格朗日函数<br>Generalized linear model 广义线性模型<br>Generalized Rayleigh quotient 广义瑞利商<br>Generative Adversarial Networks/GAN 生成对抗网络<br>Generative Model 生成模型<br>Generator 生成器<br>Genetic Algorithm/GA 遗传算法<br>Gibbs sampling 吉布斯采样<br>Gini index 基尼指数<br>Global minimum 全局最小<br>Global Optimization 全局优化<br>Gradient boosting 梯度提升<br>Gradient Descent 梯度下降<br>Graph theory 图论<br>Ground-truth 真相／真实</p>
+<p>Letter H<br>Hard margin 硬间隔<br>Hard voting 硬投票<br>Harmonic mean 调和平均<br>Hesse matrix 海塞矩阵<br>Hidden dynamic model 隐动态模型<br>Hidden layer 隐藏层<br>Hidden Markov Model/HMM 隐马尔可夫模型<br>Hierarchical clustering 层次聚类<br>Hilbert space 希尔伯特空间<br>Hinge loss function 合页损失函数<br>Hold-out 留出法<br>Homogeneous 同质<br>Hybrid computing 混合计算<br>Hyperparameter 超参数<br>Hypothesis 假设<br>Hypothesis test 假设验证</p>
+<p>Letter I<br>ICML 国际机器学习会议<br>Improved iterative scaling/IIS 改进的迭代尺度法<br>Incremental learning 增量学习<br>Independent and identically distributed/i.i.d. 独立同分布<br>Independent Component Analysis/ICA 独立成分分析<br>Indicator function 指示函数<br>Individual learner 个体学习器<br>Induction 归纳<br>Inductive bias 归纳偏好<br>Inductive learning 归纳学习<br>Inductive Logic Programming／ILP 归纳逻辑程序设计<br>Information entropy 信息熵<br>Information gain 信息增益<br>Input layer 输入层<br>Insensitive loss 不敏感损失<br>Inter-cluster similarity 簇间相似度<br>International Conference for Machine Learning/ICML 国际机器学习大会<br>Intra-cluster similarity 簇内相似度<br>Intrinsic value 固有值<br>Isometric Mapping/Isomap 等度量映射<br>Isotonic regression 等分回归<br>Iterative Dichotomiser 迭代二分器</p>
+<p>Letter K<br>Kernel method 核方法<br>Kernel trick 核技巧<br>Kernelized Linear Discriminant Analysis／KLDA 核线性判别分析<br>K-fold cross validation k 折交叉验证／k 倍交叉验证<br>K-Means Clustering K – 均值聚类<br>K-Nearest Neighbours Algorithm/KNN K近邻算法<br>Knowledge base 知识库<br>Knowledge Representation 知识表征</p>
+<p>Letter L<br>Label space 标记空间<br>Lagrange duality 拉格朗日对偶性<br>Lagrange multiplier 拉格朗日乘子<br>Laplace smoothing 拉普拉斯平滑<br>Laplacian correction 拉普拉斯修正<br>Latent Dirichlet Allocation 隐狄利克雷分布<br>Latent semantic analysis 潜在语义分析<br>Latent variable 隐变量<br>Lazy learning 懒惰学习<br>Learner 学习器<br>Learning by analogy 类比学习<br>Learning rate 学习率<br>Learning Vector Quantization/LVQ 学习向量量化<br>Least squares regression tree 最小二乘回归树<br>Leave-One-Out/LOO 留一法<br>linear chain conditional random field 线性链条件随机场<br>Linear Discriminant Analysis／LDA 线性判别分析<br>Linear model 线性模型<br>Linear Regression 线性回归<br>Link function 联系函数<br>Local Markov property 局部马尔可夫性<br>Local minimum 局部最小<br>Log likelihood 对数似然<br>Log odds／logit 对数几率<br>Logistic Regression Logistic 回归<br>Log-likelihood 对数似然<br>Log-linear regression 对数线性回归<br>Long-Short Term Memory/LSTM 长短期记忆<br>Loss function 损失函数</p>
+<p>Letter M<br>Machine translation/MT 机器翻译<br>Macron-P 宏查准率<br>Macron-R 宏查全率<br>Majority voting 绝对多数投票法<br>Manifold assumption 流形假设<br>Manifold learning 流形学习<br>Margin theory 间隔理论<br>Marginal distribution 边际分布<br>Marginal independence 边际独立性<br>Marginalization 边际化<br>Markov Chain Monte Carlo/MCMC 马尔可夫链蒙特卡罗方法<br>Markov Random Field 马尔可夫随机场<br>Maximal clique 最大团<br>Maximum Likelihood Estimation/MLE 极大似然估计／极大似然法<br>Maximum margin 最大间隔<br>Maximum weighted spanning tree 最大带权生成树<br>Max-Pooling 最大池化<br>Mean squared error 均方误差<br>Meta-learner 元学习器<br>Metric learning 度量学习<br>Micro-P 微查准率<br>Micro-R 微查全率<br>Minimal Description Length/MDL 最小描述长度<br>Minimax game 极小极大博弈<br>Misclassification cost 误分类成本<br>Mixture of experts 混合专家<br>Momentum 动量<br>Moral graph 道德图／端正图<br>Multi-class classification 多分类<br>Multi-document summarization 多文档摘要<br>Multi-layer feedforward neural networks 多层前馈神经网络<br>Multilayer Perceptron/MLP 多层感知器<br>Multimodal learning 多模态学习<br>Multiple Dimensional Scaling 多维缩放<br>Multiple linear regression 多元线性回归<br>Multi-response Linear Regression ／MLR 多响应线性回归<br>Mutual information 互信息</p>
+<p>Letter N<br>Naive bayes 朴素贝叶斯<br>Naive Bayes Classifier 朴素贝叶斯分类器<br>Named entity recognition 命名实体识别<br>Nash equilibrium 纳什均衡<br>Natural language generation/NLG 自然语言生成<br>Natural language processing 自然语言处理<br>Negative class 负类<br>Negative correlation 负相关法<br>Negative Log Likelihood 负对数似然<br>Neighbourhood Component Analysis/NCA 近邻成分分析<br>Neural Machine Translation 神经机器翻译<br>Neural Turing Machine 神经图灵机<br>Newton method 牛顿法<br>NIPS 国际神经信息处理系统会议<br>No Free Lunch Theorem／NFL 没有免费的午餐定理<br>Noise-contrastive estimation 噪音对比估计<br>Nominal attribute 列名属性<br>Non-convex optimization 非凸优化<br>Nonlinear model 非线性模型<br>Non-metric distance 非度量距离<br>Non-negative matrix factorization 非负矩阵分解<br>Non-ordinal attribute 无序属性<br>Non-Saturating Game 非饱和博弈<br>Norm 范数<br>Normalization 归一化<br>Nuclear norm 核范数<br>Numerical attribute 数值属性</p>
+<p>Letter O<br>Objective function 目标函数<br>Oblique decision tree 斜决策树<br>Occam’s razor 奥卡姆剃刀<br>Odds 几率<br>Off-Policy 离策略<br>One shot learning 一次性学习<br>One-Dependent Estimator／ODE 独依赖估计<br>On-Policy 在策略<br>Ordinal attribute 有序属性<br>Out-of-bag estimate 包外估计<br>Output layer 输出层<br>Output smearing 输出调制法<br>Overfitting 过拟合／过配<br>Oversampling 过采样</p>
+<p>Letter P<br>Paired t-test 成对 t 检验<br>Pairwise 成对型<br>Pairwise Markov property 成对马尔可夫性<br>Parameter 参数<br>Parameter estimation 参数估计<br>Parameter tuning 调参<br>Parse tree 解析树<br>Particle Swarm Optimization/PSO 粒子群优化算法<br>Part-of-speech tagging 词性标注<br>Perceptron 感知机<br>Performance measure 性能度量<br>Plug and Play Generative Network 即插即用生成网络<br>Plurality voting 相对多数投票法<br>Polarity detection 极性检测<br>Polynomial kernel function 多项式核函数<br>Pooling 池化<br>Positive class 正类<br>Positive definite matrix 正定矩阵<br>Post-hoc test 后续检验<br>Post-pruning 后剪枝<br>potential function 势函数<br>Precision 查准率／准确率<br>Prepruning 预剪枝<br>Principal component analysis/PCA 主成分分析<br>Principle of multiple explanations 多释原则<br>Prior 先验<br>Probability Graphical Model 概率图模型<br>Proximal Gradient Descent/PGD 近端梯度下降<br>Pruning 剪枝<br>Pseudo-label 伪标记</p>
+<p>Letter Q<br>Quantized Neural Network 量子化神经网络<br>Quantum computer 量子计算机<br>Quantum Computing 量子计算<br>Quasi Newton method 拟牛顿法</p>
+<p>Letter R<br>Radial Basis Function／RBF 径向基函数<br>Random Forest Algorithm 随机森林算法<br>Random walk 随机漫步<br>Recall 查全率／召回率<br>Receiver Operating Characteristic/ROC 受试者工作特征<br>Rectified Linear Unit/ReLU 线性修正单元<br>Recurrent Neural Network 循环神经网络<br>Recursive neural network 递归神经网络<br>Reference model 参考模型<br>Regression 回归<br>Regularization 正则化<br>Reinforcement learning/RL 强化学习<br>Representation learning 表征学习<br>Representer theorem 表示定理<br>reproducing kernel Hilbert space/RKHS 再生核希尔伯特空间<br>Re-sampling 重采样法<br>Rescaling 再缩放<br>Residual Mapping 残差映射<br>Residual Network 残差网络<br>Restricted Boltzmann Machine/RBM 受限玻尔兹曼机<br>Restricted Isometry Property/RIP 限定等距性<br>Re-weighting 重赋权法<br>Robustness 稳健性/鲁棒性<br>Root node 根结点<br>Rule Engine 规则引擎<br>Rule learning 规则学习</p>
+<p>Letter S<br>Saddle point 鞍点<br>Sample space 样本空间<br>Sampling 采样<br>Score function 评分函数<br>Self-Driving 自动驾驶<br>Self-Organizing Map／SOM 自组织映射<br>Semi-naive Bayes classifiers 半朴素贝叶斯分类器<br>Semi-Supervised Learning 半监督学习<br>semi-Supervised Support Vector Machine 半监督支持向量机<br>Sentiment analysis 情感分析<br>Separating hyperplane 分离超平面<br>Sigmoid function Sigmoid 函数<br>Similarity measure 相似度度量<br>Simulated annealing 模拟退火<br>Simultaneous localization and mapping 同步定位与地图构建<br>Singular Value Decomposition 奇异值分解<br>Slack variables 松弛变量<br>Smoothing 平滑<br>Soft margin 软间隔<br>Soft margin maximization 软间隔最大化<br>Soft voting 软投票<br>Sparse representation 稀疏表征<br>Sparsity 稀疏性<br>Specialization 特化<br>Spectral Clustering 谱聚类<br>Speech Recognition 语音识别<br>Splitting variable 切分变量<br>Squashing function 挤压函数<br>Stability-plasticity dilemma 可塑性-稳定性困境<br>Statistical learning 统计学习<br>Status feature function 状态特征函<br>Stochastic gradient descent 随机梯度下降<br>Stratified sampling 分层采样<br>Structural risk 结构风险<br>Structural risk minimization/SRM 结构风险最小化<br>Subspace 子空间<br>Supervised learning 监督学习／有导师学习<br>support vector expansion 支持向量展式<br>Support Vector Machine/SVM 支持向量机<br>Surrogat loss 替代损失<br>Surrogate function 替代函数<br>Symbolic learning 符号学习<br>Symbolism 符号主义<br>Synset 同义词集</p>
+<p>Letter T<br>T-Distribution Stochastic Neighbour Embedding/t-SNE T – 分布随机近邻嵌入<br>Tensor 张量<br>Tensor Processing Units/TPU 张量处理单元<br>The least square method 最小二乘法<br>Threshold 阈值<br>Threshold logic unit 阈值逻辑单元<br>Threshold-moving 阈值移动<br>Time Step 时间步骤<br>Tokenization 标记化<br>Training error 训练误差<br>Training instance 训练示例／训练例<br>Transductive learning 直推学习<br>Transfer learning 迁移学习<br>Treebank 树库<br>Tria-by-error 试错法<br>True negative 真负类<br>True positive 真正类<br>True Positive Rate/TPR 真正例率<br>Turing Machine 图灵机<br>Twice-learning 二次学习</p>
+<p>Letter U<br>Underfitting 欠拟合／欠配<br>Undersampling 欠采样<br>Understandability 可理解性<br>Unequal cost 非均等代价<br>Unit-step function 单位阶跃函数<br>Univariate decision tree 单变量决策树<br>Unsupervised learning 无监督学习／无导师学习<br>Unsupervised layer-wise training 无监督逐层训练<br>Upsampling 上采样</p>
+<p>Letter V<br>Vanishing Gradient Problem 梯度消失问题<br>Variational inference 变分推断<br>VC Theory VC维理论<br>Version space 版本空间<br>Viterbi algorithm 维特比算法<br>Von Neumann architecture 冯 · 诺伊曼架构</p>
+<p>Letter W<br>Wasserstein GAN/WGAN Wasserstein生成对抗网络<br>Weak learner 弱学习器<br>Weight 权重<br>Weight sharing 权共享<br>Weighted voting 加权投票法<br>Within-class scatter matrix 类内散度矩阵<br>Word embedding 词嵌入<br>Word sense disambiguation 词义消歧</p>
+<p>Letter Z<br>Zero-data learning 零数据学习<br>Zero-shot learning 零次学习</p>
+<p>A<br>approximations近似值<br>arbitrary随意的<br>affine仿射的<br>arbitrary任意的<br>amino acid氨基酸<br>amenable经得起检验的<br>axiom公理，原则<br>abstract提取<br>architecture架构，体系结构；建造业<br>absolute绝对的<br>arsenal军火库<br>assignment分配<br>algebra线性代数<br>asymptotically无症状的<br>appropriate恰当的</p>
+<p>B<br>bias偏差<br>brevity简短，简洁；短暂<br>broader广泛<br>briefly简短的<br>batch批量</p>
+<p>C<br>convergence 收敛，集中到一点<br>convex凸的<br>contours轮廓<br>constraint约束<br>constant常理<br>commercial商务的<br>complementarity补充<br>coordinate ascent同等级上升<br>clipping剪下物；剪报；修剪<br>component分量；部件<br>continuous连续的<br>covariance协方差<br>canonical正规的，正则的<br>concave非凸的<br>corresponds相符合；相当；通信<br>corollary推论<br>concrete具体的事物，实在的东西<br>cross validation交叉验证<br>correlation相互关系<br>convention约定<br>cluster一簇<br>centroids 质心，形心<br>converge收敛<br>computationally计算(机)的<br>calculus计算</p>
+<p>D<br>derive获得，取得<br>dual二元的<br>duality二元性；二象性；对偶性<br>derivation求导；得到；起源<br>denote预示，表示，是…的标志；意味着，[逻]指称<br>divergence 散度；发散性<br>dimension尺度，规格；维数<br>dot小圆点<br>distortion变形<br>density概率密度函数<br>discrete离散的<br>discriminative有识别能力的<br>diagonal对角<br>dispersion分散，散开<br>determinant决定因素<br>disjoint不相交的</p>
+<p>E<br>encounter遇到<br>ellipses椭圆<br>equality等式<br>extra额外的<br>empirical经验；观察<br>ennmerate例举，计数<br>exceed超过，越出<br>expectation期望<br>efficient生效的<br>endow赋予<br>explicitly清楚的<br>exponential family指数家族<br>equivalently等价的</p>
+<p>F<br>feasible可行的<br>forary初次尝试<br>finite有限的，限定的<br>forgo摒弃，放弃<br>fliter过滤<br>frequentist最常发生的<br>forward search前向式搜索<br>formalize使定形</p>
+<p>G<br>generalized归纳的<br>generalization概括，归纳；普遍化；判断（根据不足）<br>guarantee保证；抵押品<br>generate形成，产生<br>geometric margins几何边界<br>gap裂口<br>generative生产的；有生产力的</p>
+<p>H<br>heuristic启发式的；启发法；启发程序<br>hone怀恋；磨<br>hyperplane超平面</p>
+<p>L<br>initial最初的<br>implement执行<br>intuitive凭直觉获知的<br>incremental增加的<br>intercept截距<br>intuitious直觉<br>instantiation例子<br>indicator指示物，指示器<br>interative重复的，迭代的<br>integral积分<br>identical相等的；完全相同的<br>indicate表示，指出<br>invariance不变性，恒定性<br>impose把…强加于<br>intermediate中间的<br>interpretation解释，翻译</p>
+<p>J<br>joint distribution联合概率</p>
+<p>L<br>lieu替代<br>logarithmic对数的，用对数表示的<br>latent潜在的<br>Leave-one-out cross validation留一法交叉验证</p>
+<p>M<br>magnitude巨大<br>mapping绘图，制图；映射<br>matrix矩阵<br>mutual相互的，共同的<br>monotonically单调的<br>minor较小的，次要的<br>multinomial多项的<br>multi-class classification二分类问题</p>
+<p>N<br>nasty讨厌的<br>notation标志，注释<br>naïve朴素的</p>
+<p>O<br>obtain得到<br>oscillate摆动<br>optimization problem最优化问题<br>objective function目标函数<br>optimal最理想的<br>orthogonal(矢量，矩阵等)正交的<br>orientation方向<br>ordinary普通的<br>occasionally偶然的</p>
+<p>P<br>partial derivative偏导数<br>property性质<br>proportional成比例的<br>primal原始的，最初的<br>permit允许<br>pseudocode伪代码<br>permissible可允许的<br>polynomial多项式<br>preliminary预备<br>precision精度<br>perturbation 不安，扰乱<br>poist假定，设想<br>positive semi-definite半正定的<br>parentheses圆括号<br>posterior probability后验概率<br>plementarity补充<br>pictorially图像的<br>parameterize确定…的参数<br>poisson distribution柏松分布<br>pertinent相关的</p>
+<p>Q<br>quadratic二次的<br>quantity量，数量；分量<br>query疑问的</p>
+<p>R<br>regularization使系统化；调整<br>reoptimize重新优化<br>restrict限制；限定；约束<br>reminiscent回忆往事的；提醒的；使人联想…的（of）<br>remark注意<br>random variable随机变量<br>respect考虑<br>respectively各自的；分别的<br>redundant过多的；冗余的</p>
+<p>S<br>susceptible敏感的<br>stochastic可能的；随机的<br>symmetric对称的<br>sophisticated复杂的<br>spurious假的；伪造的<br>subtract减去；减法器<br>simultaneously同时发生地；同步地<br>suffice满足<br>scarce稀有的，难得的<br>split分解，分离<br>subset子集<br>statistic统计量<br>successive iteratious连续的迭代<br>scale标度<br>sort of有几分的<br>squares平方</p>
+<p>T<br>trajectory轨迹<br>temporarily暂时的<br>terminology专用名词<br>tolerance容忍；公差<br>thumb翻阅<br>threshold阈，临界<br>theorem定理<br>tangent正弦</p>
+<p>U<br>unit-length vector单位向量</p>
+<p>V<br>valid有效的，正确的<br>variance方差<br>variable变量；变元<br>vocabulary词汇<br>valued经估价的；宝贵的</p>
+<p>W<br>wrapper包装</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+      
+      <div>
+    
+    <div style="text-align:center;color:#ccc;font-size:14px;">
+        -------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------
+    </div>
+    
+</div>
+      
+    </div>
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/NLP/" rel="tag"><i class="fa fa-tag"></i>NLP</a>
+          
+            <a href="/tags/名词解释/" rel="tag"><i class="fa fa-tag"></i>名词解释</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/09/学习记录之句法结构标注（一）/" rel="next" title="学习记录之句法结构标注(一)">
+                <i class="fa fa-chevron-left"></i> 学习记录之句法结构标注(一)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/10/阅读笔记：语言和认知中的跨语言影响/" rel="prev" title="阅读笔记 | 语言和认知中的跨语言影响">
+                阅读笔记 | 语言和认知中的跨语言影响 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Xiao</p>
+              <div class="site-description motion-element" itemprop="description">怕什么真理无穷，进一寸有进一寸的欢喜。</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/xiaoxiaoAurora" title="GitHub &rarr; https://github.com/xiaoxiaoAurora" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="/uliuxiao@163.com" title="E-Mail &rarr; uliuxiao@163.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                神奇的链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://xiaoxiaoaurora.github.io/about/" title="https://xiaoxiaoaurora.github.io/about/">关于此博客</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NLP-中英文名词对照附录"><span class="nav-number">1.</span> <span class="nav-text">NLP|中英文名词对照附录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#句法标注"><span class="nav-number">1.1.</span> <span class="nav-text">句法标注</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#other"><span class="nav-number">1.2.</span> <span class="nav-text">other</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xiao</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数"></span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长"></span>
+  
+</div>
+
+
+
+
+
+
+
+
+  
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共41.9k字</span>
+</div>
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>
+
