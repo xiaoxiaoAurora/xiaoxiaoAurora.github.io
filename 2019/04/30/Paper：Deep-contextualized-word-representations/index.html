@@ -105,7 +105,7 @@
 <meta property="og:description" content="Deep contextualized word representations (ELMO) [TOC]  1. 题目与摘要本文针对什么任务？任务简要介绍下。 任务： 词表征(Word Representation) 任务介绍： 句子是序列化，里面携带了大量的信息。在NLP发展的进程里面， 采用了one-hot vector的形式来表示一个句子里面的词是一种方式。表示这个句子的方式如下：  首先">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/04/04/5ca5d524ec8fa.jpg">
-<meta property="og:updated_time" content="2019-05-10T12:16:50.081Z">
+<meta property="og:updated_time" content="2019-05-10T12:30:14.172Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Paper：Deep contextualized word representations">
 <meta name="twitter:description" content="Deep contextualized word representations (ELMO) [TOC]  1. 题目与摘要本文针对什么任务？任务简要介绍下。 任务： 词表征(Word Representation) 任务介绍： 句子是序列化，里面携带了大量的信息。在NLP发展的进程里面， 采用了one-hot vector的形式来表示一个句子里面的词是一种方式。表示这个句子的方式如下：  首先">
@@ -439,7 +439,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-10 20:16:50" itemprop="dateModified" datetime="2019-05-10T20:16:50+08:00">2019-05-10</time>
+                <time title="修改时间：2019-05-10 20:30:14" itemprop="dateModified" datetime="2019-05-10T20:30:14+08:00">2019-05-10</time>
               
             
           </span>
@@ -549,7 +549,7 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(x_Harry)^T * x_Hermione = 0</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(x\_Harry)^T * x\_Hermione = 0</span><br></pre></td></tr></table></figure>
 <hr>
 <h3 id="本文发现了什么问题？该文大体是怎么解决的？解决得如何？"><a href="#本文发现了什么问题？该文大体是怎么解决的？解决得如何？" class="headerlink" title="本文发现了什么问题？该文大体是怎么解决的？解决得如何？"></a>本文发现了什么问题？该文大体是怎么解决的？解决得如何？</h3><p><strong>本文提出了一种新的深层上下文的word reresentation。这种模型不仅能够【1】表征词汇使用的复杂特性（例如句法和语义层面的特征，syntax and semantics）；还能【2】表征出如何随着上下文语境的变化而改变，例如一词多义（polysemy）。</strong></p>
 <ul>
@@ -602,9 +602,9 @@
 <ol>
 <li><strong>Language Model</strong><br><img src="https://i.loli.net/2019/05/10/5cd534478803e.jpg" alt="Language Model"></li>
 </ol>
-<p>  给定一个句子(t~1~, t~2~, …，t~N~) 构建的语言模型就是通过一个词汇的上下文去预测一个词t~k~：</p>
+<p>  给定一个句子($t_1, t_2, t_N$) 构建的语言模型就是通过一个词汇的上下文去预测一个词$t_k$：</p>
 <p><img src="https://i.loli.net/2019/05/10/5cd53de4a9292.jpg" alt="image"></p>
-<p>最新的神经语言模型(Jozefowicz et al. ´ , 2016; Melis et al., 2017; Merity et al., 2017)先 计算一个与上下文无关的字符表示 ${x_k^{LM}}$ (通过token embedding或者一个CNN覆盖字符)，然后将它传递进L层前向LSTM。在每个位置k，每个LSTM层输出一个上下文相关的表示$\overrightarrow{h}<em>{k,j}^{LM}$，其中j = 1，…，L。顶层LSTM输出，$\overrightarrow{h}</em>{k,j}^{LM}$通过一个Softmax层用于预测下一个token$t_{k+1}$。</p>
+<p>最新的神经语言模型(Jozefowicz et al. ´ , 2016; Melis et al., 2017; Merity et al., 2017)先 计算一个与上下文无关的字符表示 ${x_k^{LM}}$ (通过token embedding或者一个CNN覆盖字符)，然后将它传递进L层前向LSTM。在每个位置k，每个LSTM层输出一个上下文相关的表示$\overrightarrow{h}_{k,j}^{LM}$，其中j = 1，…，L。顶层LSTM输出，$\overrightarrow{h}_{k,j}^{LM}$通过一个Softmax层用于预测下一个token$t_{k+1}$。</p>
 <p>反向LM与前向LM类似，只是它以相反的方式遍历序列，根据未来上下文预测前面的token。</p>
 <p><img src="https://i.loli.net/2019/05/10/5cd550adece17.jpg" alt></p>
 <p>biLM结合了前向LM和反向LM。我们的公式共同最大化了前向和反向的对数似然性：<br>$$<br>\sum_{k=1}^N(\log p(t_k | t_1,…,t_{k-i}; \circleddash_x, \overrightarrow{\circleddash}_{LSTM}, \circleddash_s) + \log p(t_k | t_{k+1},…,t_{N}; \circleddash_x, \overleftarrow{\circleddash}_{LSTM}, \circleddash_s)))<br>$$</p>
@@ -618,9 +618,9 @@
 <li>ELMO：一种学习单词表示的新方法，该方法是biLM层的线性组合。具体的描述在<a href="模型创新点">模型创新点</a>。</li>
 </ol>
 <h3 id="模型创新点"><a href="#模型创新点" class="headerlink" title="模型创新点"></a>模型创新点</h3><h3 id="（仅对要进一步跟进的paper）详细介绍模型，从输入到输出，输入矩阵维度，公式等"><a href="#（仅对要进一步跟进的paper）详细介绍模型，从输入到输出，输入矩阵维度，公式等" class="headerlink" title="（仅对要进一步跟进的paper）详细介绍模型，从输入到输出，输入矩阵维度，公式等"></a>（仅对要进一步跟进的paper）详细介绍模型，从输入到输出，输入矩阵维度，公式等</h3><p>ELMo is a task specific combination of the intermediate layer representations in the biLM.</p>
-<p>对于每一个词t~k~，一个L层的biLM可以计算出$2*L+1$个表达如下：</p>
+<p>对于每一个词$t_k$，一个L层的biLM可以计算出$2*L+1$个表达如下：</p>
 <p><img src="https://i.loli.net/2019/05/10/5cd55747f158c.jpg" alt></p>
-<p>其中$h_{k,0}^{LM}$来表示第一层向量，$h_{k,j}^{LM} = [\overrightarrow{h}<em>{k,j}^{LM}; {\overleftarrow{h}}</em>{k,j}^{LM}]$。</p>
+<p>其中$h_{k,0}^{LM}$来表示第一层向量，$h_{k,j}^{LM} = [\overrightarrow{h}_{k,j}^{LM}; {\overleftarrow{h}}_{k,j}^{LM}]$。\</p>
 <p>为了包含在下游模型中，ELMo将R中的所有层折叠成一个向量，$ELMO_k = E(R_k; \circleddash_e) $。</p>
 <p>在最简单的情况下，ELMo只选择顶层，$E(R_k) = h_{k,L}^{LM}$，和TagLM和CoVe一样。</p>
 <p>ELMO本质上就是一个任务导向的、双向语言模型（biLM）内部的隐状态层的组合。通用的表达式如下：</p>
@@ -631,8 +631,8 @@
 </blockquote>
 <h3 id="Using-biLMs-for-supervised-NLP-tasks"><a href="#Using-biLMs-for-supervised-NLP-tasks" class="headerlink" title="Using biLMs for supervised NLP tasks"></a>Using biLMs for supervised NLP tasks</h3><p>在给定目标NLP任务的预训练biLM和监督体系结构的情况下，利用biLM改进任务模型是一个简单的过程。我们只需运行biLM并记录每个单词的所有层表示。然后，我们让终端任务模型学习这些表示的线性组合，如下所述：</p>
 <ul>
-<li>首先考虑无biLM的监督模型的最低层。大部分的NLP的模型都会有一层词向量层，而我们要做的无非就是用ELMO与词向量层结合。然后，模型生成一个上下文敏感的表示h~k~，通常使用双向RNNs、CNNs或前馈网络。</li>
-<li>为了将ELMo添加到监督模型中，我们首先冻结biLM的权值，然后将ELMo向量$ELMo_k^{task}$与 x~k~ 连接，并将ELMo增强表示$[ x_k ; ELMo_k^{task}]$c传递到RNN中。</li>
+<li>首先考虑无biLM的监督模型的最低层。大部分的NLP的模型都会有一层词向量层，而我们要做的无非就是用ELMO与词向量层结合。然后，模型生成一个上下文敏感的表示$h_k$，通常使用双向RNNs、CNNs或前馈网络。</li>
+<li>为了将ELMo添加到监督模型中，我们首先冻结biLM的权值，然后将ELMo向量$ELMo_k^{task}$与 $x_k$ 连接，并将ELMo增强表示$[ x_k ; ELMo_k^{task}]$c传递到RNN中。</li>
 <li>发现：在ELMo中添加合适的dropout和某些情况下在loss中添加$\lambda ||w||_2^2$正则化ELMo权重都是有益的。这对ELMo权重施加了一个归纳偏差，使其接近所有biLM层的平均值。</li>
 </ul>
 <h3 id="Pre-trained-bidirectional-language-model-architecture"><a href="#Pre-trained-bidirectional-language-model-architecture" class="headerlink" title="Pre-trained bidirectional language model architecture"></a>Pre-trained bidirectional language model architecture</h3><p>本文预训练的biLMs与Jozefowicz等人(2016)和Kim等人 (2015) 的体系结构相似，但加以修改以便支持两个方向的联合训练，并在LSTM层之间添加了剩余连接。在这项工作中，作者重点关注大规模的biLMs，正如Peters等人(2017)强调了使用biLMs比只使用前向LMs和大规模训练更重要。</p>
@@ -726,6 +726,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/05/11/Pytorch-Bugs/" rel="prev" title="Pytorch Bugs">
+                Pytorch Bugs <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -793,7 +797,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">28</span>
+                    <span class="site-state-item-count">29</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -850,7 +854,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">20</span>
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -959,7 +965,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">46</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">48</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1100,7 +1110,7 @@
   
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共41.8k字</span>
+  <span class="post-count">博客全站共41.9k字</span>
 </div>
         
 
@@ -1228,6 +1238,53 @@
   
 
   
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
 
   
 
