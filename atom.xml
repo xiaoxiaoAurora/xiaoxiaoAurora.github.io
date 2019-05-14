@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiaoxiaoaurora.github.io/"/>
-  <updated>2019-05-11T01:46:15.549Z</updated>
+  <updated>2019-05-14T06:32:14.791Z</updated>
   <id>https://xiaoxiaoaurora.github.io/</id>
   
   <author>
@@ -15,6 +15,76 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Semantic Role Labeling(语义角色标注)</title>
+    <link href="https://xiaoxiaoaurora.github.io/2019/05/14/Semantic-Role-Labeling-%E8%AF%AD%E4%B9%89%E8%A7%92%E8%89%B2%E6%A0%87%E6%B3%A8/"/>
+    <id>https://xiaoxiaoaurora.github.io/2019/05/14/Semantic-Role-Labeling-语义角色标注/</id>
+    <published>2019-05-14T06:23:08.000Z</published>
+    <updated>2019-05-14T06:32:14.791Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="What-is-Semantic-Role-Labeling"><a href="#What-is-Semantic-Role-Labeling" class="headerlink" title="What is Semantic Role Labeling ?"></a>What is Semantic Role Labeling ?</h1><p>（<a href="https://blog.csdn.net/huhehaotechangsha/article/details/80463118" target="_blank" rel="noopener">from reference</a>）</p><h2 id="概念（from-reference）"><a href="#概念（from-reference）" class="headerlink" title="概念（from reference）"></a>概念（<a href="https://blog.csdn.net/huhehaotechangsha/article/details/80463118" target="_blank" rel="noopener">from reference</a>）</h2><ul><li>自然语言分析技术大致分为三个层面：词法分析、句法分析和语义分析。语义角色标注是实现浅层语义分析的一种方式。<strong>在一个句子中，谓词是对主语的陈述或说明，指出“做什么”、“是什么”或“怎么样，代表了一个事件的核心，跟谓词搭配的名词称为谓元（论元）</strong>。<strong>语义角色是指谓元在动词所指事件中担任的角色</strong>。主要有：施事者（Agent）、受事者（Patient）、客体（Theme）、经验者（Experiencer）、受益者（Beneficiary）、工具（Instrument）、处所（Location）、目标（Goal）和来源（Source）等</li></ul><h2 id="任务介绍"><a href="#任务介绍" class="headerlink" title="任务介绍"></a>任务介绍</h2><p>语义角色标注(SRL)<strong>任务是指以句子的谓词为中心，不对句子所包含的语义信息进行深入分析，</strong>只分析句子中各成分与谓词之间的关系，即句子的谓词（Predicate）- 论元（Argument）结构**，并用语义角色来描述这些结构关系，是许多自然语言理解任务（如信息抽取，篇章分析，深度问答等）的一个重要中间步骤。在研究中一般都假定谓词是给定的，所要做的就是找出给定谓词的各个论元和它们的语义角色。</p><ul><li><p>Motivation:  From Sentences to Propositions(抽取句子的主干意义)</p></li><li><p>将语言<strong>信息结构化</strong>，方便计算机理解句子中蕴含的语义信息。</p><blockquote><p>语义角色标注 (Semantic Role Labeling, SRL) 是一种浅层的语义分析技术，标注句子中某些短语为<strong>给定谓词</strong>的论元 (语义角色) ，如施事、受事、时间和地点等。其能够对问答系统、信息抽取和机器翻译等应用产生推动作用。</p></blockquote></li><li><p>语义标注的不足之处</p><ul><li>仅仅对于特定谓词进行论元标注，那多谓词呢？没有涉及到。</li><li>不会补出句子所省略的部分语义。信息有所缺失。</li></ul></li><li><p>核心的语义角色: A0-5 六种，A0 通常表示动作的施事，A1通常表示动作的影响等，A2-5 根据谓语动词不同会有不同的语义含义。</p></li><li><p>附加的15种语义角色</p><p><img src="https://i.loli.net/2019/05/14/5cda20e8d1bf745091.jpg" alt></p></li></ul><h2 id="标注"><a href="#标注" class="headerlink" title="标注"></a>标注</h2><ul><li>传统方法<ul><li>依赖句法分析的结果进行。因为句法分析包括短语结构分析、浅层句法分析、<strong>依存关系分析</strong>，所以语义角色标注也可以按照此思路分类。</li><li>基于短语结构树的语义角色标注方法</li><li>基于浅层句法分析结果的语义角色标注方法</li><li><strong>基于依存句法分析结果的语义角色标注方法</strong></li><li>基于特征向量的 SRL</li><li>基于最大熵分类器的 SRL</li><li>基于核函数的 SRL</li><li>基于条件随机场的 SRL</li></ul></li><li><strong>统一标注的过程：句法分析-&gt;候选论元剪除-&gt;论元识别-&gt;论元标注-&gt;语义角色标注结果</strong><ul><li>论元剪除：在较多候选项中去掉肯定不是论元的部分（span）</li><li>论元识别：一个二值分类问题，即：是论元和不是论元</li><li>论元标注：一个多值分类问题</li></ul></li></ul><p><img src="https://i.loli.net/2019/05/14/5cda234db961121245.jpg" alt="短语结构分析"></p><blockquote><p>传统的SRL系统大多建立在句法分析基础之上，通常包括5个流程：<img src="https://img-blog.csdn.net/20170922120117082?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbWluZ3phaTYyNA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt></p><ol><li>构建一棵句法分析树，例如，上图是对上面例子进行依存句法分析得到的一棵句法树。 </li><li>从句法树上识别出给定谓词的候选论元。 </li><li>候选论元剪除；一个句子中的候选论元可能很多，候选论元剪除就是从大量的候选项中剪除那些最不可能成为论元的候选项。 </li><li>论元识别：这个过程是从上一步剪除之后的候选中判断哪些是真正的论元，通常当做一个二分类问题来解决。</li><li>对第4步的结果，通过多分类得到论元的语义角色标签。可以看到，句法分析是基础，并且后续步骤常常会构造的一些人工特征，这些特征往往也来自句法分析。</li></ol></blockquote><h2 id="如何设计分类问题的特征？"><a href="#如何设计分类问题的特征？" class="headerlink" title="如何设计分类问题的特征？"></a>如何设计分类问题的特征？</h2><ul><li>谓词本身、</li><li>短语结构树路径、</li><li>短语类型、</li><li>论元在谓词的位置、</li><li>谓词语态、</li><li>论元中心词、</li><li>从属类别、</li><li>论元第一个词和最后一个词、</li><li>组合特征</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;What-is-Semantic-Role-Labeling&quot;&gt;&lt;a href=&quot;#What-is-Semantic-Role-Labeling&quot; class=&quot;headerlink&quot; title=&quot;What is Semantic Role Labeling ?
+      
+    
+    </summary>
+    
+      <category term="NLP" scheme="https://xiaoxiaoaurora.github.io/categories/NLP/"/>
+    
+      <category term="Semantic Role Labeling" scheme="https://xiaoxiaoaurora.github.io/categories/NLP/Semantic-Role-Labeling/"/>
+    
+    
+      <category term="NLP" scheme="https://xiaoxiaoaurora.github.io/tags/NLP/"/>
+    
+      <category term="Semantic Role Labeling" scheme="https://xiaoxiaoaurora.github.io/tags/Semantic-Role-Labeling/"/>
+    
+      <category term="SRL" scheme="https://xiaoxiaoaurora.github.io/tags/SRL/"/>
+    
+      <category term="语义角色标注" scheme="https://xiaoxiaoaurora.github.io/tags/%E8%AF%AD%E4%B9%89%E8%A7%92%E8%89%B2%E6%A0%87%E6%B3%A8/"/>
+    
+      <category term="知识点" scheme="https://xiaoxiaoaurora.github.io/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Semantic Role Labeling for Learner Chinese--the Importance of Syntactic Parsing and L2-L1 Parallel Data</title>
+    <link href="https://xiaoxiaoaurora.github.io/2019/05/14/Semantic%20Role%20Labeling%20for%20Learner%20Chinese/"/>
+    <id>https://xiaoxiaoaurora.github.io/2019/05/14/Semantic Role Labeling for Learner Chinese/</id>
+    <published>2019-05-13T16:00:00.000Z</published>
+    <updated>2019-05-14T06:32:55.554Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Semantic-Role-Labeling-for-Learner-Chinese–the-Importance-of-Syntactic-Parsing-and-L2-L1-Parallel-Data"><a href="#Semantic-Role-Labeling-for-Learner-Chinese–the-Importance-of-Syntactic-Parsing-and-L2-L1-Parallel-Data" class="headerlink" title="Semantic Role Labeling for Learner Chinese–the Importance of Syntactic Parsing and L2-L1 Parallel Data"></a>Semantic Role Labeling for Learner Chinese–the Importance of Syntactic Parsing and L2-L1 Parallel Data</h1><p><img src="https://i.loli.net/2019/05/14/5cda1b19d65b334883.jpg" alt>  </p><p><a href="https://arxiv.org/pdf/1808.09409.pdf" target="_blank" rel="noopener">【论文地址】</a></p><p>本文阅读目的：了解SRL标注工作及在现有parsing model上的评估与分析，作为Dependency SRL研究工作的基础知识学习。</p><h2 id="题目与摘要"><a href="#题目与摘要" class="headerlink" title="题目与摘要"></a>题目与摘要</h2><h3 id="本文针对什么任务？任务简要介绍下。"><a href="#本文针对什么任务？任务简要介绍下。" class="headerlink" title="本文针对什么任务？任务简要介绍下。"></a>本文针对什么任务？任务简要介绍下。</h3><ul><li><p><strong>本文主要以面向汉语学习者的中介语(interlanguage， L2)的语义分析为研究对象，进行语义角色标注(Semantic Role Labeling, SRL)。</strong></p></li><li><p><strong>语义角色标注</strong>（<a href="https://blog.csdn.net/huhehaotechangsha/article/details/80463118" target="_blank" rel="noopener">from reference</a>）</p><ul><li>自然语言分析技术大致分为三个层面：词法分析、句法分析和语义分析。语义角色标注是实现浅层语义分析的一种方式。<strong>在一个句子中，谓词是对主语的陈述或说明，指出“做什么”、“是什么”或“怎么样，代表了一个事件的核心，跟谓词搭配的名词称为谓元（论元）</strong>。<strong>语义角色是指谓元在动词所指事件中担任的角色</strong>。主要有：施事者（Agent）、受事者（Patient）、客体（Theme）、经验者（Experiencer）、受益者（Beneficiary）、工具（Instrument）、处所（Location）、目标（Goal）和来源（Source）等</li><li><strong>语义角色标注(SRL)</strong>任务是指以句子的谓词为中心，不对句子所包含的语义信息进行深入分析，<strong>只分析句子中各成分与谓词之间的关系，即句子的谓词（Predicate）- 论元（Argument）结构</strong>，并用语义角色来描述这些结构关系，是许多自然语言理解任务（如信息抽取，篇章分析，深度问答等）的一个重要中间步骤。在研究中一般都假定谓词是给定的，所要做的就是找出给定谓词的各个论元和它们的语义角色。</li><li>Motivation:  From Sentences to Propositions(抽取句子的主干意义)</li><li>详细介绍</li></ul></li></ul><h3 id="本文发现了什么问题？该文大体是怎么解决的？解决得如何？"><a href="#本文发现了什么问题？该文大体是怎么解决的？解决得如何？" class="headerlink" title="本文发现了什么问题？该文大体是怎么解决的？解决得如何？"></a>本文发现了什么问题？该文大体是怎么解决的？解决得如何？</h3><p><strong>本文工作首先为一组学习者文本手工标注语义角色，以获得进行自动SRL的黄金标准。并基于这些新标注的数据，在三个现有的SRL系统（the PCFGLA-parser-based, neural-parserbased, neural-syntax-agnostic systems ）上进行评估来衡量SRL在学习者汉语文本上的解析性能。</strong>  针对评估结果作者提出了两点不太明显的结论：</p><p>（1）L1句子训练的系统对L2数据的处理能力较差；</p><p>（2）<strong>两种parser-based系统在解析L1数据到L2数据的时候性能下降要小得多，这说明了SRL中句法分析对于跨语言的重要性。</strong></p><p>针对以上结论，<strong>作者提出了一种面向大规模L2-L1平行数据的agreement-based model来探索语义一致性 (coherency ) 信息</strong>。同时也证明了这些信息对于提高L2的语篇学习水平是非常有效的。<strong>最终结果获得了72.06分的F-score，比最佳基线提高了2.02分。</strong></p><h3 id="解释下题目。题目起得如何？能概括内容并吸引人吗？"><a href="#解释下题目。题目起得如何？能概括内容并吸引人吗？" class="headerlink" title="解释下题目。题目起得如何？能概括内容并吸引人吗？"></a>解释下题目。题目起得如何？能概括内容并吸引人吗？</h3><p>简要明了：</p><ul><li>Semantic Role Labeling Learner Chinese 指明是面向汉语中介语的语义角色标注工作</li><li>the Importance of Syntactic Parsing and L2-L1 Parallel Data 指明本文中心立意</li></ul><hr><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>学习者语言(中介语)是由第二语言学习者或外语学习者发展起来的一种个人习语，它可能保留了一些学习者母语的某些特征。</p><h3 id="这个任务以往是如何解决的？作者沿着哪条路径继续研究的？为什么？"><a href="#这个任务以往是如何解决的？作者沿着哪条路径继续研究的？为什么？" class="headerlink" title="这个任务以往是如何解决的？作者沿着哪条路径继续研究的？为什么？"></a>这个任务以往是如何解决的？作者沿着哪条路径继续研究的？为什么？</h3><ul><li><p>之前关于构建学习者语言的自动句法分析工作相当令人振奋(Nagata<br>and Sakaguchi, 2016) ，<strong>但是对于语义处理是如何执行的仍然是未知的，而将学习者语言(L2)解析为语义表示是对学习者语言进行各种深入分析的基础</strong>，例如作文自动评分。</p></li><li><p>因此，在本文中作者以语义角色标注(SRL)为案例任务，以汉语学习者为案例语言，研究中介语的语义分析。</p></li></ul><h3 id="目前存在什么问题？为什么？你觉得可能还存在什么其他问题？为什么？"><a href="#目前存在什么问题？为什么？你觉得可能还存在什么其他问题？为什么？" class="headerlink" title="目前存在什么问题？为什么？你觉得可能还存在什么其他问题？为什么？"></a>目前存在什么问题？为什么？你觉得可能还存在什么其他问题？为什么？</h3><p>本文从三个concern展开介绍自己的研究工作：</p><ul><li>（1）本文作者提出：在讨论计算系统之前，首先考虑语言能力和语言运用。并提出了以下疑问：</li></ul><p>​        <strong>人类能够准确地理解学习者的文本吗?或者更准确地说，以英语为母语的人能   在多大程度上理解语言学习者写的句子的意思?</strong> </p><blockquote><p>Can human robustly understand learner texts? Or to be more precise, to what extent, a native speaker can understand the meaning of a sentence written by a language learner? </p></blockquote><ul><li><strong>（2）作者提出的第二个关注点是如何通过计算机程序模拟人类的语义处理能力</strong>。</li><li><strong>（3）探索大规模的L2-L1并行语料对于增强SRL系统的潜力。</strong>提出利用L2-L1并行语料来增强学习者文本的NLP系统这一观点也是第一次提出。</li></ul><h3 id="该文准备如何解决这个问题？为什么可以这样解决？你觉得该文解决这个问题的方法如何？为什么？你觉得可以如何-或更好的解决这个问题？为什么？"><a href="#该文准备如何解决这个问题？为什么可以这样解决？你觉得该文解决这个问题的方法如何？为什么？你觉得可以如何-或更好的解决这个问题？为什么？" class="headerlink" title="该文准备如何解决这个问题？为什么可以这样解决？你觉得该文解决这个问题的方法如何？为什么？你觉得可以如何/或更好的解决这个问题？为什么？"></a>该文准备如何解决这个问题？为什么可以这样解决？你觉得该文解决这个问题的方法如何？为什么？你觉得可以如何/或更好的解决这个问题？为什么？</h3><ul><li>直觉上，以上问题（1）答案是积极的一面。为了验证这一点，作者<strong>根据 Chinese PropBank (CPB)的规范（针对L1的），标注了一些L2-L1平行句子的 predicate–argument (谓语-论元)结构</strong>。最终的标注一致度表明，这种规范对于L2的语言理解具有很高的鲁棒性。【此工作也是在进行Dependency parsing的标注工作模式】。<strong>在语义标注过程中，作者提出：可以重用为L1开发的语义标注规范Chinese PropBank来标注L2句子中的语义角色。</strong>    </li></ul><blockquote><p>During the course of semantic annotation, we find a non-obvious fact that we can re-use the semantic annotation specification, Chinese PropBank in our case, which is developed for L1. Only modest rules are needed to handle some tricky phenomena. This is quite different from syntactic treebanking for learner sentences, where defining a rich set of new annotation heuristics seems necessary</p></blockquote><ul><li>问题（1）中关于重用L1标注规范的可行性意味着可以用标准的CPB数据来训练一个SRL系统来处理学习者的文本。为了测试最优SRL算法的鲁棒性，论文在两种SRL框架进行了评估。<ul><li>传统的SRL系统：利用句法分析器和繁重的特性工程来获取语义角色的显式信息(explicit information), 使用了两个不同的解析器进行比较:<ul><li>1) the PCFGLA-based parser, viz. Berkeley parser (<a href="https://www.aclweb.org/anthology/P06-1055" target="_blank" rel="noopener">Petrov et al., 2006</a>)</li><li>2) a minimal span-based neural parser (<a href="https://arxiv.org/pdf/1705.03919.pdf" target="_blank" rel="noopener">Stern et al., 2017</a>) </li></ul></li><li>另一个SRL系统使用堆叠的BiLSTM隐式地捕获局部和非局部信息。</li></ul></li></ul><h3 id="列出该文贡献（该文自己觉得的）"><a href="#列出该文贡献（该文自己觉得的）" class="headerlink" title="列出该文贡献（该文自己觉得的）"></a>列出该文贡献（该文自己觉得的）</h3><p>1、基于CPB规范，构建了L2-L1平行语料的SRL语料库，经验证可以重用为L1开发的语义标注规范CPB来标注L2句子中的语义角色。(<a href="https://www.aclweb.org/anthology/C12-1053" target="_blank" rel="noopener">Feng et al., 2012</a>)</p><p>2、</p><h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><h3 id="整体介绍（主要是图）"><a href="#整体介绍（主要是图）" class="headerlink" title="整体介绍（主要是图）"></a>整体介绍（主要是图）</h3><h3 id="模型创新点"><a href="#模型创新点" class="headerlink" title="模型创新点"></a>模型创新点</h3><h3 id="（仅对要进一步跟进的paper）详细介绍模型，从输入到输出，输入矩阵维度，公式等"><a href="#（仅对要进一步跟进的paper）详细介绍模型，从输入到输出，输入矩阵维度，公式等" class="headerlink" title="（仅对要进一步跟进的paper）详细介绍模型，从输入到输出，输入矩阵维度，公式等"></a>（仅对要进一步跟进的paper）详细介绍模型，从输入到输出，输入矩阵维度，公式等</h3><h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><h3 id="数据集及评价标准介绍"><a href="#数据集及评价标准介绍" class="headerlink" title="数据集及评价标准介绍"></a>数据集及评价标准介绍</h3><h3 id="Baseline介绍"><a href="#Baseline介绍" class="headerlink" title="Baseline介绍"></a>Baseline介绍</h3><h3 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h3><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><h3 id="你觉得这篇paper创新与贡献是（不一定如作者所说）？为什么？"><a href="#你觉得这篇paper创新与贡献是（不一定如作者所说）？为什么？" class="headerlink" title="你觉得这篇paper创新与贡献是（不一定如作者所说）？为什么？"></a>你觉得这篇paper创新与贡献是（不一定如作者所说）？为什么？</h3><h3 id="有没有进一步深入的价值？为什么？"><a href="#有没有进一步深入的价值？为什么？" class="headerlink" title="有没有进一步深入的价值？为什么？"></a>有没有进一步深入的价值？为什么？</h3><h3 id="列出该文弱点（或者是你觉得应该是什么问题，他解决的不好，你会如何解决？）"><a href="#列出该文弱点（或者是你觉得应该是什么问题，他解决的不好，你会如何解决？）" class="headerlink" title="列出该文弱点（或者是你觉得应该是什么问题，他解决的不好，你会如何解决？）"></a>列出该文弱点（或者是你觉得应该是什么问题，他解决的不好，你会如何解决？）</h3><h3 id="该文对你的启发是？"><a href="#该文对你的启发是？" class="headerlink" title="该文对你的启发是？"></a>该文对你的启发是？</h3><h3 id="列出其中有价值的需要进一步阅读的参考文献"><a href="#列出其中有价值的需要进一步阅读的参考文献" class="headerlink" title="列出其中有价值的需要进一步阅读的参考文献"></a>列出其中有价值的需要进一步阅读的参考文献</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Semantic-Role-Labeling-for-Learner-Chinese–the-Importance-of-Syntactic-Parsing-and-L2-L1-Parallel-Data&quot;&gt;&lt;a href=&quot;#Semantic-Role-Labe
+      
+    
+    </summary>
+    
+      <category term="Papers" scheme="https://xiaoxiaoaurora.github.io/categories/Papers/"/>
+    
+      <category term="Semantic Role Labeling(SRL)" scheme="https://xiaoxiaoaurora.github.io/categories/Papers/Semantic-Role-Labeling-SRL/"/>
+    
+    
+      <category term="Papers" scheme="https://xiaoxiaoaurora.github.io/tags/Papers/"/>
+    
+      <category term="Semantic Role Labeling" scheme="https://xiaoxiaoaurora.github.io/tags/Semantic-Role-Labeling/"/>
+    
+      <category term="SRL" scheme="https://xiaoxiaoaurora.github.io/tags/SRL/"/>
+    
+      <category term="语义角色标注" scheme="https://xiaoxiaoaurora.github.io/tags/%E8%AF%AD%E4%B9%89%E8%A7%92%E8%89%B2%E6%A0%87%E6%B3%A8/"/>
+    
+      <category term="Annotation Guidelines" scheme="https://xiaoxiaoaurora.github.io/tags/Annotation-Guidelines/"/>
+    
+  </entry>
   
   <entry>
     <title>Pytorch Bugs</title>
@@ -108,37 +178,6 @@
       <category term="Biaffine Attention" scheme="https://xiaoxiaoaurora.github.io/tags/Biaffine-Attention/"/>
     
       <category term="Dependency Parsing" scheme="https://xiaoxiaoaurora.github.io/tags/Dependency-Parsing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Semantic Role Labeling for Learner Chinese--the Importance of Syntactic Parsing and L2-L1 Parallel Data</title>
-    <link href="https://xiaoxiaoaurora.github.io/2019/04/04/Semantic%20Role%20Labeling%20for%20Learner%20Chinese/"/>
-    <id>https://xiaoxiaoaurora.github.io/2019/04/04/Semantic Role Labeling for Learner Chinese/</id>
-    <published>2019-04-03T16:00:00.000Z</published>
-    <updated>2019-04-04T10:02:12.938Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Semantic-Role-Labeling-for-Learner-Chinese–the-Importance-of-Syntactic-Parsing-and-L2-L1-Parallel-Data"><a href="#Semantic-Role-Labeling-for-Learner-Chinese–the-Importance-of-Syntactic-Parsing-and-L2-L1-Parallel-Data" class="headerlink" title="Semantic Role Labeling for Learner Chinese–the Importance of Syntactic Parsing and L2-L1 Parallel Data"></a>Semantic Role Labeling for Learner Chinese–the Importance of Syntactic Parsing and L2-L1 Parallel Data</h1><p><img src="https://i.loli.net/2019/04/01/5ca1c8b1c76df.jpg" alt>  </p><h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><ol><li>中介语的语义依存标注  </li><li>taking semantic role labeling (SRL) as a case task and learner Chinese as a case language </li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Semantic-Role-Labeling-for-Learner-Chinese–the-Importance-of-Syntactic-Parsing-and-L2-L1-Parallel-Data&quot;&gt;&lt;a href=&quot;#Semantic-Role-Labe
-      
-    
-    </summary>
-    
-      <category term="Papers" scheme="https://xiaoxiaoaurora.github.io/categories/Papers/"/>
-    
-      <category term="SRL" scheme="https://xiaoxiaoaurora.github.io/categories/Papers/SRL/"/>
-    
-    
-      <category term="Papers" scheme="https://xiaoxiaoaurora.github.io/tags/Papers/"/>
-    
-      <category term="SRL" scheme="https://xiaoxiaoaurora.github.io/tags/SRL/"/>
-    
-      <category term="Annotation Guidelines" scheme="https://xiaoxiaoaurora.github.io/tags/Annotation-Guidelines/"/>
     
   </entry>
   
@@ -588,37 +627,6 @@
       <category term="CodingErrors" scheme="https://xiaoxiaoaurora.github.io/tags/CodingErrors/"/>
     
       <category term="Softmax" scheme="https://xiaoxiaoaurora.github.io/tags/Softmax/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>序列标注与BIO标注</title>
-    <link href="https://xiaoxiaoaurora.github.io/2018/04/24/%E5%BA%8F%E5%88%97%E6%A0%87%E6%B3%A8%E4%B8%8EBIO%E6%A0%87%E6%B3%A8/"/>
-    <id>https://xiaoxiaoaurora.github.io/2018/04/24/序列标注与BIO标注/</id>
-    <published>2018-04-24T12:42:28.000Z</published>
-    <updated>2019-04-04T10:00:45.571Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="序列标注与BIO标注"><a href="#序列标注与BIO标注" class="headerlink" title="序列标注与BIO标注"></a>序列标注与BIO标注</h1><p>re:  <a href="https://blog.csdn.net/HappyRocking/article/details/79716212" title="https://blog.csdn.net/HappyRocking/article/details/79716212" target="_blank" rel="noopener">  参考博客</a>   </p><h1 id="序列标注"><a href="#序列标注" class="headerlink" title="序列标注"></a>序列标注</h1><p>序列标注（Sequence labeling）是我们在解决NLP问题时经常遇到的基本问题之一。在序列标注中，我们想对一个序列的每一个元素标注一个标签。一般来说，一个序列指的是一个句子，而一个元素指的是句子中的一个词。比如信息提取问题可以认为是一个序列标注问题，如提取出会议时间、地点等。  </p><p>  序列标注一般可以分为两类：</p><p>1、原始标注（Raw labeling）：每个元素都需要被标注为一个标签。</p><p>2、联合标注（Joint segmentation and labeling）：所有的分段被标注为同样的标签。</p><p>命名实体识别（Named entity recognition， NER）是信息提取问题的一个子任务，需要将元素进行定位和分类，如人名、组织名、地点、时间、质量等。</p><p>举个NER和联合标注的例子。一个句子为：Yesterday , George Bush gave a speech. 其中包括一个命名实体：George Bush。我们希望将标签“人名”标注到整个短语“George Bush”中，而不是将两个词分别标注。这就是联合标注。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;序列标注与BIO标注&quot;&gt;&lt;a href=&quot;#序列标注与BIO标注&quot; class=&quot;headerlink&quot; title=&quot;序列标注与BIO标注&quot;&gt;&lt;/a&gt;序列标注与BIO标注&lt;/h1&gt;&lt;p&gt;re:  &lt;a href=&quot;https://blog.csdn.net/Ha
-      
-    
-    </summary>
-    
-      <category term="NLP" scheme="https://xiaoxiaoaurora.github.io/categories/NLP/"/>
-    
-    
-      <category term="NLP" scheme="https://xiaoxiaoaurora.github.io/tags/NLP/"/>
-    
-      <category term="序列标注" scheme="https://xiaoxiaoaurora.github.io/tags/%E5%BA%8F%E5%88%97%E6%A0%87%E6%B3%A8/"/>
-    
-      <category term="Sequence Labeling" scheme="https://xiaoxiaoaurora.github.io/tags/Sequence-Labeling/"/>
-    
-      <category term="BIO" scheme="https://xiaoxiaoaurora.github.io/tags/BIO/"/>
     
   </entry>
   

@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Semantic Role Labeling(语义角色标注)]]></title>
+    <url>%2F2019%2F05%2F14%2FSemantic-Role-Labeling-%E8%AF%AD%E4%B9%89%E8%A7%92%E8%89%B2%E6%A0%87%E6%B3%A8%2F</url>
+    <content type="text"><![CDATA[What is Semantic Role Labeling ?（from reference） 概念（from reference） 自然语言分析技术大致分为三个层面：词法分析、句法分析和语义分析。语义角色标注是实现浅层语义分析的一种方式。在一个句子中，谓词是对主语的陈述或说明，指出“做什么”、“是什么”或“怎么样，代表了一个事件的核心，跟谓词搭配的名词称为谓元（论元）。语义角色是指谓元在动词所指事件中担任的角色。主要有：施事者（Agent）、受事者（Patient）、客体（Theme）、经验者（Experiencer）、受益者（Beneficiary）、工具（Instrument）、处所（Location）、目标（Goal）和来源（Source）等 任务介绍语义角色标注(SRL)任务是指以句子的谓词为中心，不对句子所包含的语义信息进行深入分析，只分析句子中各成分与谓词之间的关系，即句子的谓词（Predicate）- 论元（Argument）结构**，并用语义角色来描述这些结构关系，是许多自然语言理解任务（如信息抽取，篇章分析，深度问答等）的一个重要中间步骤。在研究中一般都假定谓词是给定的，所要做的就是找出给定谓词的各个论元和它们的语义角色。 Motivation: From Sentences to Propositions(抽取句子的主干意义) 将语言信息结构化，方便计算机理解句子中蕴含的语义信息。 语义角色标注 (Semantic Role Labeling, SRL) 是一种浅层的语义分析技术，标注句子中某些短语为给定谓词的论元 (语义角色) ，如施事、受事、时间和地点等。其能够对问答系统、信息抽取和机器翻译等应用产生推动作用。 语义标注的不足之处 仅仅对于特定谓词进行论元标注，那多谓词呢？没有涉及到。 不会补出句子所省略的部分语义。信息有所缺失。 核心的语义角色: A0-5 六种，A0 通常表示动作的施事，A1通常表示动作的影响等，A2-5 根据谓语动词不同会有不同的语义含义。 附加的15种语义角色 标注 传统方法 依赖句法分析的结果进行。因为句法分析包括短语结构分析、浅层句法分析、依存关系分析，所以语义角色标注也可以按照此思路分类。 基于短语结构树的语义角色标注方法 基于浅层句法分析结果的语义角色标注方法 基于依存句法分析结果的语义角色标注方法 基于特征向量的 SRL 基于最大熵分类器的 SRL 基于核函数的 SRL 基于条件随机场的 SRL 统一标注的过程：句法分析-&gt;候选论元剪除-&gt;论元识别-&gt;论元标注-&gt;语义角色标注结果 论元剪除：在较多候选项中去掉肯定不是论元的部分（span） 论元识别：一个二值分类问题，即：是论元和不是论元 论元标注：一个多值分类问题 传统的SRL系统大多建立在句法分析基础之上，通常包括5个流程： 构建一棵句法分析树，例如，上图是对上面例子进行依存句法分析得到的一棵句法树。 从句法树上识别出给定谓词的候选论元。 候选论元剪除；一个句子中的候选论元可能很多，候选论元剪除就是从大量的候选项中剪除那些最不可能成为论元的候选项。 论元识别：这个过程是从上一步剪除之后的候选中判断哪些是真正的论元，通常当做一个二分类问题来解决。 对第4步的结果，通过多分类得到论元的语义角色标签。可以看到，句法分析是基础，并且后续步骤常常会构造的一些人工特征，这些特征往往也来自句法分析。 如何设计分类问题的特征？ 谓词本身、 短语结构树路径、 短语类型、 论元在谓词的位置、 谓词语态、 论元中心词、 从属类别、 论元第一个词和最后一个词、 组合特征]]></content>
+      <categories>
+        <category>NLP</category>
+        <category>Semantic Role Labeling</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Semantic Role Labeling</tag>
+        <tag>SRL</tag>
+        <tag>语义角色标注</tag>
+        <tag>知识点</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Semantic Role Labeling for Learner Chinese--the Importance of Syntactic Parsing and L2-L1 Parallel Data]]></title>
+    <url>%2F2019%2F05%2F14%2FSemantic%20Role%20Labeling%20for%20Learner%20Chinese%2F</url>
+    <content type="text"><![CDATA[Semantic Role Labeling for Learner Chinese–the Importance of Syntactic Parsing and L2-L1 Parallel Data 【论文地址】 本文阅读目的：了解SRL标注工作及在现有parsing model上的评估与分析，作为Dependency SRL研究工作的基础知识学习。 题目与摘要本文针对什么任务？任务简要介绍下。 本文主要以面向汉语学习者的中介语(interlanguage， L2)的语义分析为研究对象，进行语义角色标注(Semantic Role Labeling, SRL)。 语义角色标注（from reference） 自然语言分析技术大致分为三个层面：词法分析、句法分析和语义分析。语义角色标注是实现浅层语义分析的一种方式。在一个句子中，谓词是对主语的陈述或说明，指出“做什么”、“是什么”或“怎么样，代表了一个事件的核心，跟谓词搭配的名词称为谓元（论元）。语义角色是指谓元在动词所指事件中担任的角色。主要有：施事者（Agent）、受事者（Patient）、客体（Theme）、经验者（Experiencer）、受益者（Beneficiary）、工具（Instrument）、处所（Location）、目标（Goal）和来源（Source）等 语义角色标注(SRL)任务是指以句子的谓词为中心，不对句子所包含的语义信息进行深入分析，只分析句子中各成分与谓词之间的关系，即句子的谓词（Predicate）- 论元（Argument）结构，并用语义角色来描述这些结构关系，是许多自然语言理解任务（如信息抽取，篇章分析，深度问答等）的一个重要中间步骤。在研究中一般都假定谓词是给定的，所要做的就是找出给定谓词的各个论元和它们的语义角色。 Motivation: From Sentences to Propositions(抽取句子的主干意义) 详细介绍 本文发现了什么问题？该文大体是怎么解决的？解决得如何？本文工作首先为一组学习者文本手工标注语义角色，以获得进行自动SRL的黄金标准。并基于这些新标注的数据，在三个现有的SRL系统（the PCFGLA-parser-based, neural-parserbased, neural-syntax-agnostic systems ）上进行评估来衡量SRL在学习者汉语文本上的解析性能。 针对评估结果作者提出了两点不太明显的结论： （1）L1句子训练的系统对L2数据的处理能力较差； （2）两种parser-based系统在解析L1数据到L2数据的时候性能下降要小得多，这说明了SRL中句法分析对于跨语言的重要性。 针对以上结论，作者提出了一种面向大规模L2-L1平行数据的agreement-based model来探索语义一致性 (coherency ) 信息。同时也证明了这些信息对于提高L2的语篇学习水平是非常有效的。最终结果获得了72.06分的F-score，比最佳基线提高了2.02分。 解释下题目。题目起得如何？能概括内容并吸引人吗？简要明了： Semantic Role Labeling Learner Chinese 指明是面向汉语中介语的语义角色标注工作 the Importance of Syntactic Parsing and L2-L1 Parallel Data 指明本文中心立意 介绍学习者语言(中介语)是由第二语言学习者或外语学习者发展起来的一种个人习语，它可能保留了一些学习者母语的某些特征。 这个任务以往是如何解决的？作者沿着哪条路径继续研究的？为什么？ 之前关于构建学习者语言的自动句法分析工作相当令人振奋(Nagataand Sakaguchi, 2016) ，但是对于语义处理是如何执行的仍然是未知的，而将学习者语言(L2)解析为语义表示是对学习者语言进行各种深入分析的基础，例如作文自动评分。 因此，在本文中作者以语义角色标注(SRL)为案例任务，以汉语学习者为案例语言，研究中介语的语义分析。 目前存在什么问题？为什么？你觉得可能还存在什么其他问题？为什么？本文从三个concern展开介绍自己的研究工作： （1）本文作者提出：在讨论计算系统之前，首先考虑语言能力和语言运用。并提出了以下疑问： ​ 人类能够准确地理解学习者的文本吗?或者更准确地说，以英语为母语的人能 在多大程度上理解语言学习者写的句子的意思? Can human robustly understand learner texts? Or to be more precise, to what extent, a native speaker can understand the meaning of a sentence written by a language learner? （2）作者提出的第二个关注点是如何通过计算机程序模拟人类的语义处理能力。 （3）探索大规模的L2-L1并行语料对于增强SRL系统的潜力。提出利用L2-L1并行语料来增强学习者文本的NLP系统这一观点也是第一次提出。 该文准备如何解决这个问题？为什么可以这样解决？你觉得该文解决这个问题的方法如何？为什么？你觉得可以如何/或更好的解决这个问题？为什么？ 直觉上，以上问题（1）答案是积极的一面。为了验证这一点，作者根据 Chinese PropBank (CPB)的规范（针对L1的），标注了一些L2-L1平行句子的 predicate–argument (谓语-论元)结构。最终的标注一致度表明，这种规范对于L2的语言理解具有很高的鲁棒性。【此工作也是在进行Dependency parsing的标注工作模式】。在语义标注过程中，作者提出：可以重用为L1开发的语义标注规范Chinese PropBank来标注L2句子中的语义角色。 During the course of semantic annotation, we find a non-obvious fact that we can re-use the semantic annotation specification, Chinese PropBank in our case, which is developed for L1. Only modest rules are needed to handle some tricky phenomena. This is quite different from syntactic treebanking for learner sentences, where defining a rich set of new annotation heuristics seems necessary 问题（1）中关于重用L1标注规范的可行性意味着可以用标准的CPB数据来训练一个SRL系统来处理学习者的文本。为了测试最优SRL算法的鲁棒性，论文在两种SRL框架进行了评估。 传统的SRL系统：利用句法分析器和繁重的特性工程来获取语义角色的显式信息(explicit information), 使用了两个不同的解析器进行比较: 1) the PCFGLA-based parser, viz. Berkeley parser (Petrov et al., 2006) 2) a minimal span-based neural parser (Stern et al., 2017) 另一个SRL系统使用堆叠的BiLSTM隐式地捕获局部和非局部信息。 列出该文贡献（该文自己觉得的）1、基于CPB规范，构建了L2-L1平行语料的SRL语料库，经验证可以重用为L1开发的语义标注规范CPB来标注L2句子中的语义角色。(Feng et al., 2012) 2、 模型整体介绍（主要是图）模型创新点（仅对要进一步跟进的paper）详细介绍模型，从输入到输出，输入矩阵维度，公式等实验数据集及评价标准介绍Baseline介绍结果分析结论你觉得这篇paper创新与贡献是（不一定如作者所说）？为什么？有没有进一步深入的价值？为什么？列出该文弱点（或者是你觉得应该是什么问题，他解决的不好，你会如何解决？）该文对你的启发是？列出其中有价值的需要进一步阅读的参考文献]]></content>
+      <categories>
+        <category>Papers</category>
+        <category>Semantic Role Labeling(SRL)</category>
+      </categories>
+      <tags>
+        <tag>Papers</tag>
+        <tag>Semantic Role Labeling</tag>
+        <tag>SRL</tag>
+        <tag>语义角色标注</tag>
+        <tag>Annotation Guidelines</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Pytorch Bugs]]></title>
     <url>%2F2019%2F05%2F11%2FPytorch-Bugs%2F</url>
     <content type="text"><![CDATA[Pytorch Bugs本篇用于记录使用Pytorch过程中遇到的bug AttributeError: module ‘torch.nn._functions’ has no attribute ‘dropout’123456Traceback (most recent call last): File "src/main.py", line 17, in &lt;module&gt; import parse_nk File "/home/workspace/self-attentive-parser/src/parse_nk.py", line 74, in &lt;module&gt; class FeatureDropoutFunction(nn.functional._functions.dropout.InplaceFunction):AttributeError: module 'torch.nn._functions' has no attribute 'dropout' 将class FeatureDropoutFunction(torch.nn.functional._functions.dropout.InplaceFunction)更改为class FeatureDropoutFunction(torch.autograd.function.InplaceFunction)]]></content>
@@ -41,20 +73,6 @@
         <tag>论文阅读笔记</tag>
         <tag>Biaffine Attention</tag>
         <tag>Dependency Parsing</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Semantic Role Labeling for Learner Chinese--the Importance of Syntactic Parsing and L2-L1 Parallel Data]]></title>
-    <url>%2F2019%2F04%2F04%2FSemantic%20Role%20Labeling%20for%20Learner%20Chinese%2F</url>
-    <content type="text"><![CDATA[Semantic Role Labeling for Learner Chinese–the Importance of Syntactic Parsing and L2-L1 Parallel Data 摘要 中介语的语义依存标注 taking semantic role labeling (SRL) as a case task and learner Chinese as a case language]]></content>
-      <categories>
-        <category>Papers</category>
-        <category>SRL</category>
-      </categories>
-      <tags>
-        <tag>Papers</tag>
-        <tag>SRL</tag>
-        <tag>Annotation Guidelines</tag>
       </tags>
   </entry>
   <entry>
