@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiaoxiaoaurora.github.io/"/>
-  <updated>2019-05-14T06:38:30.469Z</updated>
+  <updated>2019-05-21T10:44:23.023Z</updated>
   <id>https://xiaoxiaoaurora.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Semantic Dependency Parsing</title>
+    <link href="https://xiaoxiaoaurora.github.io/2019/05/21/Semantic-Dependency-Parsing/"/>
+    <id>https://xiaoxiaoaurora.github.io/2019/05/21/Semantic-Dependency-Parsing/</id>
+    <published>2019-05-21T08:14:47.000Z</published>
+    <updated>2019-05-21T10:44:23.023Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="What-is-Semantic-Dependency-Parsing"><a href="#What-is-Semantic-Dependency-Parsing" class="headerlink" title="What is Semantic Dependency Parsing?"></a>What is Semantic Dependency Parsing?</h1><p><a href="http://alt.qcri.org/semeval2016/task9/" target="_blank" rel="noopener">from reference</a> | <a href="http://alt.qcri.org/semeval2016/task9/index.php?id=data-and-tools" target="_blank" rel="noopener">data and tool</a></p><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ol><li><p><strong>语义依存分析（Semantic Dependency Parsing, SDP），通过树形(tree-shape)依存关系研究句子中的“深层”语义关系。换句话说，SDP是用于分析汉语句子的图结构语义表示</strong></p></li><li><p>不同于传统的树形句法依存(syntactic dependency)，每一个head-dependent弧都具有一个语义关系，但没有语法关系。因此，<strong>语义依存分析结果可以用来直接回答问题，比如谁在何时何地对谁做了什么；句法依存分析结果是定义在一个句子的所有单词上的连接树和特定于语言的语法函数，但在许多情况下不能回答问题。</strong></p></li><li><p>取自HIT的<a href="http://alt.qcri.org/semeval2016/task9/" target="_blank" rel="noopener">Task 9: Chinese Semantic Dependency Parsing</a></p><blockquote><p>然而，在meaning-text语言学理论中，自然语言描述的理论框架( ˇ Zolkovskij and Mel’ˇcuk, 1967)，有人说，在某些情况下，<strong>树不足以表达句子的全部意思</strong>，这一点在HIT的语料库标注实践中得到了不容置疑的证明。这一次,我们不仅<u>根据汉语语言知识改进了汉语中通俗易懂的意义表示以达到减少语义关系的模糊性或模糊边界</u>，我们还<u>将依存结构扩展到符合汉语特点的有向无环图</u>。因为汉语是一种语序灵活的意合(parataxis)语言，表面词汇中隐藏着丰富的潜在信息。例子如下：</p><p><img src="http://alt.qcri.org/semeval2016/task9/data/uploads/images/sdp.jpg" alt></p></blockquote></li></ol><p>“她”是“脸色”的argument(论元)，同时也是“病”的论元。</p><p><strong>依存分析领域的研究人员认识到，限制在树结构中的依存分析仍然过于浅显</strong>。因此，他们在SemEval 2014 (Oepen et al., 2014)和SemEval 2015的task 8中探索了树结构之外的语义信息。它们提供的数据与我们将要提供的数据结构类似，但是语义表示系统是不同的。我们再次提出这项任务是为了促进对汉语句子的深入理解的研究，我们认为，在数据驱动的统计依赖分析中，有必要利用免费的、注释良好的语料库作为公共测试平台来促进研究</p><h2 id="数据介绍"><a href="#数据介绍" class="headerlink" title="数据介绍"></a><a href="https://github.com/dingyu-scir/SDP-Specification" target="_blank" rel="noopener">数据介绍</a></h2><p>种类丰富的文本具有不同的语言属性和不同的交流目的。</p><ol><li><p>data format</p><p><img src="https://github.com/dingyu-scir/SDP-Specification/blob/master/data-format.png?raw=true" alt></p></li><li><p><a href="https://github.com/HIT-SCIR/SemEval-2016" target="_blank" rel="noopener">data download</a></p></li></ol><h3 id="任务描述"><a href="#任务描述" class="headerlink" title="任务描述"></a><a href="https://www.aclweb.org/anthology/S16-1167" target="_blank" rel="noopener">任务描述</a></h3><p>给定一个完整的句子，语义依存分析(SDP)的目的是确定语义上相互关联的所有单词对，并为其分配特定的预定义的语义关系。语义依存分析是通过一组依存词对及其对应的依存关系来表示句子的意义。这个过程不受句法变化的影响。</p><ol><li><p><strong>汉语语义依存图的结构</strong></p><p>通过语义依存图来表示句子的意义，其中包含了所有具有直接语义关系的词对之间的依存关系。</p><ul><li>谓元(Predicates)包括大多数谓语成分(即大多数是动词，也有名词和形容词)</li><li>论元(Arguments)被定义为真实场景中与某个谓元对应的所有可能的参与者(例如与“吃”相关的场景中的食客、食物、工具、地点、时间)</li></ul><p><strong>构建依存弧的一个原则是优先在实词(content words)中查找predicates的arguments，因为它们是与谓元直接相关的论元。</strong></p><p>与句法依存不同的是，句法依存在谓元(predicate)及其“real arguments”之间插入非实词(non-content words)。</p><p><img src="https://i.loli.net/2019/05/21/5ce3d4631519e11660.jpg" alt></p><p>由于词与词之间关系表示的完整性，有的词与多个词存在关系(有的词有多个子词，有的词有多个父词)，最终形成直接的无环图(acyclic graphs)。</p></li></ol><ol start="2"><li><p><strong>语义依存关系</strong></p><p><img src="https://i.loli.net/2019/05/21/5ce3d18090c1376304.jpg" alt></p></li></ol><h2 id="评估方法"><a href="#评估方法" class="headerlink" title="评估方法"></a>评估方法</h2><p>将预测的依存关系(predicate-role-argument 三元组，其中一些包含整个句子的根)与人工标注的依存关系(它们被视为gold依存关系)进行比较。</p><p>评估指标是基于两个粒度：依存弧(dependency arc)和完整的句子。与预测的依存关系相关的标记和未标记的精确度(precision)和召回率(recall)将用作评估指标。</p><blockquote><p>The evaluate measures are on two granularity, dependency arc and the complete sentence. Labeled and unlabeled precision and recall with respect to predicted dependencies will be used as evaluation measures</p></blockquote><p><em>non-local dependencies: 将这些依存弧称为使依存树折叠的非局部依存弧。(we call these dependency arcs making dependency trees collapsed non-local ones, following Sun et al. (2014))</em></p><p>在SemEval 2014的Task8之后，在下面以及其他与任务相关的上下文中，将把这些度量标准缩写为：</p><p>a. labeled precision，recall, F1 和非局部依存的recall【NLR】：<strong>LP, LR, LF, NLR</strong></p><p>b. unlabeled precision, recall, F1 和非局部依存的recall【NUR】：<strong>UP, UR, UF, NUR</strong></p><p>c. labeled and unlabeled exact match(精确匹配)：<strong>LM，UM</strong></p><blockquote><ul><li>Labeled precision (LP), recall (LR), F1 (LR) and recall for non-local dependencies (NLR);</li><li>Unlabeled precision (UP), recall (UR), F1 (UF) and recall for non-local dependencies (NUR);</li><li>Labeled and unlabeled exact match (LM, UM)</li></ul></blockquote><h2 id="相关文献"><a href="#相关文献" class="headerlink" title="相关文献"></a>相关文献</h2><ul><li>Aleksandr ˇ Zolkovskij and Igor A. Mel’ˇcuk. 1967. O sisteme semantiˇceskogo sinteza. ii: Pravila preobrazovanija [on a system of semantic synthesis (of texts). ii: Paraphrasing rules]. In Nauˇcno-texniˇceskaja informacija 2, Informacionnye processy i sistemy, pages 17–27.</li><li>Nianwen Xue and Martha Palmer. 2003. Annotating the propositions in the Penn Chinese Treebank. Proceedings of the second SIGHAN workshop on Chinese language processing -, 17:47–54.</li><li>Stephan Oepen, Marco Kuhlmann, Yusuke Miyao, Daniel Zeman, Dan Flickinger, Jan Hajiˇc, Angelina Ivanova, and Yi Zhang. 2014. SemEval 2014 The 8th International Workshop on Semantic Evaluation Proceedings of the Workshop Dublin , Ireland. In Proc. of SemEval.</li><li>Wanxiang Che, Meishan Zhang, Yanqiu Shao and Ting Liu. 2012. SemEval-2012 Task 5 : Chinese Semantic Dependency Parsing. In Proceedings of the First Joint Conference on Lexical and Computational Semantics-Volume 1: Proceedings of the main conference and the shared task, and Volume 2: Proceedings of the Sixth International Workshop on Semantic Evaluation, pages 378–384.</li><li>Weiwei Sun, Yantao Du, Xin Kou, Shuoyang Ding, and Xiaojun Wan. 2014. Grammatical relations in Chinese: Gb-ground extraction and data-driven parsing. In Proceedings of the 52nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 446–456, Baltimore, Maryland, June. Association for Computational Linguistics.</li><li>Xiao Fan. 1998. The Sentence Types of Chinese. Shanghai Publishing House.</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;What-is-Semantic-Dependency-Parsing&quot;&gt;&lt;a href=&quot;#What-is-Semantic-Dependency-Parsing&quot; class=&quot;headerlink&quot; title=&quot;What is Semantic Depen
+      
+    
+    </summary>
+    
+      <category term="NLP" scheme="https://xiaoxiaoaurora.github.io/categories/NLP/"/>
+    
+      <category term="Semantic Dependency Parsing" scheme="https://xiaoxiaoaurora.github.io/categories/NLP/Semantic-Dependency-Parsing/"/>
+    
+    
+      <category term="NLP" scheme="https://xiaoxiaoaurora.github.io/tags/NLP/"/>
+    
+      <category term="Semantic Dependency Parsing" scheme="https://xiaoxiaoaurora.github.io/tags/Semantic-Dependency-Parsing/"/>
+    
+      <category term="SDP" scheme="https://xiaoxiaoaurora.github.io/tags/SDP/"/>
+    
+      <category term="语义依存分析" scheme="https://xiaoxiaoaurora.github.io/tags/%E8%AF%AD%E4%B9%89%E4%BE%9D%E5%AD%98%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
   
   <entry>
     <title>Semantic Role Labeling(语义角色标注)</title>
@@ -596,37 +629,6 @@
       <category term="CodingErrors" scheme="https://xiaoxiaoaurora.github.io/tags/CodingErrors/"/>
     
       <category term="CRF" scheme="https://xiaoxiaoaurora.github.io/tags/CRF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>softmax() got an unexpected keyword argument &#39;axis&#39;</title>
-    <link href="https://xiaoxiaoaurora.github.io/2018/04/25/Keras%E4%B9%8Bsoftmax-got-an-unexpected-keyword-argument-axis/"/>
-    <id>https://xiaoxiaoaurora.github.io/2018/04/25/Keras之softmax-got-an-unexpected-keyword-argument-axis/</id>
-    <published>2018-04-25T02:09:45.000Z</published>
-    <updated>2019-04-04T09:45:36.667Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="softmax-got-an-unexpected-keyword-argument-‘axis’"><a href="#softmax-got-an-unexpected-keyword-argument-‘axis’" class="headerlink" title="softmax() got an unexpected keyword argument ‘axis’"></a>softmax() got an unexpected keyword argument ‘axis’</h1><p>在使用keras构建模型时出现了以下错误：  </p><p><img src="https://i.loli.net/2018/04/25/5ae0295ac11f3.jpg" alt> </p><p>根据错误位置提示的最后一行<br><img src="https://i.loli.net/2018/04/25/5ae02d6730d70.jpg" alt></p><p>可以知道是在tensoflow_backend.py中出现错误，如下图：<br><img src="https://i.loli.net/2018/04/25/5ae02f1f09a2e.jpg" alt>   </p><p>解决方法：<br>把  </p><pre><code>return tf.nn.softmax(x, axis=axis)  </code></pre><p>改为：</p><pre><code>return tf.nn.softmax(x,axis)  </code></pre><p>简单粗暴好用的办法！<br>感谢<a href="https://blog.csdn.net/s_sunnyy/article/details/70469600" target="_blank" rel="noopener"> TypeError: concat() got an unexpected keyword argument ‘axis’</a> 提供参考意见。  </p><p>ps: 遇到狐假虎威的狼外婆和心怀险恶的小红帽，鲁智深是解决不了的，但是曹操自己能做到~</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;softmax-got-an-unexpected-keyword-argument-‘axis’&quot;&gt;&lt;a href=&quot;#softmax-got-an-unexpected-keyword-argument-‘axis’&quot; class=&quot;headerlink&quot; t
-      
-    
-    </summary>
-    
-      <category term="Keras" scheme="https://xiaoxiaoaurora.github.io/categories/Keras/"/>
-    
-      <category term="CodingErrors" scheme="https://xiaoxiaoaurora.github.io/categories/Keras/CodingErrors/"/>
-    
-    
-      <category term="Keras" scheme="https://xiaoxiaoaurora.github.io/tags/Keras/"/>
-    
-      <category term="CodingErrors" scheme="https://xiaoxiaoaurora.github.io/tags/CodingErrors/"/>
-    
-      <category term="Softmax" scheme="https://xiaoxiaoaurora.github.io/tags/Softmax/"/>
     
   </entry>
   
